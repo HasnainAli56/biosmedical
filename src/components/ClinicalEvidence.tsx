@@ -7,26 +7,26 @@ export const ClinicalEvidence: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'stats' | 'economics'>('stats');
 
   return (
-    <section id="evidence" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="evidence" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>CLINICAL EVIDENCE & HEALTH ECONOMICS</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
           The Urgent Need For <br />
           <span className="text-blue-600">Continuous Post-Fracture Telemetry</span>
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
           Hip fractures represent a catastrophic health crisis for older adults and healthcare systems worldwide. 
           Here is why real-time data at the implant site changes everything.
         </p>
       </div>
 
       {/* Main Interactive Card Container */}
-      <div className="rounded-[36px] bg-white border border-slate-200/90 shadow-2xl p-6 sm:p-10 lg:p-14 relative overflow-hidden">
+      <div className="rounded-[32px] bg-white border border-slate-200/90 shadow-2xl p-5 sm:p-8 lg:p-10 relative overflow-hidden">
         
         {/* Subtle mesh backdrop glow */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />

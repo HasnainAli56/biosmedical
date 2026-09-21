@@ -68,25 +68,25 @@ export const StickyStepper: React.FC = () => {
   const current = steps[activeStep];
 
   return (
-    <section id="why-choose" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="why-choose" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
       {/* Top Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>WHY CHOOSE US</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
           Why Choose <span className="text-blue-600">HIPbeacon?</span>
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
           With the world's first implanted hip mobility sensor and BIOS-Cloud data infrastructure, 
           ensure every hip fracture patient receives precision recovery, avoiding fatal complications.
         </p>
       </div>
 
       {/* Main Stepper Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* Left Vertical Stepper Indicator with animated progress fill (Identical to Dribbble) */}
         <div className="hidden lg:flex lg:col-span-1 flex-col items-center">
@@ -222,11 +222,11 @@ export const StickyStepper: React.FC = () => {
                 {current.badge}
               </div>
 
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 leading-tight">
                 {current.title}
               </h3>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 {current.description}
               </p>
 

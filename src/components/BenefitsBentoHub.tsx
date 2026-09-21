@@ -29,16 +29,16 @@ export const BenefitsBentoHub: React.FC = () => {
   const currentDayData = telemetryData[selectedDay] || telemetryData[23];
 
   return (
-    <section id="benefits" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="benefits" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
       
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-5">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
             <TurbineLogo size={14} animate={true} />
             <span>OUR CLINICAL INNOVATION</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
             The Breakthrough In <br />
             <span className="text-blue-600">Implanted Mobility Sensing</span>
           </h2>
@@ -48,7 +48,7 @@ export const BenefitsBentoHub: React.FC = () => {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           href="#why-choose"
-          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-blue-100/70 hover:bg-blue-200/70 text-blue-800 font-semibold text-xs tracking-wide transition-all self-start md:self-auto group cursor-pointer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-100/70 hover:bg-blue-200/70 text-blue-800 font-semibold text-xs tracking-wide transition-all self-start md:self-auto group cursor-pointer"
         >
           <span>See How It Works</span>
           <div className="w-5 h-5 rounded-full bg-white text-blue-600 flex items-center justify-center group-hover:translate-x-1 transition-transform">
@@ -64,33 +64,33 @@ export const BenefitsBentoHub: React.FC = () => {
             Central Glowing Hub (Dead Center in the 4-card quad)
             ============================================================ */}
         <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none items-center justify-center">
-          <div className="relative w-32 h-32 flex items-center justify-center">
+          <div className="relative w-36 h-36 flex items-center justify-center">
             
             {/* Multiple pulsing ripple waves */}
             <motion.div 
-              animate={{ scale: [1, 1.45, 1], opacity: [0.6, 0, 0.6] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute inset-0 rounded-full bg-blue-500/25 blur-lg" 
+              animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 rounded-full bg-blue-500/20 blur-lg" 
             />
             <motion.div 
-              animate={{ scale: [1, 1.25, 1], opacity: [0.8, 0.2, 0.8] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ scale: [1, 1.25, 1], opacity: [0.7, 0.2, 0.7] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="absolute inset-2 rounded-full bg-indigo-500/20 blur-md" 
             />
 
-            {/* Solid Center Orb with rotating turbine */}
+            {/* Solid Center Orb with Large, Highly-Visible White Rotating Turbine Logo */}
             <motion.div 
               animate={{ rotate: 360 }}
-              transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
-              className="w-20 h-20 rounded-full bg-white shadow-2xl border-4 border-blue-100 flex items-center justify-center p-3 relative z-10"
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="w-24 h-24 rounded-full bg-white shadow-2xl border-4 border-blue-100 flex items-center justify-center p-2 relative z-10"
             >
-              <div className="w-full h-full rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-inner">
-                <TurbineLogo size={36} animate={true} glow={true} />
+              <div className="w-full h-full rounded-full bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-700 flex items-center justify-center shadow-inner">
+                <TurbineLogo size={52} variant="white" glow={true} />
               </div>
             </motion.div>
 
             {/* Glowing SVG dashed lines connecting center to all 4 cards */}
-            <svg className="absolute w-64 h-64 pointer-events-none -z-10" viewBox="0 0 256 256">
+            <svg className="absolute w-72 h-72 pointer-events-none -z-10" viewBox="0 0 256 256">
               <line x1="128" y1="128" x2="20" y2="40" stroke="#93c5fd" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
               <line x1="128" y1="128" x2="236" y2="40" stroke="#93c5fd" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
               <line x1="128" y1="128" x2="20" y2="216" stroke="#93c5fd" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
@@ -103,12 +103,12 @@ export const BenefitsBentoHub: React.FC = () => {
             Card 1 (Top Left): Continuous Hip Biomechanics
             ============================================================ */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.94, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
-          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
+          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-2 mb-2">
@@ -212,19 +212,19 @@ export const BenefitsBentoHub: React.FC = () => {
             Card 2 (Top Right): Digital Biomarker Telemetry
             ============================================================ */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.94, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
-          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
+          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-2 mb-2">
               <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-xs">
                 <ShieldAlert className="w-4 h-4" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">Predictive Fall & Biomarker Alerts</h3>
+              <h3 className="text-base sm:text-lg font-bold text-slate-900">Predictive Fall & Biomarker Alerts</h3>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 font-medium">
               AI predictive algorithms detect micro-instability, asymmetry, and dangerous complications early.
@@ -282,19 +282,19 @@ export const BenefitsBentoHub: React.FC = () => {
             Card 3 (Bottom Left): Multidisciplinary OGCM Loop
             ============================================================ */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.94, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
-          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
+          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-2 mb-2">
               <div className="w-7 h-7 rounded-lg bg-emerald-600 text-white flex items-center justify-center shadow-xs">
                 <Users className="w-4 h-4" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">Multidisciplinary OGCM Co-Management</h3>
+              <h3 className="text-base sm:text-lg font-bold text-slate-900">Multidisciplinary OGCM Co-Management</h3>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 font-medium">
               Seamless data loop uniting surgeons, geriatricians, and patients for a proven 22% mortality reduction.
@@ -325,7 +325,7 @@ export const BenefitsBentoHub: React.FC = () => {
               {/* Center Bridge: BIOS-Cloud */}
               <div className="relative z-10 flex flex-col items-center">
                 <div className="w-11 h-11 rounded-full bg-blue-600 text-white shadow-lg flex items-center justify-center animate-pulse">
-                  <TurbineLogo size={22} animate={true} />
+                  <TurbineLogo size={22} variant="white" animate={true} />
                 </div>
                 <span className="text-[9px] font-extrabold text-blue-700 mt-1 uppercase tracking-wider">BIOS-Cloud</span>
               </div>
@@ -352,12 +352,12 @@ export const BenefitsBentoHub: React.FC = () => {
             Card 4 (Bottom Right): Actionable Clinical Notifications
             ============================================================ */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.94, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
-          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
+          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-2 mb-2">

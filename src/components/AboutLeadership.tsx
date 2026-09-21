@@ -41,34 +41,34 @@ export const AboutLeadership: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="about" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>LEADERSHIP & ADVISORY</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
           Founded in the Swiss Alps, <br />
           <span className="text-blue-600">Built on Decades of Orthopedic Expertise</span>
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
           BIOS Medical AG is based in Davos, Switzerland. We combine world-class medical biomechanics with low-power sensor telemetry and machine learning to improve the human condition.
         </p>
       </div>
 
       {/* Leadership 3 Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
         {leadership.map((member, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: idx * 0.15 }}
+            transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{ y: -6, scale: 1.02 }}
-            className="rounded-3xl bg-white border border-slate-200/80 p-6 sm:p-8 shadow-md hover:shadow-2xl hover:border-blue-300 transition-all flex flex-col justify-between group relative overflow-hidden"
+            className="rounded-3xl bg-white border border-slate-200/80 p-5 sm:p-7 shadow-md hover:shadow-2xl hover:border-blue-300 transition-all flex flex-col justify-between group relative overflow-hidden"
           >
             <div>
               <div className="relative mb-6">

@@ -6,6 +6,7 @@ import { ArrowRight, Mail, MapPin, Building, ShieldCheck, CheckCircle2 } from 'l
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [isWatermarkBlue, setIsWatermarkBlue] = useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,12 +17,12 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="contact" className="pt-20 pb-12 bg-white border-t border-slate-200/80 relative overflow-hidden">
+    <footer id="contact" className="pt-12 sm:pt-16 pb-8 bg-white border-t border-slate-200/80 relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Section: Brand + Newsletter */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-slate-100">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-10 border-b border-slate-100">
           
           {/* Left Column: Logo + Newsletter */}
           <div className="lg:col-span-5 space-y-6">
@@ -133,42 +134,48 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Copyright & Legal Links */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-600 gap-4">
-          <div>
-            © {new Date().getFullYear()} BIOS Medical AG. All rights reserved. Registered in Graubünden, Switzerland.
-          </div>
-          <div className="flex items-center gap-6">
-            <a href="https://www.biosmedical.care/dataprivacy" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">Privacy Policy</a>
-            <span>·</span>
-            <a href="#" className="hover:text-blue-600">Terms of Use</a>
-            <span>·</span>
-            <a href="https://bios.mdeg.cloud/login" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">BIOS-Cloud Portal</a>
-          </div>
-        </div>
-
       </div>
 
       {/* ============================================================
-          Giant Watermark Typography Across the Entire Bottom 
-          (Identical to Video Frame 49 watermark: animates from bottom to up, fading to hide)
+          Large Readable Watermark Typography 
+          (Turns vibrant blue after animation completes as requested by user)
           ============================================================ */}
-      <div className="w-full text-center mt-10 select-none pointer-events-none overflow-hidden relative min-h-[16vw]">
+      <div className="w-full text-center my-4 select-none pointer-events-none overflow-hidden relative">
         <motion.div
-          initial={{ y: 90, opacity: 0 }}
+          initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+          onAnimationComplete={() => setIsWatermarkBlue(true)}
           className="relative"
-          style={{
-            maskImage: 'linear-gradient(to top, black 25%, transparent 90%)',
-            WebkitMaskImage: 'linear-gradient(to top, black 25%, transparent 90%)'
-          }}
         >
-          <span className="text-[13vw] sm:text-[15vw] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-t from-blue-600/50 via-sky-400/35 to-transparent block leading-none">
+          <span className={`text-[11vw] sm:text-[13vw] font-black tracking-tighter block leading-none select-none transition-colors duration-1000 ${
+            isWatermarkBlue
+              ? 'text-blue-600/90 drop-shadow-sm'
+              : 'text-slate-200/80'
+          }`}>
             BIOS Medical
           </span>
         </motion.div>
+      </div>
+
+      {/* ============================================================
+          Bottom Copyright & Legal Links 
+          (Placed at the absolute bottom of the footer as requested)
+          ============================================================ */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-100 pt-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+          <div>
+            © {new Date().getFullYear()} BIOS Medical AG. All rights reserved. Registered in Graubünden, Switzerland.
+          </div>
+          <div className="flex items-center gap-5 text-slate-500">
+            <a href="https://www.biosmedical.care/dataprivacy" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
+            <span>·</span>
+            <a href="#" className="hover:text-blue-600 transition-colors">Terms of Use</a>
+            <span>·</span>
+            <a href="https://bios.mdeg.cloud/login" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">BIOS-Cloud Portal</a>
+          </div>
+        </div>
       </div>
 
     </footer>

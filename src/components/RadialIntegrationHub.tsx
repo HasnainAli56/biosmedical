@@ -53,13 +53,15 @@ export const RadialIntegrationHub: React.FC = () => {
     { id: 'export', name: 'CSV / Parquet Export', category: 'Research Cohorts', icon: <FileSpreadsheet className="w-4 h-4 text-teal-600" />, row: 'bot', side: 'right' },
   ];
 
-  const renderBadge = (item: IntegrationItem) => {
+  const renderBadge = (item: IntegrationItem, idx: number) => {
     const isHovered = hoveredId === item.id;
     return (
       <motion.button
         key={item.id}
         onMouseEnter={() => setHoveredId(item.id)}
         onClick={() => setHoveredId(item.id)}
+        animate={{ y: [-2, 2, -2] }}
+        transition={{ duration: 4 + (idx % 3), repeat: Infinity, ease: "easeInOut" }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         className={`relative inline-flex items-center gap-2 p-2.5 sm:p-3 rounded-full border transition-all duration-300 cursor-pointer shadow-xs ${
@@ -94,30 +96,30 @@ export const RadialIntegrationHub: React.FC = () => {
   };
 
   return (
-    <section id="integration" className="py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section id="integration" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       
       {/* Header (Matching exact style in frame 30s) */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-4">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>INTEGRATION</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
           Seamlessly Integrate With All <br />
           <span className="text-blue-600">Your Healthcare & Clinical Systems</span>
         </h2>
-        <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
+        <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
           Our implanted sensor telemetry integrates effortlessly with your hospital information systems and EHRs, ensuring a smooth and connected experience.
         </p>
 
-        <div className="mt-6 flex justify-center">
+        <div className="mt-5 flex justify-center">
           <motion.a
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             href="https://bios.mdeg.cloud/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-blue-500 hover:bg-blue-600 text-white font-semibold text-xs tracking-wide shadow-md shadow-blue-500/25 transition-all group cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-500 hover:bg-blue-600 text-white font-semibold text-xs tracking-wide shadow-md shadow-blue-500/25 transition-all group cursor-pointer"
           >
             <span>Learn More</span>
             <div className="w-5 h-5 rounded-full bg-white text-blue-600 flex items-center justify-center group-hover:translate-x-1 transition-transform">
@@ -128,10 +130,10 @@ export const RadialIntegrationHub: React.FC = () => {
       </div>
 
       {/* 
-        Radial Canvas Layout (Exact Match of frame 30s & frame 32s):
+        Radial Canvas Layout:
         Center Rotating Blue Orb + Horizontal Branching Lines + Circular Badges that expand on hover!
       */}
-      <div className="relative py-16 px-4 sm:px-8 max-w-6xl mx-auto flex items-center justify-center min-h-[420px]">
+      <div className="relative py-10 px-4 sm:px-8 max-w-6xl mx-auto flex items-center justify-center min-h-[360px]">
         
         {/* Subtle background connecting branch lines */}
         <div className="hidden lg:block absolute left-12 right-12 top-1/2 h-0.5 border-t-2 border-dashed border-blue-200/80 -translate-y-1/2 z-0" />
@@ -141,48 +143,48 @@ export const RadialIntegrationHub: React.FC = () => {
         <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Wing Rows */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-end space-y-4 sm:space-y-6">
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-end space-y-3.5 sm:space-y-5">
             
             {/* Top Row */}
             <div className="flex flex-wrap items-center justify-center lg:justify-end gap-2.5 sm:gap-3">
-              {leftItems.filter(i => i.row === 'top').map(renderBadge)}
+              {leftItems.filter(i => i.row === 'top').map((item, i) => renderBadge(item, i))}
             </div>
 
             {/* Middle Row */}
             <div className="flex flex-wrap items-center justify-center lg:justify-end gap-2.5 sm:gap-3">
-              {leftItems.filter(i => i.row === 'mid').map(renderBadge)}
+              {leftItems.filter(i => i.row === 'mid').map((item, i) => renderBadge(item, i + 4))}
             </div>
 
             {/* Bottom Row */}
             <div className="flex flex-wrap items-center justify-center lg:justify-end gap-2.5 sm:gap-3">
-              {leftItems.filter(i => i.row === 'bot').map(renderBadge)}
+              {leftItems.filter(i => i.row === 'bot').map((item, i) => renderBadge(item, i + 8))}
             </div>
 
           </div>
 
-          {/* Center Rotating & Pulsing Orb (User: "circle moves and items also have some animation") */}
+          {/* Center Rotating & Pulsing Orb with Large White Turbine Logo */}
           <div className="lg:col-span-2 flex flex-col items-center justify-center relative my-4 lg:my-0">
             
             {/* Concentric ripple aura waves */}
             <motion.div
-              animate={{ scale: [1, 1.4, 1], opacity: [0.6, 0.1, 0.6] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0.1, 0.5] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute w-36 h-36 rounded-full bg-blue-400/20 blur-md pointer-events-none"
             />
             <motion.div
-              animate={{ scale: [1, 1.2, 1], opacity: [0.8, 0.3, 0.8] }}
-              transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ scale: [1, 1.25, 1], opacity: [0.7, 0.2, 0.7] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="absolute w-28 h-28 rounded-full bg-indigo-400/25 blur-sm pointer-events-none"
             />
 
-            {/* Rotating Solid Blue Orb */}
+            {/* Rotating Solid Orb with Large, Highly-Visible White Turbine Logo */}
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
-              className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-sky-500 shadow-2xl shadow-blue-600/40 p-1 flex items-center justify-center border-4 border-white relative z-10 cursor-pointer"
+              transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+              className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-white shadow-2xl border-4 border-blue-100 p-2 flex items-center justify-center relative z-10 cursor-pointer"
             >
-              <div className="w-full h-full rounded-full bg-gradient-to-tr from-blue-700 to-indigo-700 flex items-center justify-center text-white shadow-inner">
-                <TurbineLogo size={46} animate={true} glow={true} />
+              <div className="w-full h-full rounded-full bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-inner">
+                <TurbineLogo size={62} variant="white" glow={true} />
               </div>
             </motion.div>
 
@@ -193,21 +195,21 @@ export const RadialIntegrationHub: React.FC = () => {
           </div>
 
           {/* Right Wing Rows */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-start space-y-4 sm:space-y-6">
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-start space-y-3.5 sm:space-y-5">
             
             {/* Top Row */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
-              {rightItems.filter(i => i.row === 'top').map(renderBadge)}
+              {rightItems.filter(i => i.row === 'top').map((item, i) => renderBadge(item, i + 12))}
             </div>
 
             {/* Middle Row */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
-              {rightItems.filter(i => i.row === 'mid').map(renderBadge)}
+              {rightItems.filter(i => i.row === 'mid').map((item, i) => renderBadge(item, i + 16))}
             </div>
 
             {/* Bottom Row */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
-              {rightItems.filter(i => i.row === 'bot').map(renderBadge)}
+              {rightItems.filter(i => i.row === 'bot').map((item, i) => renderBadge(item, i + 20))}
             </div>
 
           </div>

@@ -5,13 +5,13 @@ import { ArrowRight, Sparkles, Users, MapPin } from 'lucide-react';
 
 export const CtaBanner: React.FC = () => {
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="relative rounded-[36px] overflow-hidden shadow-2xl border border-blue-200 min-h-[440px] flex items-center justify-center p-8 sm:p-14 text-center group"
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        className="relative rounded-[32px] overflow-hidden shadow-2xl border border-blue-200 min-h-[380px] flex items-center justify-center p-6 sm:p-12 text-center group"
       >
         
         {/* Real Background Image: Davos Swiss Alps (BIOS Headquarters) */}
@@ -25,12 +25,12 @@ export const CtaBanner: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/70 to-slate-950/85 backdrop-blur-[2px]" />
 
         {/* Foreground Content */}
-        <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center space-y-6">
+        <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center space-y-5">
           
           {/* Floating Pill Badge */}
           <motion.div 
-            whileHover={{ scale: 1.05 }}
-            className="glass-pill px-4 py-1.5 rounded-full flex items-center gap-2 shadow-lg border border-white/30 backdrop-blur-md cursor-pointer"
+            whileHover={{ scale: 1.04 }}
+            className="glass-pill px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg border border-white/30 backdrop-blur-md cursor-pointer"
           >
             <Users className="w-3.5 h-3.5 text-blue-400" />
             <span className="text-xs font-bold text-white tracking-wide">
@@ -39,7 +39,7 @@ export const CtaBanner: React.FC = () => {
           </motion.div>
 
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
             Take Control Of Hip Fracture <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-300">
               Recovery With BIOS Medical
@@ -47,7 +47,7 @@ export const CtaBanner: React.FC = () => {
           </h2>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal max-w-lg">
+          <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal max-w-lg">
             Empower your clinical team with real-time continuous Digital Mobility Outcomes (DMO), shorten hospital stays, and prevent life-threatening complications.
           </p>
 
