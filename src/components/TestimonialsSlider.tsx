@@ -85,15 +85,15 @@ export const TestimonialsSlider: React.FC = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="text-center max-w-2xl mx-auto mb-10 sm:mb-12"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
-          <TurbineLogo size={14} animate={true} />
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-sm font-bold mb-3">
+          <TurbineLogo size={16} animate={true} />
           <span>CLINICAL TESTIMONIALS</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight text-slate-900">
           Clinicians & Patients <br />
           <span className="text-blue-600">Trust BIOS Medical</span>
         </h2>
-        <p className="mt-3 text-xs sm:text-sm text-slate-600">
+        <p className="mt-3.5 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
           World-renowned orthopedic trauma surgeons and rehabilitation pioneers share how continuous implanted mobility data improves recovery.
         </p>
       </motion.div>
@@ -113,7 +113,7 @@ export const TestimonialsSlider: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-4 flex flex-col items-center"
         >
-          <div className="w-52 h-64 sm:w-56 sm:h-72 rounded-3xl overflow-hidden border-2 border-slate-100 shadow-xl bg-white relative">
+          <div className="w-56 h-68 sm:w-60 sm:h-76 rounded-3xl overflow-hidden border-2 border-slate-100 shadow-xl bg-white relative">
             <AnimatePresence mode="wait">
               <motion.img
                 key={current.image}
@@ -128,24 +128,24 @@ export const TestimonialsSlider: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Stepper / Pagination Bar (Identical to Dribbble `< 1/5 >`) */}
-          <div className="mt-4 flex items-center justify-between w-52 sm:w-56 px-4 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-xs">
+          {/* Stepper / Pagination Bar with solid blue chevron buttons */}
+          <div className="mt-4 flex items-center justify-between w-56 sm:w-60 px-4 py-3 rounded-full bg-white border border-slate-200/90 shadow-xs">
             <motion.button
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.9 }}
               onClick={handlePrev}
-              className="p-1 rounded-full hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer"
+              className="p-1.5 rounded-full hover:bg-blue-50 text-blue-600 transition-colors cursor-pointer"
               aria-label="Previous Testimonial"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5 text-blue-600" />
             </motion.button>
 
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-slate-800">
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-black text-slate-800">
                 {currentIndex + 1} / {testimonials.length}
               </span>
               {!isPaused && (
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" title="Auto-playing" />
+                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" title="Auto-playing" />
               )}
             </div>
 
@@ -153,10 +153,10 @@ export const TestimonialsSlider: React.FC = () => {
               whileHover={{ scale: 1.15 }}
               whileTap={{ scale: 0.9 }}
               onClick={handleNext}
-              className="p-1 rounded-full hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer"
+              className="p-1.5 rounded-full hover:bg-blue-50 text-blue-600 transition-colors cursor-pointer"
               aria-label="Next Testimonial"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5 text-blue-600" />
             </motion.button>
           </div>
         </motion.div>
@@ -169,12 +169,12 @@ export const TestimonialsSlider: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="md:col-span-8"
         >
-          <div className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-9 shadow-xl shadow-blue-900/5 relative overflow-hidden">
+          <div className="rounded-3xl bg-white border border-slate-200/90 p-7 sm:p-10 shadow-xl shadow-blue-900/5 relative overflow-hidden">
             
-            {/* Top 5 Star Rating */}
-            <div className="flex items-center gap-1 text-amber-400 mb-5">
+            {/* Top 5 Star Rating (Solid Yellow) */}
+            <div className="flex items-center gap-1.5 text-amber-400 mb-6">
               {[...Array(current.rating)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-400 stroke-amber-400" />
+                <Star key={i} className="w-5 h-5 fill-amber-400 stroke-amber-400" />
               ))}
             </div>
 
@@ -187,27 +187,27 @@ export const TestimonialsSlider: React.FC = () => {
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p className="text-sm sm:text-base md:text-lg text-slate-800 font-medium leading-relaxed mb-6">
+                <p className="text-base sm:text-lg md:text-xl text-slate-900 font-medium leading-relaxed mb-7">
                   "{current.quote}"
                 </p>
 
                 {/* Author Row */}
                 <div className="flex items-center justify-between pt-5 border-t border-slate-100">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3.5">
                     <img
                       src={current.avatar}
                       alt={current.name}
-                      className="w-11 h-11 rounded-full object-cover ring-2 ring-blue-100 shadow-xs"
+                      className="w-13 h-13 rounded-full object-cover ring-2 ring-blue-100 shadow-xs"
                     />
                     <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">{current.name}</h4>
-                      <p className="text-[11px] text-slate-500 max-w-sm leading-snug mt-0.5">{current.role}</p>
+                      <h4 className="text-sm sm:text-base font-bold text-slate-900">{current.name}</h4>
+                      <p className="text-xs sm:text-sm text-slate-500 max-w-sm leading-snug mt-0.5 font-medium">{current.role}</p>
                     </div>
                   </div>
 
                   {/* Stylized Quotation Mark */}
                   <div className="text-blue-500/20">
-                    <Quote className="w-9 h-9 rotate-180" />
+                    <Quote className="w-10 h-10 rotate-180 text-blue-600/30" />
                   </div>
                 </div>
               </motion.div>

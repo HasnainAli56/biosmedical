@@ -45,14 +45,14 @@ export const StatementSection: React.FC = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
       >
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black font-heading tracking-tight text-slate-800 leading-[1.4] sm:leading-[1.45]">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-black font-heading tracking-tight text-slate-800 leading-[1.38] sm:leading-[1.42]">
           
           {/* Row 1: "Our solution [circle -> pill with HIPbeacon™] effectively empowers" */}
           <span className="inline-flex items-center flex-wrap justify-center align-middle">
             <span className="text-slate-900">Our solution</span>
 
             {/* Morphing Pill Container */}
-            <span className="inline-flex items-center align-middle mx-1.5 sm:mx-2 min-h-[38px]">
+            <span className="inline-flex items-center align-middle mx-1.5 sm:mx-2 min-h-[42px]">
               {animationStage === 0 && (
                 <span className="w-1 inline-block" />
               )}
@@ -63,21 +63,21 @@ export const StatementSection: React.FC = () => {
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                  className="w-8 h-8 rounded-full bg-teal-50 border border-teal-200 shadow-sm flex items-center justify-center shrink-0"
+                  className="w-9 h-9 rounded-full bg-blue-50 border border-blue-200 shadow-sm flex items-center justify-center shrink-0"
                 >
-                  <TurbineLogo size={16} animate={true} />
+                  <TurbineLogo size={18} animate={true} />
                 </motion.span>
               )}
 
               {/* Stage >= 2: Circle expands to pill and text expands out */}
               {animationStage >= 2 && (
                 <motion.span
-                  initial={{ width: 32 }}
+                  initial={{ width: 36 }}
                   animate={{ width: 'auto' }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="inline-flex items-center overflow-hidden rounded-full bg-teal-50 border border-teal-200 text-teal-700 shadow-sm text-xs sm:text-sm font-bold whitespace-nowrap px-3 py-1.5 gap-1.5"
+                  className="inline-flex items-center overflow-hidden rounded-full bg-blue-50 border border-blue-200 text-blue-700 shadow-sm text-sm sm:text-base font-bold whitespace-nowrap px-3.5 py-1.5 gap-2"
                 >
-                  <TurbineLogo size={15} animate={true} />
+                  <TurbineLogo size={17} animate={true} />
                   <motion.span
                     initial={{ width: 0, opacity: 0 }}
                     animate={{ width: 'auto', opacity: 1 }}
@@ -98,7 +98,7 @@ export const StatementSection: React.FC = () => {
             <span className="text-slate-600">the orthopedic recovery</span>
 
             {/* Pill 2: Smoothly expands between "orthopedic recovery" and "ecosystem" */}
-            <span className="inline-flex items-center align-middle mx-1.5 sm:mx-2 min-h-[38px]">
+            <span className="inline-flex items-center align-middle mx-1.5 sm:mx-2 min-h-[42px]">
               {animationStage >= 3 ? (
                 <motion.span
                   initial={{ width: 0, opacity: 0, scale: 0.7 }}
@@ -106,8 +106,8 @@ export const StatementSection: React.FC = () => {
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                   className="inline-flex items-center overflow-hidden align-middle"
                 >
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 shadow-sm text-xs sm:text-sm font-bold whitespace-nowrap">
-                    <Shield className="w-3.5 h-3.5 text-purple-600" />
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 shadow-sm text-sm sm:text-base font-bold whitespace-nowrap">
+                    <Shield className="w-4 h-4 text-amber-500" />
                     <span>OGCM 22%</span>
                   </span>
                 </motion.span>
@@ -124,7 +124,7 @@ export const StatementSection: React.FC = () => {
             <span className="text-slate-900">by enhancing</span>
 
             {/* Pill 3: Smoothly expands parentheses with founder avatars */}
-            <span className="inline-flex items-center align-middle mx-1.5 sm:mx-2 min-h-[38px]">
+            <span className="inline-flex items-center align-middle mx-1.5 sm:mx-2 min-h-[42px]">
               {animationStage >= 4 ? (
                 <motion.span
                   initial={{ width: 0, opacity: 0, scale: 0.7 }}
@@ -132,14 +132,14 @@ export const StatementSection: React.FC = () => {
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                   className="inline-flex items-center overflow-hidden align-middle"
                 >
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 shadow-sm whitespace-nowrap">
-                    <span className="text-blue-700 font-extrabold text-xs sm:text-sm">(</span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 shadow-sm whitespace-nowrap">
+                    <span className="text-blue-700 font-extrabold text-sm sm:text-base">(</span>
                     <span className="flex -space-x-1.5">
-                      <img className="inline-block h-5 w-5 sm:h-6 sm:w-6 rounded-full ring-2 ring-white object-cover" src="/real_bios/markus_windolf_ceo.jpg" alt="Dr. Markus Windolf" />
-                      <img className="inline-block h-5 w-5 sm:h-6 sm:w-6 rounded-full ring-2 ring-white object-cover" src="/real_bios/patrick_stepanek_coo.jpg" alt="Dr. Patrick Stepanek" />
-                      <img className="inline-block h-5 w-5 sm:h-6 sm:w-6 rounded-full ring-2 ring-white object-cover" src="/real_bios/viktor_varjas_dev.jpg" alt="Viktor Varjas" />
+                      <img className="inline-block h-6 w-6 sm:h-7 sm:w-7 rounded-full ring-2 ring-white object-cover" src="/real_bios/markus_windolf_ceo.jpg" alt="Dr. Markus Windolf" />
+                      <img className="inline-block h-6 w-6 sm:h-7 sm:w-7 rounded-full ring-2 ring-white object-cover" src="/real_bios/patrick_stepanek_coo.jpg" alt="Dr. Patrick Stepanek" />
+                      <img className="inline-block h-6 w-6 sm:h-7 sm:w-7 rounded-full ring-2 ring-white object-cover" src="/real_bios/viktor_varjas_dev.jpg" alt="Viktor Varjas" />
                     </span>
-                    <span className="text-blue-700 font-extrabold text-xs sm:text-sm">)</span>
+                    <span className="text-blue-700 font-extrabold text-sm sm:text-base">)</span>
                   </span>
                 </motion.span>
               ) : (

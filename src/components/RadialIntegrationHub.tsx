@@ -15,42 +15,42 @@ interface IntegrationItem {
 export const RadialIntegrationHub: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<string | null>('epic');
 
-  // Left Wing Items (EHR & Gateways)
+  // Left Wing Items (EHR & Gateways) - Standardized to Solid Blue & Solid Yellow
   const leftItems: IntegrationItem[] = [
     // Top row
-    { id: 'epic', name: 'Epic Systems', category: 'EHR Ingest', icon: <Database className="w-4 h-4 text-blue-600" />, row: 'top', side: 'left' },
-    { id: 'cerner', name: 'Oracle Cerner', category: 'Hospital Record', icon: <Server className="w-4 h-4 text-indigo-600" />, row: 'top', side: 'left' },
-    { id: 'fhir', name: 'HL7 FHIR v4', category: 'Interoperability', icon: <Radio className="w-4 h-4 text-cyan-600" />, row: 'top', side: 'left' },
-    { id: 'baxter', name: 'Baxter Platform', category: 'Device Stream', icon: <Cpu className="w-4 h-4 text-blue-700" />, row: 'top', side: 'left' },
+    { id: 'epic', name: 'Epic Systems', category: 'EHR Ingest', icon: <Database className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'left' },
+    { id: 'cerner', name: 'Oracle Cerner', category: 'Hospital Record', icon: <Server className="w-4.5 h-4.5 text-amber-500" />, row: 'top', side: 'left' },
+    { id: 'fhir', name: 'HL7 FHIR v4', category: 'Interoperability', icon: <Radio className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'left' },
+    { id: 'baxter', name: 'Baxter Platform', category: 'Device Stream', icon: <Cpu className="w-4.5 h-4.5 text-amber-500" />, row: 'top', side: 'left' },
 
     // Mid row
-    { id: 'mdeg', name: 'mdeg Swiss Cloud', category: 'GDPR / HIPAA', icon: <Cloud className="w-4 h-4 text-sky-600" />, row: 'mid', side: 'left' },
-    { id: 'ble', name: 'Bedside RF Ingest', category: 'Wireless Telemetry', icon: <Radio className="w-4 h-4 text-teal-600" />, row: 'mid', side: 'left' },
-    { id: 'pacs', name: 'DICOM / PACS', category: 'Radiology Archive', icon: <FileSpreadsheet className="w-4 h-4 text-purple-600" />, row: 'mid', side: 'left' },
+    { id: 'mdeg', name: 'mdeg Swiss Cloud', category: 'GDPR / HIPAA', icon: <Cloud className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'left' },
+    { id: 'ble', name: 'Bedside RF Ingest', category: 'Wireless Telemetry', icon: <Radio className="w-4.5 h-4.5 text-amber-500" />, row: 'mid', side: 'left' },
+    { id: 'pacs', name: 'DICOM / PACS', category: 'Radiology Archive', icon: <FileSpreadsheet className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'left' },
 
     // Bot row
-    { id: 'apple', name: 'Apple Health', category: 'Patient Portal', icon: <Activity className="w-4 h-4 text-rose-500" />, row: 'bot', side: 'left' },
-    { id: 'aes', name: 'AES-256 Vault', category: 'Encrypted Stream', icon: <Lock className="w-4 h-4 text-amber-600" />, row: 'bot', side: 'left' },
-    { id: 'cal', name: 'Cal Clinical Sync', category: 'Visit Scheduler', icon: <Stethoscope className="w-4 h-4 text-emerald-600" />, row: 'bot', side: 'left' },
+    { id: 'apple', name: 'Apple Health', category: 'Patient Portal', icon: <Activity className="w-4.5 h-4.5 text-amber-500" />, row: 'bot', side: 'left' },
+    { id: 'aes', name: 'AES-256 Vault', category: 'Encrypted Stream', icon: <Lock className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'left' },
+    { id: 'cal', name: 'Cal Clinical Sync', category: 'Visit Scheduler', icon: <Stethoscope className="w-4.5 h-4.5 text-amber-500" />, row: 'bot', side: 'left' },
   ];
 
-  // Right Wing Items (Registries & AI Analytics)
+  // Right Wing Items (Registries & AI Analytics) - Standardized to Solid Blue & Solid Yellow
   const rightItems: IntegrationItem[] = [
     // Top row
-    { id: 'ai-engine', name: 'BIOS AI Risk Engine', category: 'Predictive ML', icon: <Cpu className="w-4 h-4 text-purple-600" />, row: 'top', side: 'right' },
-    { id: 'mobilise', name: 'Mobilise-D Registry', category: 'EU DMO Benchmark', icon: <LineChart className="w-4 h-4 text-indigo-600" />, row: 'top', side: 'right' },
-    { id: 'ao-data', name: 'AO Foundation DB', category: 'Fracture Trials', icon: <Database className="w-4 h-4 text-blue-600" />, row: 'top', side: 'right' },
-    { id: 'avegen', name: 'Avegen Health', category: 'Remote Monitoring', icon: <Activity className="w-4 h-4 text-emerald-600" />, row: 'top', side: 'right' },
+    { id: 'ai-engine', name: 'BIOS AI Risk Engine', category: 'Predictive ML', icon: <Cpu className="w-4.5 h-4.5 text-amber-500" />, row: 'top', side: 'right' },
+    { id: 'mobilise', name: 'Mobilise-D Registry', category: 'EU DMO Benchmark', icon: <LineChart className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'right' },
+    { id: 'ao-data', name: 'AO Foundation DB', category: 'Fracture Trials', icon: <Database className="w-4.5 h-4.5 text-amber-500" />, row: 'top', side: 'right' },
+    { id: 'avegen', name: 'Avegen Health', category: 'Remote Monitoring', icon: <Activity className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'right' },
 
     // Mid row
-    { id: 'ward', name: 'OGCM Ward Tablet', category: 'Geriatric Rounding', icon: <Stethoscope className="w-4 h-4 text-sky-600" />, row: 'mid', side: 'right' },
-    { id: 'telehealth', name: 'Telehealth Portal', category: 'Physician Review', icon: <Radio className="w-4 h-4 text-blue-500" />, row: 'mid', side: 'right' },
-    { id: 'fall-model', name: 'Fall Hazard Engine', category: 'Asymmetry ML', icon: <Shield className="w-4 h-4 text-amber-500" />, row: 'mid', side: 'right' },
+    { id: 'ward', name: 'OGCM Ward Tablet', category: 'Geriatric Rounding', icon: <Stethoscope className="w-4.5 h-4.5 text-amber-500" />, row: 'mid', side: 'right' },
+    { id: 'telehealth', name: 'Telehealth Portal', category: 'Physician Review', icon: <Radio className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'right' },
+    { id: 'fall-model', name: 'Fall Hazard Engine', category: 'Asymmetry ML', icon: <Shield className="w-4.5 h-4.5 text-amber-500" />, row: 'mid', side: 'right' },
 
     // Bot row
-    { id: 'api-gateway', name: 'REST Clinical API', category: 'Fast Ingest', icon: <Server className="w-4 h-4 text-cyan-600" />, row: 'bot', side: 'right' },
-    { id: 'audit', name: 'Audit Compliance', category: 'MDR / FDA Logs', icon: <Lock className="w-4 h-4 text-indigo-700" />, row: 'bot', side: 'right' },
-    { id: 'export', name: 'CSV / Parquet Export', category: 'Research Cohorts', icon: <FileSpreadsheet className="w-4 h-4 text-teal-600" />, row: 'bot', side: 'right' },
+    { id: 'api-gateway', name: 'REST Clinical API', category: 'Fast Ingest', icon: <Server className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'right' },
+    { id: 'audit', name: 'Audit Compliance', category: 'MDR / FDA Logs', icon: <Lock className="w-4.5 h-4.5 text-amber-500" />, row: 'bot', side: 'right' },
+    { id: 'export', name: 'CSV / Parquet Export', category: 'Research Cohorts', icon: <FileSpreadsheet className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'right' },
   ];
 
   const renderBadge = (item: IntegrationItem, idx: number) => {
@@ -64,19 +64,17 @@ export const RadialIntegrationHub: React.FC = () => {
         transition={{ duration: 4 + (idx % 3), repeat: Infinity, ease: "easeInOut" }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className={`relative inline-flex items-center gap-2 p-2.5 sm:p-3 rounded-full border transition-all duration-300 cursor-pointer shadow-xs ${
+        className={`relative inline-flex items-center gap-2.5 p-3 rounded-full border transition-all duration-300 cursor-pointer shadow-xs ${
           isHovered
             ? 'bg-white border-blue-500 shadow-lg ring-2 ring-blue-100 z-30'
-            : 'bg-white/90 hover:bg-white border-slate-200/90 text-slate-700'
+            : 'bg-white/95 hover:bg-white border-slate-200/90 text-slate-700'
         }`}
       >
         <div className="flex items-center justify-center shrink-0">
           {item.icon}
         </div>
 
-        {/* 
-          Expanding pill title matching video frame 32s (where hovering expands horizontally with arrow)
-        */}
+        {/* Expanding pill title */}
         <AnimatePresence>
           {isHovered && (
             <motion.span
@@ -84,10 +82,10 @@ export const RadialIntegrationHub: React.FC = () => {
               animate={{ width: 'auto', opacity: 1 }}
               exit={{ width: 0, opacity: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="inline-flex items-center gap-1.5 overflow-hidden text-xs font-bold text-slate-900 whitespace-nowrap pr-1"
+              className="inline-flex items-center gap-2 overflow-hidden text-sm font-bold text-slate-900 whitespace-nowrap pr-1.5"
             >
               <span>{item.name}</span>
-              <ArrowRight className="w-3 h-3 text-blue-600 shrink-0" />
+              <ArrowRight className="w-3.5 h-3.5 text-blue-600 shrink-0" />
             </motion.span>
           )}
         </AnimatePresence>
@@ -106,30 +104,30 @@ export const RadialIntegrationHub: React.FC = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="text-center max-w-3xl mx-auto mb-10 sm:mb-12"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
-          <TurbineLogo size={14} animate={true} />
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-sm font-bold mb-3">
+          <TurbineLogo size={16} animate={true} />
           <span>INTEGRATION</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900 leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight text-slate-900 leading-tight">
           Seamlessly Integrate With All <br />
           <span className="text-blue-600">Your Healthcare & Clinical Systems</span>
         </h2>
-        <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
+        <p className="mt-3.5 text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
           Our implanted sensor telemetry integrates effortlessly with your hospital information systems and EHRs, ensuring a smooth and connected experience.
         </p>
 
-        <div className="mt-5 flex justify-center">
+        <div className="mt-6 flex justify-center">
           <motion.a
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             href="https://bios.mdeg.cloud/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs tracking-wide shadow-md shadow-blue-500/25 transition-all group cursor-pointer"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm tracking-wide shadow-md shadow-blue-500/25 transition-all group cursor-pointer"
           >
             <span>Learn More</span>
             <div className="w-5 h-5 rounded-full bg-white text-blue-600 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-              <ArrowRight className="w-3 h-3" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </motion.a>
         </div>

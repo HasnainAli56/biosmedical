@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Radio, Activity, ShieldCheck, HeartPulse, Sparkles, Clock, Calendar, Users, Zap } from 'lucide-react';
 import { TurbineLogo } from './TurbineLogo';
@@ -6,6 +6,14 @@ import { TurbineLogo } from './TurbineLogo';
 export const HeroSection: React.FC = () => {
   const [adherenceCounter, setAdherenceCounter] = useState(50);
   const [mortalityCounter, setMortalityCounter] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleVideoTimeUpdate = () => {
+    if (videoRef.current && videoRef.current.currentTime >= 7) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+    }
+  };
 
   useEffect(() => {
     // Ticking counter from 50% to 81% (matching exact video frame 02s)
@@ -43,26 +51,31 @@ export const HeroSection: React.FC = () => {
       */}
       <div className="relative w-full overflow-hidden min-h-[600px] sm:min-h-[680px] flex items-center shadow-2xl border-b border-blue-900/40">
         
-        {/* Full-Bleed Real Clinical Photo with Slow Ambient Animation */}
-        <motion.img
-          src="/real_bios/clinical_team_review.jpg"
-          alt="Clinical doctors reviewing patient recovery data"
-          animate={{ 
-            scale: [1, 1.08, 1],
-            x: [0, -14, 0],
-            y: [0, -6, 0]
-          }}
-          transition={{ 
-            duration: 22, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
+        {/* Full-Bleed 7-Second Muted Video with Scale-Crop to remove bottom-right Gemini watermark */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <video
+            ref={videoRef}
+            src="/hip_fracture_bg.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            onTimeUpdate={handleVideoTimeUpdate}
+            className="w-[115%] h-[115%] max-w-none object-cover -translate-x-[6%] -translate-y-[6%]"
+          />
+        </div>
 
-        {/* High-End Atmospheric Cyan/Blue Clinical Gradient Mask */}
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-950/92 via-blue-950/75 to-slate-950/65 backdrop-blur-[1.5px]" />
-        <div className="absolute inset-0 bg-radial-at-tl from-sky-500/15 via-transparent to-transparent pointer-events-none" />
+        {/* Light, Crystal-Clear Overlay: Darker only behind left text, vibrant and clear on the animation */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/35 to-transparent pointer-events-none" />
+        
+        {/* Dedicated Bottom-Right Watermark Concealment Mask */}
+        <div className="absolute -bottom-1 -right-1 w-56 h-36 bg-gradient-to-tl from-slate-950 via-slate-950/60 to-transparent pointer-events-none z-[2]" />
+
+        {/* Bottom smooth edge gradient */}
+        <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent pointer-events-none z-[1]" />
+        
+        {/* Top subtle shade for navbar clarity */}
+        <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-slate-950/70 to-transparent pointer-events-none" />
 
         {/* Inner Foreground Layout */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-28 pb-14 sm:pt-32 sm:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
@@ -75,10 +88,10 @@ export const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-xs font-semibold shadow-sm"
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-sm font-bold shadow-sm"
             >
-              <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-              <TurbineLogo size={14} animate={true} variant="white" />
+              <span className="flex h-2.5 w-2.5 rounded-full bg-amber-400 animate-ping" />
+              <TurbineLogo size={16} animate={true} variant="white" />
               <span>World's First Implanted Hip Mobility Sensor</span>
             </motion.div>
 
@@ -87,10 +100,10 @@ export const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
-              className="text-3xl sm:text-4xl xl:text-5xl font-black font-heading tracking-tight text-white leading-[1.15]"
+              className="text-4xl sm:text-5xl xl:text-6xl font-black font-heading tracking-tight text-white leading-[1.12] drop-shadow-lg"
             >
               Your Implant-Powered <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-indigo-200">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-indigo-200 drop-shadow-sm">
                 Recovery Companion
               </span>
             </motion.h1>
@@ -100,7 +113,7 @@ export const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-              className="text-xs sm:text-sm md:text-base text-slate-100/90 font-normal leading-relaxed max-w-xl"
+              className="text-base sm:text-lg md:text-xl text-slate-100/95 font-normal leading-relaxed max-w-2xl drop-shadow-md"
             >
               BIOS Medical ensures older adults recover from hip fractures with precision, giving surgeons and geriatricians continuous implanted telemetry to prevent fatal secondary complications.
             </motion.p>
@@ -110,7 +123,7 @@ export const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.8, ease: "easeOut" }}
-              className="pt-2 flex flex-wrap items-center gap-3.5"
+              className="pt-2 flex flex-wrap items-center gap-4"
             >
               <div className="relative group">
                 {/* Subtle slow glowing ring */}
@@ -120,11 +133,11 @@ export const HeroSection: React.FC = () => {
                   whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.2 }}
                   href="#why-choose"
-                  className="relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-slate-900 font-bold text-xs tracking-wider uppercase shadow-2xl hover:bg-blue-50 transition-all group cursor-pointer"
+                  className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-sm tracking-wider uppercase shadow-2xl hover:bg-blue-50 transition-all group cursor-pointer"
                 >
                   <span>Get Started for Free</span>
-                  <div className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
-                    <ArrowRight className="w-3 h-3" />
+                  <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </motion.a>
               </div>
@@ -136,7 +149,7 @@ export const HeroSection: React.FC = () => {
                 href="https://bios.mdeg.cloud/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/25 backdrop-blur-md transition-all duration-300 cursor-pointer"
+                className="inline-flex items-center gap-2.5 px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/25 backdrop-blur-md transition-all duration-300 cursor-pointer"
               >
                 <span>Launch BIOS-Cloud</span>
               </motion.a>
@@ -179,11 +192,11 @@ export const HeroSection: React.FC = () => {
               {/* Top Row: Founders Stack & Adherence Headline */}
               <div className="flex items-center justify-between pb-3.5 border-b border-slate-200/60">
                 <div className="flex -space-x-2 overflow-hidden">
-                  <img className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover" src="/real_bios/markus_windolf_ceo.jpg" alt="Dr. Markus Windolf" title="Dr. Markus Windolf (CEO)" />
-                  <img className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover" src="/real_bios/patrick_stepanek_coo.jpg" alt="Dr. Patrick Stepanek" title="Dr. Patrick Stepanek (COO)" />
-                  <img className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover" src="/real_bios/viktor_varjas_dev.jpg" alt="Viktor Varjas" title="Viktor Varjas (Lead Software Dev)" />
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="/real_bios/markus_windolf_ceo.jpg" alt="Dr. Markus Windolf" title="Dr. Markus Windolf (CEO)" />
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="/real_bios/patrick_stepanek_coo.jpg" alt="Dr. Patrick Stepanek" title="Dr. Patrick Stepanek (COO)" />
+                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="/real_bios/viktor_varjas_dev.jpg" alt="Viktor Varjas" title="Viktor Varjas (Lead Software Dev)" />
                 </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">
+                <span className="text-xs font-black uppercase tracking-wider text-slate-600">
                   {adherenceCounter}% Adherence Rate
                 </span>
               </div>
@@ -191,34 +204,34 @@ export const HeroSection: React.FC = () => {
               {/* Big Stat Row */}
               <div className="py-3.5">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl sm:text-4xl font-black font-heading text-slate-900 tracking-tight">
+                  <span className="text-4xl sm:text-5xl font-black font-heading text-slate-900 tracking-tight">
                     {adherenceCounter}%
                   </span>
-                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-blue-700">
+                  <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-blue-700">
                     OF PATIENTS IMPROVED MOBILITY
                   </span>
                 </div>
-                <div className="mt-0.5 text-[10px] text-slate-500 font-medium">
+                <div className="mt-1 text-xs text-slate-500 font-semibold">
                   OGCM Clinical Cohort · {mortalityCounter}% Mortality Reduction
                 </div>
               </div>
 
-              {/* 6 Interactive Feature Pills */}
-              <div className="grid grid-cols-2 gap-2 pt-1 text-[10px] font-bold text-slate-700">
+              {/* 6 Interactive Feature Pills (Standardized to solid blue & solid yellow icons) */}
+              <div className="grid grid-cols-2 gap-2.5 pt-1 text-xs font-bold text-slate-700">
                 {[
-                  { label: "TELEHEALTH", icon: <Activity className="w-3.5 h-3.5 text-blue-600" /> },
-                  { label: "SMART SCHEDULING", icon: <Calendar className="w-3.5 h-3.5 text-emerald-600" /> },
-                  { label: "ADAPTIVE ALERTS", icon: <ShieldCheck className="w-3.5 h-3.5 text-indigo-600" /> },
-                  { label: "24/7 SUPPORT", icon: <Clock className="w-3.5 h-3.5 text-amber-500" /> },
-                  { label: "AI-ASSISTED NOTES", icon: <Sparkles className="w-3.5 h-3.5 text-purple-600" /> },
-                  { label: "DMO ANALYTICS", icon: <Zap className="w-3.5 h-3.5 text-sky-600" /> },
+                  { label: "TELEHEALTH", icon: <Activity className="w-4 h-4 text-blue-600" /> },
+                  { label: "SMART SCHEDULING", icon: <Calendar className="w-4 h-4 text-amber-500" /> },
+                  { label: "ADAPTIVE ALERTS", icon: <ShieldCheck className="w-4 h-4 text-blue-600" /> },
+                  { label: "24/7 SUPPORT", icon: <Clock className="w-4 h-4 text-amber-500" /> },
+                  { label: "AI-ASSISTED NOTES", icon: <Sparkles className="w-4 h-4 text-blue-600" /> },
+                  { label: "DMO ANALYTICS", icon: <Zap className="w-4 h-4 text-amber-500" /> },
                 ].map((item, idx) => (
                   <motion.div
                     key={item.label}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + idx * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="p-2 rounded-xl bg-slate-50/90 border border-slate-200/70 flex items-center justify-between shadow-2xs hover:bg-white hover:border-blue-300 transition-all cursor-default"
+                    className="p-2.5 rounded-xl bg-slate-50/95 border border-slate-200/80 flex items-center justify-between shadow-2xs hover:bg-white hover:border-blue-300 transition-all cursor-default"
                   >
                     <span>{item.label}</span>
                     {item.icon}

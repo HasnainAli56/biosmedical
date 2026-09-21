@@ -27,19 +27,19 @@ export const CtaBanner: React.FC = () => {
         {/* Foreground Content */}
         <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center space-y-5">
           
-          {/* Floating Pill Badge */}
+          {/* Floating Pill Badge with high contrast dark glass */}
           <motion.div 
             whileHover={{ scale: 1.04 }}
-            className="glass-pill px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg border border-white/30 backdrop-blur-md cursor-pointer animate-float"
+            className="bg-slate-900/90 border border-blue-400/40 px-5 py-2.5 rounded-full flex items-center gap-2.5 shadow-2xl backdrop-blur-md cursor-pointer animate-float"
           >
-            <Users className="w-3.5 h-3.5 text-blue-400" />
-            <span className="text-xs font-bold text-white tracking-wide">
+            <Users className="w-4 h-4 text-amber-400 shrink-0" />
+            <span className="text-xs sm:text-sm font-bold text-white tracking-wide drop-shadow-sm">
               1.7M Hip Fractures Worldwide Annually — Transform The Outcome
             </span>
           </motion.div>
 
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-heading text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-white tracking-tight leading-tight">
             Take Control Of Hip Fracture <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-300">
               Recovery With BIOS Medical
@@ -47,7 +47,7 @@ export const CtaBanner: React.FC = () => {
           </h2>
 
           {/* Subtitle */}
-          <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal max-w-lg">
+          <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal max-w-xl">
             Empower your clinical team with real-time continuous Digital Mobility Outcomes (DMO), shorten hospital stays, and prevent life-threatening complications.
           </p>
 
@@ -57,11 +57,11 @@ export const CtaBanner: React.FC = () => {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-xs tracking-wider uppercase shadow-2xl hover:bg-blue-50 transition-all group cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-sm tracking-wider uppercase shadow-2xl hover:bg-blue-50 transition-all group cursor-pointer"
             >
               <span>Request Clinical Consultation</span>
-              <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                <ArrowRight className="w-3.5 h-3.5" />
+              <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                <ArrowRight className="w-4 h-4" />
               </div>
             </motion.a>
           </div>

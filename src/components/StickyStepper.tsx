@@ -34,8 +34,8 @@ export const StickyStepper: React.FC = () => {
         "Elimination of Costly Emergency Re-admissions"
       ],
       image: "/real_bios/clinical_team_review.jpg",
-      bgAccent: "from-emerald-50 to-teal-50 border-emerald-200",
-      pillColor: "bg-emerald-600 text-white",
+      bgAccent: "from-amber-50 to-yellow-50 border-amber-200",
+      pillColor: "bg-amber-500 text-white",
       floatingTag: "22% Mortality Reduction",
       floatingStat: "OGCM Benchmark Met"
     },
@@ -50,8 +50,8 @@ export const StickyStepper: React.FC = () => {
         "Next-Level Digital Mobility Outcomes (DMO)"
       ],
       image: "/real_bios/telemetry_pipeline.png",
-      bgAccent: "from-amber-50 to-orange-50 border-amber-200",
-      pillColor: "bg-amber-600 text-white",
+      bgAccent: "from-blue-50 to-sky-50 border-blue-200",
+      pillColor: "bg-blue-600 text-white",
       floatingTag: "Safe Return Home",
       floatingStat: "Hospital Days Saved: -4.2"
     }
@@ -179,23 +179,23 @@ export const StickyStepper: React.FC = () => {
                 </AnimatePresence>
 
                 {/* Floating Top Pill on Image with float 4s */}
-                <div className="absolute top-4 right-4 glass-pill px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md z-10 animate-float">
-                  <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                  <span className="text-[11px] font-bold text-slate-800">{current.floatingTag}</span>
+                <div className="absolute top-4 right-4 glass-pill px-4 py-2 rounded-full flex items-center gap-2 shadow-md z-10 animate-float">
+                  <Sparkles className="w-4 h-4 text-amber-500" />
+                  <span className="text-xs font-bold text-slate-800">{current.floatingTag}</span>
                 </div>
 
                 {/* Floating Bottom Telemetry Widget on Image with float 4s delayed */}
-                <div className="absolute bottom-4 left-4 right-4 rounded-2xl glass-panel p-3.5 shadow-xl border border-white/90 flex items-center justify-between z-10 animate-float-delayed">
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl glass-panel p-4 shadow-xl border border-white/90 flex items-center justify-between z-10 animate-float-delayed">
                   <div>
-                    <span className="text-[10px] uppercase font-extrabold tracking-wider text-blue-700 block">
+                    <span className="text-xs uppercase font-black tracking-wider text-blue-700 block">
                       Clinical Status
                     </span>
-                    <span className="text-xs font-bold text-slate-800">
+                    <span className="text-sm font-bold text-slate-900">
                       {current.floatingStat}
                     </span>
                   </div>
-                  <div className={`flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-bold shadow-xs ${current.pillColor}`}>
-                    <Activity className="w-3 h-3 animate-pulse" />
+                  <div className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-xs ${current.pillColor}`}>
+                    <Activity className="w-3.5 h-3.5 animate-pulse" />
                     <span>Real-Time</span>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ export const StickyStepper: React.FC = () => {
                 <button
                   key={step.id}
                   onClick={() => setActiveStep(idx)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                  className={`px-5 py-2 rounded-full text-sm font-bold transition-all cursor-pointer ${
                     activeStep === idx
                       ? 'bg-blue-600 text-white shadow-md'
                       : 'bg-slate-100 text-slate-600'
@@ -242,15 +242,15 @@ export const StickyStepper: React.FC = () => {
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className="space-y-4"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold">
                 {current.badge}
               </div>
 
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 leading-tight">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
                 {current.title}
               </h3>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 {current.description}
               </p>
 
@@ -264,10 +264,10 @@ export const StickyStepper: React.FC = () => {
                     transition={{ delay: i * 0.1, duration: 0.3 }}
                     className="flex items-start gap-3"
                   >
-                    <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                    <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-4 h-4 stroke-[3]" />
                     </div>
-                    <span className="text-sm font-semibold text-slate-800">{point}</span>
+                    <span className="text-base font-semibold text-slate-800">{point}</span>
                   </motion.div>
                 ))}
               </div>
@@ -278,11 +278,11 @@ export const StickyStepper: React.FC = () => {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   href="#partners"
-                  className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-slate-900 hover:bg-blue-600 text-white font-semibold text-xs tracking-wide shadow-md transition-all group cursor-pointer"
+                  className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-slate-900 hover:bg-blue-600 text-white font-bold text-sm tracking-wide shadow-md transition-all group cursor-pointer"
                 >
                   <span>Explore Clinical Evidence</span>
                   <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </motion.a>
               </div>

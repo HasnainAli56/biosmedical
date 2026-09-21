@@ -34,12 +34,12 @@ export const MarqueeTicker: React.FC = () => {
         style={{ animation: 'marquee 25s linear infinite', willChange: 'transform' }}
       >
         {[...items, ...items].map((text, idx) => (
-          <div key={idx} className="flex items-center gap-6 mx-4">
-            <span className="text-xs sm:text-sm font-black font-heading tracking-widest text-slate-500 uppercase hover:text-blue-600 transition-colors cursor-default">
+          <div key={idx} className="flex items-center gap-7 mx-5">
+            <span className="text-sm sm:text-base font-black font-heading tracking-widest text-slate-600 uppercase hover:text-blue-600 transition-colors cursor-default">
               {text}
             </span>
-            <div className="text-blue-500/50">
-              <TurbineLogo size={14} animate={false} />
+            <div className={idx % 2 === 0 ? "text-blue-600" : "text-amber-500"}>
+              <TurbineLogo size={16} animate={false} />
             </div>
           </div>
         ))}

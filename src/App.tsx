@@ -13,6 +13,7 @@ import { PricingTiers } from './components/PricingTiers';
 import { AboutLeadership } from './components/AboutLeadership';
 import { FaqAccordion } from './components/FaqAccordion';
 import { CtaBanner } from './components/CtaBanner';
+import { ConsultationForm } from './components/ConsultationForm';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
@@ -60,9 +61,13 @@ export const App: React.FC = () => {
 
         {/* 13. Full-Width Bottom Hero Banner CTA (00:44 - 00:46) */}
         <CtaBanner />
+
+        {/* 14. Comprehensive Clinical Consultation & Trial Request Form */}
+        <div id="contact" className="scroll-mt-20" />
+        <ConsultationForm />
       </main>
 
-      {/* 14. Modern Footer with Giant Typography Watermark (00:47 - 00:48) */}
+      {/* 15. Modern Footer with Interactive Pages Modal */}
       <Footer />
     </div>
   );

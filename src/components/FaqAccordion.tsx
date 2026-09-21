@@ -50,28 +50,28 @@ export const FaqAccordion: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="lg:col-span-5 space-y-5"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold">
-            <TurbineLogo size={14} animate={true} />
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-sm font-bold">
+            <TurbineLogo size={16} animate={true} />
             <span>F.A.Q</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight text-slate-900 leading-tight">
             Got Questions? <br />
             <span className="text-blue-600">We've Got Answers!</span>
           </h2>
 
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-sm">
             Everything you need to know about the HIPbeacon™ implantable sensor, clinical trial protocols, and BIOS-Cloud data integration.
           </p>
 
           <div className="pt-1">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-100/80 hover:bg-blue-200/80 text-blue-800 font-semibold text-xs tracking-wide transition-all group shadow-xs"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-blue-100/80 hover:bg-blue-200/80 text-blue-800 font-bold text-sm tracking-wide transition-all group shadow-xs"
             >
               <span>Contact Clinical Team</span>
               <div className="w-5 h-5 rounded-full bg-white text-blue-600 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                <ArrowRight className="w-3 h-3" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </div>
             </a>
           </div>
@@ -83,7 +83,7 @@ export const FaqAccordion: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-7 space-y-3"
+          className="lg:col-span-7 space-y-3.5"
         >
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
@@ -106,23 +106,23 @@ export const FaqAccordion: React.FC = () => {
               >
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full text-left px-5 sm:px-6 py-4 flex items-center justify-between gap-4 cursor-pointer"
+                  className="w-full text-left px-6 sm:px-7 py-5 flex items-center justify-between gap-4 cursor-pointer"
                 >
-                  <span className={`text-xs sm:text-sm md:text-base font-bold transition-colors ${
-                    isOpen ? 'text-blue-900' : 'text-slate-800'
+                  <span className={`text-sm sm:text-base md:text-lg font-bold transition-colors ${
+                    isOpen ? 'text-blue-900' : 'text-slate-900'
                   }`}>
                     {faq.q}
                   </span>
 
-                  {/* Circular Plus/Minus Toggle Icon with rotation animation */}
+                  {/* Circular Plus/Minus Toggle Icon (Solid Blue) */}
                   <motion.div 
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
                       isOpen ? 'bg-blue-600 text-white shadow-sm' : 'bg-blue-50 text-blue-600 hover:bg-blue-100'
                     }`}
                   >
-                    {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </motion.div>
                 </button>
 
@@ -137,7 +137,7 @@ export const FaqAccordion: React.FC = () => {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 sm:px-6 pb-4 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100/80">
+                      <div className="px-6 sm:px-7 pb-5 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100/80">
                         {faq.a}
                       </div>
                     </motion.div>

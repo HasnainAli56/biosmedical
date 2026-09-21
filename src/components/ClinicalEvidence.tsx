@@ -49,7 +49,7 @@ export const ClinicalEvidence: React.FC = () => {
           <div className="inline-flex p-1.5 rounded-full bg-slate-100 border border-slate-200/80 gap-2">
             <button
               onClick={() => setActiveTab('stats')}
-              className={`relative px-6 py-2.5 rounded-full text-xs font-bold transition-colors cursor-pointer ${
+              className={`relative px-7 py-3 rounded-full text-sm font-bold transition-colors cursor-pointer ${
                 activeTab === 'stats' ? 'text-white' : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -60,15 +60,15 @@ export const ClinicalEvidence: React.FC = () => {
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
-              <span className="relative z-10 flex items-center gap-1.5">
-                <HeartCrack className="w-3.5 h-3.5" />
+              <span className="relative z-10 flex items-center gap-2">
+                <HeartCrack className="w-4 h-4 text-amber-400" />
                 <span>Global Fracture Mortality (1.7M)</span>
               </span>
             </button>
 
             <button
               onClick={() => setActiveTab('economics')}
-              className={`relative px-6 py-2.5 rounded-full text-xs font-bold transition-colors cursor-pointer ${
+              className={`relative px-7 py-3 rounded-full text-sm font-bold transition-colors cursor-pointer ${
                 activeTab === 'economics' ? 'text-white' : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -79,8 +79,8 @@ export const ClinicalEvidence: React.FC = () => {
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
-              <span className="relative z-10 flex items-center gap-1.5">
-                <TrendingUp className="w-3.5 h-3.5" />
+              <span className="relative z-10 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-blue-300" />
                 <span>Health Economic Explosion (6.7x)</span>
               </span>
             </button>
@@ -103,14 +103,14 @@ export const ClinicalEvidence: React.FC = () => {
                 initial={{ opacity: 0, x: -60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-6 border border-slate-200/80 shadow-inner relative group"
+                className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-7 border border-slate-200/80 shadow-inner relative group"
               >
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/60 text-xs font-bold text-slate-500">
-                  <span className="flex items-center gap-1.5 text-blue-700">
-                    <TurbineLogo size={14} animate={true} />
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/60 text-sm font-bold text-slate-600">
+                  <span className="flex items-center gap-2 text-blue-700 font-extrabold">
+                    <TurbineLogo size={16} animate={true} />
                     Official BIOS Clinical Epidemiology
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-red-100 text-red-800 text-[10px] font-black">
+                  <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-black">
                     High Risk Cohort
                   </span>
                 </div>
@@ -119,13 +119,13 @@ export const ClinicalEvidence: React.FC = () => {
                   <img
                     src="/real_bios/hip_fracture_stats.png"
                     alt="Hip Fracture Global Statistics from biosmedical.care"
-                    className="w-full max-h-[360px] object-contain"
+                    className="w-full max-h-[380px] object-contain"
                   />
                 </div>
 
-                <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
+                <div className="mt-4 flex items-center justify-between text-xs text-slate-500 font-medium">
                   <span>Source: International Osteoporosis Foundation & BIOS AG</span>
-                  <span className="font-semibold text-blue-600">HIPbeacon Target Population</span>
+                  <span className="font-bold text-blue-600">HIPbeacon Target Population</span>
                 </div>
               </motion.div>
 
@@ -137,52 +137,52 @@ export const ClinicalEvidence: React.FC = () => {
                 className="lg:col-span-5 space-y-6"
               >
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-red-600 mb-1">
+                  <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-600 mb-1">
                     The Silent Epidemic
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
                     More Than Just A Broken Bone
                   </h3>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-3.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                     A hip fracture often marks the rapid deterioration of health for elderly patients. Inability to regain early mobility leads to secondary pneumonia, thrombosis, pressure ulcers, and premature death.
                   </p>
                 </div>
 
-                {/* 4 Stat Cards Grid */}
+                {/* 4 Stat Cards Grid (Standardized to solid blue & yellow) */}
                 <div className="grid grid-cols-2 gap-3.5">
-                  <div className="p-3.5 rounded-2xl bg-red-50/70 border border-red-200">
-                    <div className="text-2xl font-black text-red-700">1.7M</div>
-                    <div className="text-[11px] font-bold text-slate-700 mt-0.5">Fractures Annually</div>
-                    <div className="text-[10px] text-slate-500">Growing worldwide</div>
+                  <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200">
+                    <div className="text-3xl font-black text-amber-700">1.7M</div>
+                    <div className="text-xs font-bold text-slate-800 mt-1">Fractures Annually</div>
+                    <div className="text-xs text-slate-500">Growing worldwide</div>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200">
-                    <div className="text-2xl font-black text-amber-700">25%</div>
-                    <div className="text-[11px] font-bold text-slate-700 mt-0.5">1-Year Mortality</div>
-                    <div className="text-[10px] text-slate-500">Post-fracture rate</div>
+                  <div className="p-4 rounded-2xl bg-blue-50/80 border border-blue-200">
+                    <div className="text-3xl font-black text-blue-700">25%</div>
+                    <div className="text-xs font-bold text-slate-800 mt-1">1-Year Mortality</div>
+                    <div className="text-xs text-slate-500">Post-fracture rate</div>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-purple-50/70 border border-purple-200">
-                    <div className="text-2xl font-black text-purple-700">3-4x</div>
-                    <div className="text-[11px] font-bold text-slate-700 mt-0.5">Mortality Surge</div>
-                    <div className="text-[10px] text-slate-500">Compared to peers</div>
+                  <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200">
+                    <div className="text-3xl font-black text-amber-700">3-4x</div>
+                    <div className="text-xs font-bold text-slate-800 mt-1">Mortality Surge</div>
+                    <div className="text-xs text-slate-500">Compared to peers</div>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-blue-50/70 border border-blue-200">
-                    <div className="text-2xl font-black text-blue-700">10-15%</div>
-                    <div className="text-[11px] font-bold text-slate-700 mt-0.5">Never Return Home</div>
-                    <div className="text-[10px] text-slate-500">Permanent nursing care</div>
+                  <div className="p-4 rounded-2xl bg-blue-50/80 border border-blue-200">
+                    <div className="text-3xl font-black text-blue-700">10-15%</div>
+                    <div className="text-xs font-bold text-slate-800 mt-1">Never Return Home</div>
+                    <div className="text-xs text-slate-500">Permanent nursing care</div>
                   </div>
                 </div>
 
                 {/* The BIOS Solution Pill */}
-                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
-                    <ShieldCheck className="w-4 h-4" />
+                <div className="p-4.5 rounded-2xl bg-blue-50 border border-blue-200 flex items-start gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                    <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-emerald-900">The BIOS Medical Advantage: -22% Mortality</div>
-                    <div className="text-[11px] text-emerald-800 mt-0.5">
+                    <div className="text-sm font-bold text-blue-950">The BIOS Medical Advantage: -22% Mortality</div>
+                    <div className="text-xs sm:text-sm text-blue-800 mt-1 leading-relaxed">
                       Real-time telemetry empowers Orthogeriatric Co-Management (OGCM), driving early weight-bearing and cutting 1-year mortality by 22%.
                     </div>
                   </div>
@@ -204,14 +204,14 @@ export const ClinicalEvidence: React.FC = () => {
                 initial={{ opacity: 0, x: -60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-6 border border-slate-200/80 shadow-inner relative group"
+                className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-7 border border-slate-200/80 shadow-inner relative group"
               >
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/60 text-xs font-bold text-slate-500">
-                  <span className="flex items-center gap-1.5 text-blue-700">
-                    <TurbineLogo size={14} animate={true} />
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/60 text-sm font-bold text-slate-600">
+                  <span className="flex items-center gap-2 text-blue-700 font-extrabold">
+                    <TurbineLogo size={16} animate={true} />
                     Projected European Health Economic Model (2020 – 2050)
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[10px] font-black">
+                  <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-900 text-xs font-black">
                     6.7x Escalation
                   </span>
                 </div>
@@ -220,13 +220,13 @@ export const ClinicalEvidence: React.FC = () => {
                   <img
                     src="/real_bios/economic_cost_chart.png"
                     alt="Economic Cost of Hip Fractures from biosmedical.care"
-                    className="w-full max-h-[360px] object-contain"
+                    className="w-full max-h-[380px] object-contain"
                   />
                 </div>
 
-                <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
+                <div className="mt-4 flex items-center justify-between text-xs text-slate-500 font-medium">
                   <span>Forecast from 614 M€ (2020) to 4,149 M€ (2050)</span>
-                  <span className="font-semibold text-emerald-600">Saving Hospital Budgets</span>
+                  <span className="font-bold text-blue-600">Saving Hospital Budgets</span>
                 </div>
               </motion.div>
 
@@ -238,45 +238,45 @@ export const ClinicalEvidence: React.FC = () => {
                 className="lg:col-span-5 space-y-6"
               >
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-1">
+                  <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 mb-1">
                     Fiscal Sustainability
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
                     Preventing The 6.7x Healthcare Budget Shock
                   </h3>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-3.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                     By 2050, the aging population will drive European direct fracture care costs from €614M to over €4.1 Billion. Hospitals and health insurers cannot sustain prolonged acute ward stays and readmissions.
                   </p>
                 </div>
 
                 {/* Cost metrics */}
-                <div className="space-y-3">
-                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
+                <div className="space-y-3.5">
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
                     <div>
-                      <div className="text-xs font-bold text-slate-800">Shortened Acute Bed Days</div>
-                      <div className="text-[11px] text-slate-500">Earlier mobilization enables safe discharge</div>
+                      <div className="text-sm font-bold text-slate-900">Shortened Acute Bed Days</div>
+                      <div className="text-xs text-slate-500">Earlier mobilization enables safe discharge</div>
                     </div>
-                    <span className="text-sm font-black text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                    <span className="text-sm font-black text-blue-700 bg-blue-50 px-3 py-1.5 rounded-full border border-blue-200">
                       -4.2 Days
                     </span>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
                     <div>
-                      <div className="text-xs font-bold text-slate-800">Reduced Readmission Rate</div>
-                      <div className="text-[11px] text-slate-500">Micro-instability detected before collapse</div>
+                      <div className="text-sm font-bold text-slate-900">Reduced Readmission Rate</div>
+                      <div className="text-xs text-slate-500">Micro-instability detected before collapse</div>
                     </div>
-                    <span className="text-sm font-black text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
+                    <span className="text-sm font-black text-amber-700 bg-amber-50 px-3 py-1.5 rounded-full border border-amber-200">
                       -38%
                     </span>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
                     <div>
-                      <div className="text-xs font-bold text-slate-800">Prevented Nursing Home Transitions</div>
-                      <div className="text-[11px] text-slate-500">Restored home independence</div>
+                      <div className="text-sm font-bold text-slate-900">Prevented Nursing Home Transitions</div>
+                      <div className="text-xs text-slate-500">Restored home independence</div>
                     </div>
-                    <span className="text-sm font-black text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200">
+                    <span className="text-sm font-black text-blue-700 bg-blue-50 px-3 py-1.5 rounded-full border border-blue-200">
                       Significant
                     </span>
                   </div>
@@ -286,11 +286,11 @@ export const ClinicalEvidence: React.FC = () => {
                 <div className="pt-2">
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 hover:bg-blue-600 text-white font-semibold text-xs tracking-wide shadow-md transition-all group cursor-pointer"
+                    className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-slate-900 hover:bg-blue-600 text-white font-bold text-sm tracking-wide shadow-md transition-all group cursor-pointer"
                   >
-                    <FileText className="w-3.5 h-3.5 text-blue-400" />
+                    <FileText className="w-4 h-4 text-amber-400" />
                     <span>Download Health Economics Dossier</span>
-                    <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </motion.div>

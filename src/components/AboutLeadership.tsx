@@ -51,15 +51,15 @@ export const AboutLeadership: React.FC = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="text-center max-w-3xl mx-auto mb-10 sm:mb-12"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
-          <TurbineLogo size={14} animate={true} />
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-sm font-bold mb-3">
+          <TurbineLogo size={16} animate={true} />
           <span>LEADERSHIP & ADVISORY</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
           Founded in the Swiss Alps, <br />
           <span className="text-blue-600">Built on Decades of Orthopedic Expertise</span>
         </h2>
-        <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-3.5 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
           BIOS Medical AG is based in Davos, Switzerland. We combine world-class medical biomechanics with low-power sensor telemetry and machine learning to improve the human condition.
         </p>
       </motion.div>
@@ -77,7 +77,7 @@ export const AboutLeadership: React.FC = () => {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6, scale: 1.02 }}
-              className="rounded-3xl bg-white border border-slate-200/80 p-5 sm:p-7 shadow-md hover:shadow-2xl hover:border-blue-300 transition-all flex flex-col justify-between group relative overflow-hidden"
+              className="rounded-3xl bg-white border border-slate-200/80 p-6 sm:p-8 shadow-md hover:shadow-2xl hover:border-blue-300 transition-all flex flex-col justify-between group relative overflow-hidden"
             >
               <div>
                 <div className="relative mb-6">
@@ -88,19 +88,23 @@ export const AboutLeadership: React.FC = () => {
                       className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                     />
                   </div>
-                  <div className="absolute top-0 right-0 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[10px] font-bold shadow-2xs">
+                  <div className={`absolute top-0 right-0 px-3 py-1 rounded-full text-xs font-bold shadow-2xs border ${
+                    idx % 2 === 0
+                      ? 'bg-blue-50 border-blue-200 text-blue-700'
+                      : 'bg-amber-50 border-amber-200 text-amber-700'
+                  }`}>
                     {member.highlight}
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{member.name}</h3>
-                <div className="text-xs font-semibold text-blue-600 mb-1">{member.role}</div>
-                <div className="text-[11px] text-slate-500 mb-4 flex items-center gap-1">
-                  <GraduationCap className="w-3.5 h-3.5 text-blue-500" />
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{member.name}</h3>
+                <div className="text-sm font-bold text-blue-600 mb-1.5">{member.role}</div>
+                <div className="text-xs text-slate-500 mb-4 flex items-center gap-1.5 font-medium">
+                  <GraduationCap className={`w-4 h-4 ${idx % 2 === 0 ? 'text-blue-600' : 'text-amber-500'}`} />
                   <span>{member.credentials}</span>
                 </div>
 
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                <p className="text-sm text-slate-600 leading-relaxed font-normal">
                   {member.bio}
                 </p>
               </div>
@@ -123,14 +127,14 @@ export const AboutLeadership: React.FC = () => {
 
         <div className="relative z-10 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <div className="text-xs font-extrabold uppercase tracking-wider text-blue-400">
+            <div className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-amber-400">
               Global Clinical Guidance
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mt-1">
               Scientific Advisory Board
             </h3>
           </div>
-          <div className="text-xs text-slate-400 font-medium max-w-xs">
+          <div className="text-sm text-slate-300 font-medium max-w-sm">
             Guiding clinical trials, regulatory compliance (MDR), and international hospital rollout.
           </div>
         </div>
@@ -139,10 +143,10 @@ export const AboutLeadership: React.FC = () => {
           {advisors.map((advisor, idx) => (
             <div
               key={idx}
-              className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors"
+              className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors"
             >
-              <div className="text-sm font-bold text-white mb-1">{advisor.name}</div>
-              <div className="text-xs text-slate-300 leading-snug">{advisor.role}</div>
+              <div className="text-base font-bold text-white mb-1.5">{advisor.name}</div>
+              <div className="text-sm text-slate-300 leading-relaxed">{advisor.role}</div>
             </div>
           ))}
         </div>
