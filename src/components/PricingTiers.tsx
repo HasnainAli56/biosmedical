@@ -65,39 +65,54 @@ export const PricingTiers: React.FC = () => {
   return (
     <section id="pricing" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
-      {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      {/* Header (Slide from Top) */}
+      <motion.div 
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center max-w-3xl mx-auto mb-10 sm:mb-12"
+      >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>DEPLOYMENT MODELS</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900">
           Simple & Flexible <br />
           <span className="text-blue-600">Clinical Deployment Plans</span>
         </h2>
         <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
           From multi-center research trials to acute hospital-wide OGCM implementations, choose the ideal integration framework for your institution.
         </p>
-      </div>
+      </motion.div>
 
-      {/* 3 Cards Grid with interactive hover effect on every card */}
+      {/* 3 Cards Grid: Card 1 from Left, Card 2 from Bottom, Card 3 from Right */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         {plans.map((plan, idx) => {
           // Highlight if hovered, or default to featured if nothing is hovered
           const isHighlighted = hoveredIdx !== null ? hoveredIdx === idx : plan.featured;
 
+          // Directional entrance: Left (idx 0), Bottom (idx 1), Right (idx 2)
+          const initialDirection = idx === 0 ? { opacity: 0, x: -70 } : idx === 1 ? { opacity: 0, y: 70 } : { opacity: 0, x: 70 };
+
           return (
             <motion.div
+              layout
               key={idx}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              initial={initialDirection}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ 
+                layout: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
+                duration: 0.8, 
+                ease: [0.16, 1, 0.3, 1],
+                delay: idx * 0.15 
+              }}
               className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative cursor-pointer ${
                 isHighlighted
-                  ? 'bg-white border-2 border-blue-500 shadow-2xl shadow-blue-500/15 -translate-y-2 scale-[1.02] ring-4 ring-blue-100/60 z-20'
+                  ? 'bg-white border-2 border-blue-500 shadow-2xl shadow-blue-500/20 -translate-y-2 scale-[1.02] ring-4 ring-blue-100/70 z-20'
                   : 'bg-white border border-slate-200/90 shadow-md hover:border-blue-300'
               }`}
             >

@@ -86,36 +86,43 @@ export const PartnersGrid: React.FC = () => {
   return (
     <section id="partners" className="py-12 sm:py-16 overflow-hidden relative">
       
-      {/* Header (Exact Match to User Reference Screenshot media_1789951692332.png) */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-[#2563eb] leading-tight">
+      {/* Header (Slide from Top) */}
+      <motion.div 
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 px-4 sm:px-6 lg:px-8"
+      >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-heading tracking-tight text-[#2563eb] leading-tight">
           Healthcare Providers & <br />
           Institutes
         </h2>
         <p className="mt-3.5 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
           BIOS Medical is developed in the Swiss Alps, partnering with world-renowned trauma institutes, university clinics, and healthcare leaders to advance post-fracture recovery.
         </p>
-      </div>
+      </motion.div>
 
       {/* 
-        Horizontal Moving Track with Uniform Baseline Cards
-        (Matches Screenshot media_1789951692332.png precisely)
+        Infinite Logo Carousel / Marquee Animation (Slide from Bottom):
+        animation: marquee 25s linear infinite;
+        With pause on hover and smooth looping
       */}
-      <div className="relative w-full overflow-hidden py-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        className="relative w-full overflow-hidden py-4"
+      >
         
         {/* Left & Right gradient masks for smooth edge fade */}
         <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-[#f8fafc] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 pointer-events-none" />
 
-        <motion.div
-          animate={{ x: [0, -1800] }}
-          transition={{
-            duration: 36,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          whileHover={{ animationPlayState: 'paused' }}
-          className="flex items-center gap-5 sm:gap-6 w-max pl-4"
+        <div 
+          className="flex animate-marquee-25s items-center gap-5 sm:gap-6 pl-4"
+          style={{ animation: 'marquee 25s linear infinite', willChange: 'transform' }}
         >
           {fullTrack.map((card, idx) => (
             <div
@@ -189,9 +196,9 @@ export const PartnersGrid: React.FC = () => {
               )}
             </div>
           ))}
-        </motion.div>
+        </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

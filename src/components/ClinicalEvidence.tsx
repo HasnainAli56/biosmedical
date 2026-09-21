@@ -9,8 +9,14 @@ export const ClinicalEvidence: React.FC = () => {
   return (
     <section id="evidence" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
-      {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      {/* Header (Slide from Top) */}
+      <motion.div 
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center max-w-3xl mx-auto mb-10 sm:mb-12"
+      >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>CLINICAL EVIDENCE & HEALTH ECONOMICS</span>
@@ -23,10 +29,16 @@ export const ClinicalEvidence: React.FC = () => {
           Hip fractures represent a catastrophic health crisis for older adults and healthcare systems worldwide. 
           Here is why real-time data at the implant site changes everything.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Main Interactive Card Container */}
-      <div className="rounded-[32px] bg-white border border-slate-200/90 shadow-2xl p-5 sm:p-8 lg:p-10 relative overflow-hidden">
+      {/* Main Interactive Card Container (Slide from Bottom) */}
+      <motion.div 
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        className="rounded-[32px] bg-white border border-slate-200/90 shadow-2xl p-5 sm:p-8 lg:p-10 relative overflow-hidden"
+      >
         
         {/* Subtle mesh backdrop glow */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
@@ -86,8 +98,13 @@ export const ClinicalEvidence: React.FC = () => {
               transition={{ duration: 0.35 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center"
             >
-              {/* Left Column: Real Chart Graphic */}
-              <div className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-6 border border-slate-200/80 shadow-inner relative group">
+              {/* Left Column: Real Chart Graphic (Slide from Left) */}
+              <motion.div 
+                initial={{ opacity: 0, x: -60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-6 border border-slate-200/80 shadow-inner relative group"
+              >
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/60 text-xs font-bold text-slate-500">
                   <span className="flex items-center gap-1.5 text-blue-700">
                     <TurbineLogo size={14} animate={true} />
@@ -110,10 +127,15 @@ export const ClinicalEvidence: React.FC = () => {
                   <span>Source: International Osteoporosis Foundation & BIOS AG</span>
                   <span className="font-semibold text-blue-600">HIPbeacon Target Population</span>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Right Column: Key Metrics & Narrative */}
-              <div className="lg:col-span-5 space-y-6">
+              {/* Right Column: Key Metrics & Narrative (Slide from Right) */}
+              <motion.div 
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="lg:col-span-5 space-y-6"
+              >
                 <div>
                   <div className="text-xs font-bold uppercase tracking-wider text-red-600 mb-1">
                     The Silent Epidemic
@@ -166,7 +188,7 @@ export const ClinicalEvidence: React.FC = () => {
                   </div>
                 </div>
 
-              </div>
+              </motion.div>
             </motion.div>
           ) : (
             <motion.div
@@ -177,8 +199,13 @@ export const ClinicalEvidence: React.FC = () => {
               transition={{ duration: 0.35 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center"
             >
-              {/* Left Column: Real Economic Cost Graphic */}
-              <div className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-6 border border-slate-200/80 shadow-inner relative group">
+              {/* Left Column: Real Economic Cost Graphic (Slide from Left) */}
+              <motion.div 
+                initial={{ opacity: 0, x: -60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-6 border border-slate-200/80 shadow-inner relative group"
+              >
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/60 text-xs font-bold text-slate-500">
                   <span className="flex items-center gap-1.5 text-blue-700">
                     <TurbineLogo size={14} animate={true} />
@@ -201,10 +228,15 @@ export const ClinicalEvidence: React.FC = () => {
                   <span>Forecast from 614 M€ (2020) to 4,149 M€ (2050)</span>
                   <span className="font-semibold text-emerald-600">Saving Hospital Budgets</span>
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Right Column: Health Economics Summary */}
-              <div className="lg:col-span-5 space-y-6">
+              {/* Right Column: Health Economics Summary (Slide from Right) */}
+              <motion.div 
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="lg:col-span-5 space-y-6"
+              >
                 <div>
                   <div className="text-xs font-bold uppercase tracking-wider text-blue-600 mb-1">
                     Fiscal Sustainability
@@ -261,13 +293,12 @@ export const ClinicalEvidence: React.FC = () => {
                     <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
-
-              </div>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
 
-      </div>
+      </motion.div>
 
     </section>
   );

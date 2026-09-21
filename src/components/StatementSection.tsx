@@ -38,8 +38,14 @@ export const StatementSection: React.FC = () => {
         2. Circle with turbine logo pops in
         3. Circle smoothly morphs to pill and text "HIPbeacon™" expands out
       */}
-      <div className="relative">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-extrabold tracking-tight text-slate-800 leading-[1.4] sm:leading-[1.45]">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="relative"
+      >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black font-heading tracking-tight text-slate-800 leading-[1.4] sm:leading-[1.45]">
           
           {/* Row 1: "Our solution [circle -> pill with HIPbeacon™] effectively empowers" */}
           <span className="inline-flex items-center flex-wrap justify-center align-middle">
@@ -155,7 +161,7 @@ export const StatementSection: React.FC = () => {
         >
           Continuous Digital Mobility Outcomes (DMO) directly from the hip implant bridge the dangerous post-op gap, enabling early weight-bearing and preventing permanent loss of autonomy.
         </motion.p>
-      </div>
+      </motion.div>
 
     </section>
   );

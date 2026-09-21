@@ -36,13 +36,12 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="pt-2 sm:pt-4 px-2 sm:px-4 lg:px-6 max-w-[1440px] mx-auto">
+    <section id="home" className="w-full relative overflow-hidden">
       
       {/* 
-        Single Giant Rounded Viewport Card with Full-Bleed Real Medical Photo 
-        (100% Identical to Dribbble Shot & User Screenshot media_1789925286734.png)
+        Full-Bleed Full-Width Viewport Container (Edge-to-Edge with Zero Left/Right Gaps)
       */}
-      <div className="relative rounded-[32px] sm:rounded-[40px] overflow-hidden min-h-[580px] sm:min-h-[630px] flex items-center shadow-2xl border border-blue-950/20">
+      <div className="relative w-full overflow-hidden min-h-[600px] sm:min-h-[680px] flex items-center shadow-2xl border-b border-blue-900/40">
         
         {/* Full-Bleed Real Clinical Photo with Slow Ambient Animation */}
         <motion.img
@@ -66,16 +65,16 @@ export const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-radial-at-tl from-sky-500/15 via-transparent to-transparent pointer-events-none" />
 
         {/* Inner Foreground Layout */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-24 pb-12 sm:pt-28 sm:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-28 pb-14 sm:pt-32 sm:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
-          {/* Left Hero Content Column */}
+          {/* Left Hero Content Column with fadeInUp 0.8s staggered entrance */}
           <div className="lg:col-span-7 flex flex-col items-start space-y-5">
             
             {/* Top Frosted Pill Badge */}
             <motion.div 
-              initial={{ opacity: 0, y: -18 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-xs font-semibold shadow-sm"
             >
               <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
@@ -83,12 +82,12 @@ export const HeroSection: React.FC = () => {
               <span>World's First Implanted Hip Mobility Sensor</span>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Main Headline with Text Reveal */}
             <motion.h1 
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight text-white leading-[1.15]"
+              transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
+              className="text-3xl sm:text-4xl xl:text-5xl font-black font-heading tracking-tight text-white leading-[1.15]"
             >
               Your Implant-Powered <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-indigo-200">
@@ -96,21 +95,21 @@ export const HeroSection: React.FC = () => {
               </span>
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Subtitle with Fade-in */}
             <motion.p 
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.38, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
               className="text-xs sm:text-sm md:text-base text-slate-100/90 font-normal leading-relaxed max-w-xl"
             >
               BIOS Medical ensures older adults recover from hip fractures with precision, giving surgeons and geriatricians continuous implanted telemetry to prevent fatal secondary complications.
             </motion.p>
 
-            {/* White Capsule CTA Button */}
+            {/* White Capsule CTA Button with Fade-in */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: 0.45, duration: 0.8, ease: "easeOut" }}
               className="pt-2 flex flex-wrap items-center gap-3.5"
             >
               <div className="relative group">
@@ -119,7 +118,7 @@ export const HeroSection: React.FC = () => {
                 <motion.a
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.2 }}
                   href="#why-choose"
                   className="relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-slate-900 font-bold text-xs tracking-wider uppercase shadow-2xl hover:bg-blue-50 transition-all group cursor-pointer"
                 >
@@ -133,7 +132,7 @@ export const HeroSection: React.FC = () => {
               <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.2 }}
                 href="https://bios.mdeg.cloud/login"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -145,13 +144,13 @@ export const HeroSection: React.FC = () => {
 
           </div>
 
-          {/* Right Floating Glassmorphic Telemetry Card (Exact Dribbble widget) */}
+          {/* Right Floating Dashboard / UI Telemetry Card (Continuous 4s float animation) */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             
             {/* 3D Floating HIPbeacon Sensor Graphic */}
             <motion.div
-              animate={{ y: [-8, 8, -8], rotate: [-2, 2, -2] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, -16, 0], rotate: [-3, 3, -3] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-12 right-0 lg:-right-4 w-28 sm:w-36 z-20 pointer-events-none drop-shadow-2xl"
             >
               <img
@@ -162,14 +161,20 @@ export const HeroSection: React.FC = () => {
             </motion.div>
 
             {/* 
-              Picture/Glass Card Comes from Bottom to Up:
-              Slow smooth entrance
+              Floating Dashboard Card:
+              Continuous 4s ease-in-out infinite floating animation
             */}
             <motion.div 
-              initial={{ y: 90, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="relative w-full max-w-md rounded-[28px] bg-white/90 backdrop-blur-2xl p-5 sm:p-6 shadow-2xl border border-white/95 text-slate-900 z-10"
+              initial={{ y: 24, opacity: 0 }}
+              animate={{ 
+                y: [0, -14, 0], 
+                opacity: 1 
+              }}
+              transition={{ 
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                opacity: { duration: 0.8, ease: "easeOut", delay: 0.2 }
+              }}
+              className="relative w-full max-w-md rounded-[28px] bg-white/95 backdrop-blur-2xl p-5 sm:p-6 shadow-2xl border border-white/95 text-slate-900 z-10"
             >
               {/* Top Row: Founders Stack & Adherence Headline */}
               <div className="flex items-center justify-between pb-3.5 border-b border-slate-200/60">
@@ -186,14 +191,14 @@ export const HeroSection: React.FC = () => {
               {/* Big Stat Row */}
               <div className="py-3.5">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                  <span className="text-3xl sm:text-4xl font-black font-heading text-slate-900 tracking-tight">
                     {adherenceCounter}%
                   </span>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700">
+                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-blue-700">
                     OF PATIENTS IMPROVED MOBILITY
                   </span>
                 </div>
-                <div className="mt-0.5 text-[10px] text-slate-500">
+                <div className="mt-0.5 text-[10px] text-slate-500 font-medium">
                   OGCM Clinical Cohort · {mortalityCounter}% Mortality Reduction
                 </div>
               </div>
@@ -213,7 +218,7 @@ export const HeroSection: React.FC = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 + idx * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="p-2 rounded-xl bg-slate-50/90 border border-slate-200/70 flex items-center justify-between shadow-2xs hover:bg-white transition-colors cursor-default"
+                    className="p-2 rounded-xl bg-slate-50/90 border border-slate-200/70 flex items-center justify-between shadow-2xs hover:bg-white hover:border-blue-300 transition-all cursor-default"
                   >
                     <span>{item.label}</span>
                     {item.icon}

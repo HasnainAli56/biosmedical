@@ -70,26 +70,38 @@ export const StickyStepper: React.FC = () => {
   return (
     <section id="why-choose" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
-      {/* Top Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      {/* Top Header with Top entrance */}
+      <motion.div 
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center max-w-3xl mx-auto mb-10 sm:mb-12"
+      >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>WHY CHOOSE US</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900">
           Why Choose <span className="text-blue-600">HIPbeacon?</span>
         </h2>
         <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
           With the world's first implanted hip mobility sensor and BIOS-Cloud data infrastructure, 
           ensure every hip fracture patient receives precision recovery, avoiding fatal complications.
         </p>
-      </div>
+      </motion.div>
 
       {/* Main Stepper Container */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        {/* Left Vertical Stepper Indicator with animated progress fill (Identical to Dribbble) */}
-        <div className="hidden lg:flex lg:col-span-1 flex-col items-center">
+        {/* Left Vertical Stepper Indicator (Slide from Left) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="hidden lg:flex lg:col-span-1 flex-col items-center"
+        >
           <div className="relative flex flex-col items-center space-y-16">
             
             {/* Background vertical line */}
@@ -122,10 +134,16 @@ export const StickyStepper: React.FC = () => {
             })}
 
           </div>
-        </div>
+        </motion.div>
 
-        {/* Center Showcase Visual with Dynamic Spring Transitions */}
-        <div className="lg:col-span-6 relative">
+        {/* Center Showcase Visual (Slide from Bottom) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-6 relative"
+        >
           <div className="relative mx-auto max-w-md lg:max-w-none">
             
             {/* Dynamic Colored Backdrop Card */}
@@ -160,14 +178,14 @@ export const StickyStepper: React.FC = () => {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Floating Top Pill on Image */}
-                <div className="absolute top-4 right-4 glass-pill px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md z-10">
+                {/* Floating Top Pill on Image with float 4s */}
+                <div className="absolute top-4 right-4 glass-pill px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md z-10 animate-float">
                   <Sparkles className="w-3.5 h-3.5 text-blue-600" />
                   <span className="text-[11px] font-bold text-slate-800">{current.floatingTag}</span>
                 </div>
 
-                {/* Floating Bottom Telemetry Widget on Image */}
-                <div className="absolute bottom-4 left-4 right-4 rounded-2xl glass-panel p-3.5 shadow-xl border border-white/90 flex items-center justify-between z-10">
+                {/* Floating Bottom Telemetry Widget on Image with float 4s delayed */}
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl glass-panel p-3.5 shadow-xl border border-white/90 flex items-center justify-between z-10 animate-float-delayed">
                   <div>
                     <span className="text-[10px] uppercase font-extrabold tracking-wider text-blue-700 block">
                       Clinical Status
@@ -204,10 +222,16 @@ export const StickyStepper: React.FC = () => {
             </div>
 
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Content Column */}
-        <div className="lg:col-span-5 space-y-6">
+        {/* Right Content Column (Slide from Right) */}
+        <motion.div 
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 space-y-6"
+        >
           
           <AnimatePresence mode="wait">
             <motion.div
@@ -266,7 +290,7 @@ export const StickyStepper: React.FC = () => {
             </motion.div>
           </AnimatePresence>
 
-        </div>
+        </motion.div>
 
       </div>
 

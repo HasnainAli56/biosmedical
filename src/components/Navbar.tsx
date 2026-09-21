@@ -24,17 +24,15 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <TurbineLogo size={32} animate={true} glow={true} />
-            <div className="flex flex-col">
-              <span className={`text-xl font-bold tracking-tight transition-colors ${scrolled ? 'text-slate-900 group-hover:text-blue-600' : 'text-white'}`}>
-                BIOS <span className={scrolled ? 'text-blue-600 font-extrabold' : 'text-blue-300 font-extrabold'}>Medical</span>
-              </span>
-              <span className={`text-[10px] tracking-widest uppercase font-semibold ${scrolled ? 'text-slate-500' : 'text-white/70'}`}>
-                Davos · Switzerland
-              </span>
-            </div>
+          {/* Brand Logo with Transparent Logo (No Background Box) */}
+          <a href="#" className="flex items-center group py-1">
+            <img 
+              src="/bios_logo.png" 
+              alt="BIOS Medical - Restore Life" 
+              className={`h-9 sm:h-10 w-auto object-contain transition-all duration-300 ${
+                scrolled ? '' : 'brightness-0 invert drop-shadow-sm'
+              }`}
+            />
           </a>
 
           {/* Desktop Navigation Links */}

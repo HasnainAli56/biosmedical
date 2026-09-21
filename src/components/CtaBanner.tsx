@@ -7,9 +7,9 @@ export const CtaBanner: React.FC = () => {
   return (
     <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <motion.div 
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 60, scale: 0.96 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         className="relative rounded-[32px] overflow-hidden shadow-2xl border border-blue-200 min-h-[380px] flex items-center justify-center p-6 sm:p-12 text-center group"
       >
@@ -30,7 +30,7 @@ export const CtaBanner: React.FC = () => {
           {/* Floating Pill Badge */}
           <motion.div 
             whileHover={{ scale: 1.04 }}
-            className="glass-pill px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg border border-white/30 backdrop-blur-md cursor-pointer"
+            className="glass-pill px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-lg border border-white/30 backdrop-blur-md cursor-pointer animate-float"
           >
             <Users className="w-3.5 h-3.5 text-blue-400" />
             <span className="text-xs font-bold text-white tracking-wide">
@@ -39,7 +39,7 @@ export const CtaBanner: React.FC = () => {
           </motion.div>
 
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black font-heading text-white tracking-tight leading-tight">
             Take Control Of Hip Fracture <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-300">
               Recovery With BIOS Medical

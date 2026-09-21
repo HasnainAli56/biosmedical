@@ -42,14 +42,20 @@ export const FaqAccordion: React.FC = () => {
       
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         
-        {/* Left Column */}
-        <div className="lg:col-span-5 space-y-5">
+        {/* Left Column (Slide from Left) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 space-y-5"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold">
             <TurbineLogo size={14} animate={true} />
             <span>F.A.Q</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900 leading-tight">
             Got Questions? <br />
             <span className="text-blue-600">We've Got Answers!</span>
           </h2>
@@ -69,44 +75,62 @@ export const FaqAccordion: React.FC = () => {
               </div>
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Column: Accordion List with Staggered Entrance */}
-        <div className="lg:col-span-7 space-y-3">
+        {/* Right Column: Accordion List (Slide from Right) */}
+        <motion.div 
+          initial={{ opacity: 0, x: 70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-7 space-y-3"
+        >
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <motion.div
+                layout
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className={`rounded-2xl transition-all duration-300 border overflow-hidden ${
+                transition={{ 
+                  layout: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
+                  opacity: { duration: 0.5, delay: idx * 0.06 }
+                }}
+                className={`rounded-2xl transition-colors duration-300 border overflow-hidden ${
                   isOpen
-                    ? 'bg-white border-blue-200 shadow-md ring-1 ring-blue-100'
-                    : 'bg-white/80 hover:bg-white border-slate-200/70 shadow-xs'
+                    ? 'bg-white border-blue-400/80 shadow-lg ring-2 ring-blue-100'
+                    : 'bg-white/85 hover:bg-white border-slate-200/80 shadow-xs hover:border-blue-200'
                 }`}
               >
                 <button
                   onClick={() => toggleFaq(idx)}
                   className="w-full text-left px-5 sm:px-6 py-4 flex items-center justify-between gap-4 cursor-pointer"
                 >
-                  <span className="text-xs sm:text-sm md:text-base font-bold text-slate-800">
+                  <span className={`text-xs sm:text-sm md:text-base font-bold transition-colors ${
+                    isOpen ? 'text-blue-900' : 'text-slate-800'
+                  }`}>
                     {faq.q}
                   </span>
 
-                  {/* Circular Plus/Minus Toggle Icon */}
-                  <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors ${
-                    isOpen ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-600 hover:bg-blue-100'
-                  }`}>
+                  {/* Circular Plus/Minus Toggle Icon with rotation animation */}
+                  <motion.div 
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                      isOpen ? 'bg-blue-600 text-white shadow-sm' : 'bg-blue-50 text-blue-600 hover:bg-blue-100'
+                    }`}
+                  >
                     {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
-                  </div>
+                  </motion.div>
                 </button>
 
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
+                      key="content"
+                      layout="position"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -122,7 +146,7 @@ export const FaqAccordion: React.FC = () => {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
 

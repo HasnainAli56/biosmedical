@@ -77,20 +77,26 @@ export const TestimonialsSlider: React.FC = () => {
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
-      {/* Top Header */}
-      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+      {/* Top Header (Slide from Top) */}
+      <motion.div 
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center max-w-2xl mx-auto mb-10 sm:mb-12"
+      >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>CLINICAL TESTIMONIALS</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900">
           Clinicians & Patients <br />
           <span className="text-blue-600">Trust BIOS Medical</span>
         </h2>
         <p className="mt-3 text-xs sm:text-sm text-slate-600">
           World-renowned orthopedic trauma surgeons and rehabilitation pioneers share how continuous implanted mobility data improves recovery.
         </p>
-      </div>
+      </motion.div>
 
       {/* Main Slider Box with Hover-Pause */}
       <div 
@@ -99,8 +105,14 @@ export const TestimonialsSlider: React.FC = () => {
         className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
       >
         
-        {/* Left Photo & Navigation Column with AnimatePresence */}
-        <div className="md:col-span-4 flex flex-col items-center">
+        {/* Left Photo & Navigation Column (Slide from Left) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="md:col-span-4 flex flex-col items-center"
+        >
           <div className="w-52 h-64 sm:w-56 sm:h-72 rounded-3xl overflow-hidden border-2 border-slate-100 shadow-xl bg-white relative">
             <AnimatePresence mode="wait">
               <motion.img
@@ -147,10 +159,16 @@ export const TestimonialsSlider: React.FC = () => {
               <ChevronRight className="w-4 h-4" />
             </motion.button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Frosted Testimonial Card */}
-        <div className="md:col-span-8">
+        {/* Right Frosted Testimonial Card (Slide from Right) */}
+        <motion.div 
+          initial={{ opacity: 0, x: 70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="md:col-span-8"
+        >
           <div className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-9 shadow-xl shadow-blue-900/5 relative overflow-hidden">
             
             {/* Top 5 Star Rating */}
@@ -196,7 +214,7 @@ export const TestimonialsSlider: React.FC = () => {
             </AnimatePresence>
 
           </div>
-        </div>
+        </motion.div>
 
       </div>
 

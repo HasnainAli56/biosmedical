@@ -31,14 +31,20 @@ export const BenefitsBentoHub: React.FC = () => {
   return (
     <section id="benefits" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
       
-      {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-5">
+      {/* Section Header with Top entrance */}
+      <motion.div 
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-5"
+      >
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
             <TurbineLogo size={14} animate={true} />
             <span>OUR CLINICAL INNOVATION</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900 leading-tight">
             The Breakthrough In <br />
             <span className="text-blue-600">Implanted Mobility Sensing</span>
           </h2>
@@ -55,13 +61,13 @@ export const BenefitsBentoHub: React.FC = () => {
             <ArrowRight className="w-3 h-3" />
           </div>
         </motion.a>
-      </div>
+      </motion.div>
 
       {/* Bento Grid with Central Glowing Turbine Hub (Exact Dribbble Structure) */}
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
         {/* ============================================================
-            Central Glowing Hub (Dead Center in the 4-card quad)
+            Central Glowing Hub (Dead Center in the 4-card quad with pulseGlow 2s)
             ============================================================ */}
         <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none items-center justify-center">
           <div className="relative w-36 h-36 flex items-center justify-center">
@@ -69,24 +75,37 @@ export const BenefitsBentoHub: React.FC = () => {
             {/* Multiple pulsing ripple waves */}
             <motion.div 
               animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="absolute inset-0 rounded-full bg-blue-500/20 blur-lg" 
             />
             <motion.div 
               animate={{ scale: [1, 1.25, 1], opacity: [0.7, 0.2, 0.7] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="absolute inset-2 rounded-full bg-indigo-500/20 blur-md" 
             />
 
-            {/* Solid Center Orb with Large, Highly-Visible White Rotating Turbine Logo */}
+            {/* Solid Center Orb with pulseGlow 2s infinite */}
             <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-24 h-24 rounded-full bg-white shadow-2xl border-4 border-blue-100 flex items-center justify-center p-2 relative z-10"
+              animate={{ 
+                scale: [1, 1.08, 1],
+                boxShadow: [
+                  "0 0 15px rgba(37,99,235,0.4), 0 0 35px rgba(59,130,246,0.2)",
+                  "0 0 35px rgba(37,99,235,0.9), 0 0 70px rgba(59,130,246,0.6)",
+                  "0 0 15px rgba(37,99,235,0.4), 0 0 35px rgba(59,130,246,0.2)"
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="rounded-full p-1.5 bg-gradient-to-tr from-blue-600 to-indigo-600"
             >
-              <div className="w-full h-full rounded-full bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-700 flex items-center justify-center shadow-inner">
-                <TurbineLogo size={52} variant="white" glow={true} />
-              </div>
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="w-24 h-24 rounded-full bg-white shadow-2xl border-4 border-blue-100 flex items-center justify-center p-2 relative z-10"
+              >
+                <div className="w-full h-full rounded-full bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-700 flex items-center justify-center shadow-inner">
+                  <TurbineLogo size={52} variant="white" glow={true} />
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Glowing SVG dashed lines connecting center to all 4 cards */}
@@ -100,12 +119,12 @@ export const BenefitsBentoHub: React.FC = () => {
         </div>
 
         {/* ============================================================
-            Card 1 (Top Left): Continuous Hip Biomechanics
+            Card 1 (Top Left): Continuous Hip Biomechanics (Slide from Left)
             ============================================================ */}
         <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, x: -70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
           className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
@@ -202,20 +221,20 @@ export const BenefitsBentoHub: React.FC = () => {
               </motion.div>
             </AnimatePresence>
 
-            <div className="absolute -bottom-3 -right-2 glass-pill px-3 py-1 rounded-full text-[10px] font-bold text-blue-800 shadow-md border border-blue-200">
+            <div className="absolute -bottom-3 -right-2 glass-pill px-3 py-1 rounded-full text-[10px] font-bold text-blue-800 shadow-md border border-blue-200 animate-float">
               ⚡ Real-time Telemetry
             </div>
           </div>
         </motion.div>
 
         {/* ============================================================
-            Card 2 (Top Right): Digital Biomarker Telemetry
+            Card 2 (Top Right): Digital Biomarker Telemetry (Slide from Right)
             ============================================================ */}
         <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, x: 70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
           className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
         >
@@ -279,13 +298,13 @@ export const BenefitsBentoHub: React.FC = () => {
         </motion.div>
 
         {/* ============================================================
-            Card 3 (Bottom Left): Multidisciplinary OGCM Loop
+            Card 3 (Bottom Left): Multidisciplinary OGCM Loop (Slide from Left)
             ============================================================ */}
         <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, x: -70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
           className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
         >
@@ -349,13 +368,13 @@ export const BenefitsBentoHub: React.FC = () => {
         </motion.div>
 
         {/* ============================================================
-            Card 4 (Bottom Right): Actionable Clinical Notifications
+            Card 4 (Bottom Right): Actionable Clinical Notifications (Slide from Right)
             ============================================================ */}
         <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, x: 70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
           className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-5 sm:p-7 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
         >

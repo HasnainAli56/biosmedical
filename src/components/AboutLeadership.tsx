@@ -43,8 +43,14 @@ export const AboutLeadership: React.FC = () => {
   return (
     <section id="about" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
-      {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      {/* Header (Slide from Top) */}
+      <motion.div 
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-center max-w-3xl mx-auto mb-10 sm:mb-12"
+      >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3">
           <TurbineLogo size={14} animate={true} />
           <span>LEADERSHIP & ADVISORY</span>
@@ -56,51 +62,61 @@ export const AboutLeadership: React.FC = () => {
         <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
           BIOS Medical AG is based in Davos, Switzerland. We combine world-class medical biomechanics with low-power sensor telemetry and machine learning to improve the human condition.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Leadership 3 Cards Grid */}
+      {/* Leadership 3 Cards Grid: Member 1 from Left, Member 2 from Bottom, Member 3 from Right */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-        {leadership.map((member, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-            whileHover={{ y: -6, scale: 1.02 }}
-            className="rounded-3xl bg-white border border-slate-200/80 p-5 sm:p-7 shadow-md hover:shadow-2xl hover:border-blue-300 transition-all flex flex-col justify-between group relative overflow-hidden"
-          >
-            <div>
-              <div className="relative mb-6">
-                <div className="w-24 h-24 rounded-2xl overflow-hidden ring-4 ring-blue-50 shadow-md">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
-                  />
-                </div>
-                <div className="absolute top-0 right-0 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[10px] font-bold shadow-2xs">
-                  {member.highlight}
-                </div>
-              </div>
+        {leadership.map((member, idx) => {
+          const initialDirection = idx === 0 ? { opacity: 0, x: -70 } : idx === 1 ? { opacity: 0, y: 70 } : { opacity: 0, x: 70 };
 
-              <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{member.name}</h3>
-              <div className="text-xs font-semibold text-blue-600 mb-1">{member.role}</div>
-              <div className="text-[11px] text-slate-500 mb-4 flex items-center gap-1">
-                <GraduationCap className="w-3.5 h-3.5 text-blue-500" />
-                <span>{member.credentials}</span>
-              </div>
+          return (
+            <motion.div
+              key={idx}
+              initial={initialDirection}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="rounded-3xl bg-white border border-slate-200/80 p-5 sm:p-7 shadow-md hover:shadow-2xl hover:border-blue-300 transition-all flex flex-col justify-between group relative overflow-hidden"
+            >
+              <div>
+                <div className="relative mb-6">
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden ring-4 ring-blue-50 shadow-md">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="absolute top-0 right-0 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[10px] font-bold shadow-2xs">
+                    {member.highlight}
+                  </div>
+                </div>
 
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                {member.bio}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{member.name}</h3>
+                <div className="text-xs font-semibold text-blue-600 mb-1">{member.role}</div>
+                <div className="text-[11px] text-slate-500 mb-4 flex items-center gap-1">
+                  <GraduationCap className="w-3.5 h-3.5 text-blue-500" />
+                  <span>{member.credentials}</span>
+                </div>
+
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                  {member.bio}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* Advisory Board Grid */}
-      <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+      {/* Advisory Board Grid (Slide from Bottom) */}
+      <motion.div 
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        className="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden"
+      >
         
         {/* Background glow */}
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
@@ -131,7 +147,7 @@ export const AboutLeadership: React.FC = () => {
           ))}
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );
