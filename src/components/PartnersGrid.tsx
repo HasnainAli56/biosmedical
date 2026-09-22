@@ -94,9 +94,9 @@ export const PartnersGrid: React.FC = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 px-4 sm:px-6 lg:px-8"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight text-[#2563eb] leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight text-slate-900 leading-tight">
           Healthcare Providers & <br />
-          Institutes
+          <span className="text-blue-600">Research Institutes</span>
         </h2>
         <p className="mt-3.5 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
           BIOS Medical is developed in the Swiss Alps, partnering with world-renowned trauma institutes, university clinics, and healthcare leaders to advance post-fracture recovery.
@@ -130,17 +130,17 @@ export const PartnersGrid: React.FC = () => {
               className="shrink-0 transition-all duration-300 hover:scale-103"
             >
               {card.type === 'dark' ? (
-                /* Center Connected Care Dark Card (Exact Match to Screenshot) */
-                <div className="w-68 sm:w-76 h-56 sm:h-60 rounded-[28px] overflow-hidden shadow-lg border border-slate-900 relative group cursor-pointer bg-[#070d19] flex flex-col justify-end p-6">
+                /* Connected Care Card matching theme */
+                <div className="w-68 sm:w-76 h-56 sm:h-60 rounded-[28px] overflow-hidden shadow-md border border-slate-200/90 relative group cursor-pointer bg-white flex flex-col justify-end p-6 hover:shadow-xl hover:border-blue-300 transition-all">
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen group-hover:scale-106 transition-transform duration-700"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-106 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070d19] via-[#070d19]/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
                   
                   {/* Subtle telemetry node ovals */}
-                  <div className="absolute top-4 right-5 px-3 py-1 rounded-full border border-amber-400/50 text-xs font-mono text-amber-300 bg-amber-400/15">
+                  <div className="absolute top-4 right-5 px-3 py-1 rounded-full border border-white/20 text-xs font-mono text-white bg-slate-900/60 backdrop-blur-md shadow-xs">
                     99.8% DMO
                   </div>
 

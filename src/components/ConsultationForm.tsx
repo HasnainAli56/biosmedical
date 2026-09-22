@@ -384,25 +384,25 @@ export const ConsultationForm: React.FC = () => {
               </div>
             </div>
 
-            {/* Fast Turnaround Card */}
-            <div className="p-6 rounded-3xl bg-gradient-to-br from-slate-900 to-blue-950 text-white shadow-xl space-y-4">
-              <div className="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-amber-400" />
+            {/* Fast Turnaround Card - Light Medical Theme */}
+            <div className="p-6 rounded-3xl bg-gradient-to-br from-blue-50/90 via-white to-sky-50/60 border border-blue-200/90 shadow-lg space-y-4">
+              <div className="flex items-center gap-2 text-amber-700 text-xs font-black uppercase tracking-wider bg-amber-50 px-3 py-1 rounded-full border border-amber-200/80 w-fit">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                 <span>Rapid Clinical Response</span>
               </div>
-              <h4 className="text-lg font-bold font-heading">
+              <h4 className="text-lg font-bold font-heading text-slate-900 leading-snug">
                 Need Immediate Protocol Review for an Upcoming Trauma Study?
               </h4>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
                 Our surgical liaison team reviews investigator-initiated study protocols within 48 hours and provides complimentary CAD implant insertion templates.
               </p>
               <div className="pt-1">
                 <a
                   href="mailto:trials@biosmedical.care?subject=Immediate%20Trauma%20Protocol%20Review"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-blue-300 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-sm group"
                 >
                   <span>Email Priority Desk</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>

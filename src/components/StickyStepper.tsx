@@ -18,7 +18,6 @@ export const StickyStepper: React.FC = () => {
         "Instant Identification of Immobility Regressions"
       ],
       image: "/real_bios/hipbeacon_implant_sensor.png",
-      bgAccent: "from-blue-50 to-indigo-50 border-blue-200",
       pillColor: "bg-blue-600 text-white",
       floatingTag: "Direct Implant Telemetry",
       floatingStat: "Day 1 Post-Op Active"
@@ -34,7 +33,6 @@ export const StickyStepper: React.FC = () => {
         "Elimination of Costly Emergency Re-admissions"
       ],
       image: "/real_bios/clinical_team_review.jpg",
-      bgAccent: "from-amber-50 to-yellow-50 border-amber-200",
       pillColor: "bg-amber-500 text-white",
       floatingTag: "22% Mortality Reduction",
       floatingStat: "OGCM Benchmark Met"
@@ -50,7 +48,6 @@ export const StickyStepper: React.FC = () => {
         "Next-Level Digital Mobility Outcomes (DMO)"
       ],
       image: "/real_bios/telemetry_pipeline.png",
-      bgAccent: "from-blue-50 to-sky-50 border-blue-200",
       pillColor: "bg-blue-600 text-white",
       floatingTag: "Safe Return Home",
       floatingStat: "Hospital Days Saved: -4.2"
@@ -147,7 +144,7 @@ export const StickyStepper: React.FC = () => {
           <div className="relative mx-auto max-w-md lg:max-w-none">
             
             {/* Dynamic Colored Backdrop Card */}
-            <div className={`rounded-[32px] p-6 sm:p-8 bg-gradient-to-br ${current.bgAccent} border shadow-2xl transition-colors duration-500`}>
+            <div className="rounded-[32px] p-6 sm:p-8 bg-gradient-to-br from-blue-50/70 via-white to-slate-50 border border-slate-200/90 shadow-xl transition-colors duration-500">
               
               {/* Image Frame Container with AnimatePresence */}
               <div className="relative rounded-2xl overflow-hidden shadow-md bg-white aspect-[4/3] sm:aspect-[14/11] flex items-center justify-center p-4">

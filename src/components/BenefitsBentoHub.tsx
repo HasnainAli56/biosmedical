@@ -127,7 +127,7 @@ export const BenefitsBentoHub: React.FC = () => {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
-          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
+          className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl hover:border-blue-300 transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-3 mb-2.5">
@@ -142,7 +142,7 @@ export const BenefitsBentoHub: React.FC = () => {
           </div>
 
           {/* Inset Mockup UI with interactive days */}
-          <div className="mt-6 bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-100 relative">
+          <div className="mt-6 bg-slate-50/90 rounded-2xl p-4 sm:p-6 shadow-xs border border-slate-200/70 relative">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-3">
                 <img 
@@ -236,7 +236,7 @@ export const BenefitsBentoHub: React.FC = () => {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
-          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
+          className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl hover:border-blue-300 transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-3 mb-2.5">
@@ -251,7 +251,7 @@ export const BenefitsBentoHub: React.FC = () => {
           </div>
 
           {/* Radar Node Layout with smooth animations */}
-          <div className="mt-6 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 relative min-h-[230px] flex items-center justify-center overflow-hidden">
+          <div className="mt-6 bg-slate-50/90 rounded-2xl p-5 shadow-xs border border-slate-200/70 relative min-h-[230px] flex items-center justify-center overflow-hidden">
             
             {/* Concentric radar rings */}
             <motion.div 
@@ -306,7 +306,7 @@ export const BenefitsBentoHub: React.FC = () => {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
-          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
+          className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl hover:border-blue-300 transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-3 mb-2.5">
@@ -321,7 +321,7 @@ export const BenefitsBentoHub: React.FC = () => {
           </div>
 
           {/* Connected Network Diagram using REAL Team Photos */}
-          <div className="mt-6 bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-100 relative">
+          <div className="mt-6 bg-slate-50/90 rounded-2xl p-5 sm:p-6 shadow-xs border border-slate-200/70 relative">
             <div className="flex items-center justify-between relative py-2">
               
               {/* Connecting animated pulse beam line */}
@@ -376,7 +376,7 @@ export const BenefitsBentoHub: React.FC = () => {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, borderColor: '#93c5fd' }}
-          className="rounded-3xl bg-[#f5f8fc] border border-slate-200/80 p-6 sm:p-8 flex flex-col justify-between shadow-xs transition-all relative overflow-hidden group"
+          className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl hover:border-blue-300 transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-3 mb-2.5">
@@ -391,42 +391,42 @@ export const BenefitsBentoHub: React.FC = () => {
           </div>
 
           {/* Floating Message Stack with Staggered Motion */}
-          <div className="mt-6 bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-100 space-y-3">
+          <div className="mt-6 bg-slate-50/90 rounded-2xl p-4 sm:p-5 shadow-xs border border-slate-200/70 space-y-3">
             <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="p-3 rounded-xl bg-amber-50/90 border border-amber-200 flex items-start gap-3 shadow-2xs cursor-default"
+              whileHover={{ scale: 1.02, y: -1 }}
+              className="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3 shadow-xs hover:border-amber-300 transition-all cursor-default"
             >
-              <div className="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 text-sm font-bold">
+              <div className="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 text-sm font-bold shadow-xs">
                 ✓
               </div>
               <div>
-                <div className="text-sm font-bold text-amber-950">Mobilization Target Achieved</div>
-                <div className="text-xs text-amber-800 font-medium mt-0.5">Patient took 1,420 steps today — 118% of rehabilitation plan.</div>
+                <div className="text-sm font-bold text-slate-900">Mobilization Target Achieved</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5">Patient took 1,420 steps today — 118% of rehabilitation plan.</div>
               </div>
             </motion.div>
 
             <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="p-3 rounded-xl bg-blue-50/90 border border-blue-200 flex items-start gap-3 shadow-2xs cursor-default"
+              whileHover={{ scale: 1.02, y: -1 }}
+              className="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3 shadow-xs hover:border-blue-300 transition-all cursor-default"
             >
-              <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-sm font-bold">
+              <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-sm font-bold shadow-xs">
                 ⚡
               </div>
               <div>
-                <div className="text-sm font-bold text-blue-950">Telehealth Sync Scheduled</div>
-                <div className="text-xs text-blue-800 font-medium mt-0.5">Weekly progress evaluation with Dr. Windolf at 10:30 AM.</div>
+                <div className="text-sm font-bold text-slate-900">Telehealth Sync Scheduled</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5">Weekly progress evaluation with Dr. Windolf at 10:30 AM.</div>
               </div>
             </motion.div>
 
             <motion.div 
-              whileHover={{ scale: 1.02 }}
-              className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3 shadow-2xs cursor-default"
+              whileHover={{ scale: 1.02, y: -1 }}
+              className="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3 shadow-xs hover:border-blue-300 transition-all cursor-default"
             >
-              <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-sm font-bold">
+              <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-sm font-bold shadow-xs">
                 ℹ
               </div>
               <div>
-                <div className="text-sm font-bold text-slate-800">Peace of Mind for Families</div>
+                <div className="text-sm font-bold text-slate-900">Peace of Mind for Families</div>
                 <div className="text-xs text-slate-600 font-medium mt-0.5">Immediate remote notifications sent to family caregivers.</div>
               </div>
             </motion.div>

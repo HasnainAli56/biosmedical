@@ -432,11 +432,11 @@ export const PageModal: React.FC<PageModalProps> = ({ pageId, onClose, onRequest
           className="relative w-full max-w-3xl max-h-[90vh] bg-white rounded-3xl shadow-2xl border border-slate-200/90 overflow-hidden flex flex-col z-10"
         >
           {/* Top Header Bar */}
-          <div className="p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white relative">
+          <div className="p-6 sm:p-8 bg-gradient-to-r from-blue-600 via-blue-600 to-indigo-700 text-white relative shadow-md">
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+              className="absolute top-5 right-5 p-2 rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -444,10 +444,10 @@ export const PageModal: React.FC<PageModalProps> = ({ pageId, onClose, onRequest
 
             {/* Badges */}
             <div className="flex items-center gap-2.5 mb-3 flex-wrap">
-              <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-600/40 text-blue-200 border border-blue-400/30">
+              <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/20 text-white border border-white/30">
                 {content.category}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-amber-500/20 text-amber-300 border border-amber-400/30">
+              <span className="px-3.5 py-1 rounded-full text-xs font-black tracking-wide bg-amber-400 text-slate-900 shadow-xs">
                 {content.badge}
               </span>
             </div>
@@ -456,7 +456,7 @@ export const PageModal: React.FC<PageModalProps> = ({ pageId, onClose, onRequest
             <h2 className="text-2xl sm:text-3xl font-black font-heading tracking-tight text-white leading-tight">
               {content.title}
             </h2>
-            <p className="text-sm sm:text-base text-blue-200/90 font-medium mt-1.5 leading-snug">
+            <p className="text-sm sm:text-base text-blue-100 font-medium mt-1.5 leading-snug">
               {content.subtitle}
             </p>
           </div>

@@ -113,28 +113,28 @@ export const AboutLeadership: React.FC = () => {
         })}
       </div>
 
-      {/* Advisory Board Grid (Slide from Bottom) */}
+      {/* Advisory Board Grid (Slide from Bottom) - Light Medical Theme */}
       <motion.div 
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-        className="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden"
+        className="rounded-3xl bg-gradient-to-br from-slate-50 via-white to-blue-50/40 p-8 sm:p-12 text-slate-900 border border-slate-200/90 shadow-xl relative overflow-hidden"
       >
         
         {/* Background glow */}
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-blue-400/10 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <div className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-amber-400">
+            <div className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200/80 inline-block">
               Global Clinical Guidance
             </div>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mt-1">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight text-slate-900 mt-2">
               Scientific Advisory Board
             </h3>
           </div>
-          <div className="text-sm text-slate-300 font-medium max-w-sm">
+          <div className="text-sm text-slate-600 font-medium max-w-sm">
             Guiding clinical trials, regulatory compliance (MDR), and international hospital rollout.
           </div>
         </div>
@@ -143,10 +143,10 @@ export const AboutLeadership: React.FC = () => {
           {advisors.map((advisor, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors"
+              className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:border-blue-400 hover:shadow-md transition-all group"
             >
-              <div className="text-base font-bold text-white mb-1.5">{advisor.name}</div>
-              <div className="text-sm text-slate-300 leading-relaxed">{advisor.role}</div>
+              <div className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-1.5">{advisor.name}</div>
+              <div className="text-sm text-slate-600 leading-relaxed font-medium">{advisor.role}</div>
             </div>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, CheckCircle2 } from 'lucide-react';
 import { PageModal } from './PageModal';
 
@@ -40,13 +41,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPage }) => {
           <div className="lg:col-span-5 space-y-4">
             
             {/* Transparent Logo without any background card */}
-            <div className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img 
                 src="/bios_logo_new.png" 
                 alt="BIOS Medical - Restore Life" 
                 className="h-10 sm:h-12 w-auto object-contain"
               />
-            </div>
+            </Link>
 
             <p className="text-sm sm:text-base text-slate-600 max-w-md leading-relaxed font-normal">
               Pioneering the world's first implanted hip mobility sensor. Restoring patient independence through real-time continuous Digital Mobility Outcomes (DMO).
@@ -81,18 +82,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPage }) => {
             {/* Swiss Headquarters */}
             <div className="text-xs sm:text-sm text-slate-600 flex items-center gap-2 pt-1">
               <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
-              <button 
-                onClick={() => handleOpenPage('impressum')}
-                className="font-semibold text-slate-800 hover:text-blue-600 transition-colors text-left cursor-pointer"
+              <Link 
+                to="/about"
+                className="font-semibold text-slate-800 hover:text-blue-600 transition-colors text-left"
               >
                 BIOS Medical AG
-              </button>
+              </Link>
               <span>· Innovation Center Davos, Switzerland</span>
             </div>
 
           </div>
 
-          {/* Right Columns: Structured Nav Links with Interactive Dedicated Pages */}
+          {/* Right Columns: Structured Nav Links with Dedicated Pages */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-xs sm:text-sm">
             
             {/* Column 1: Products */}
@@ -102,24 +103,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPage }) => {
               </h4>
               <ul className="space-y-2.5 text-slate-600 font-medium text-xs sm:text-sm">
                 <li>
-                  <button onClick={(e) => handleOpenPage('hipbeacon', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/hipbeacon" className="hover:text-blue-600 transition-colors text-left block">
                     HIPbeacon™ Sensor
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('bios-cloud', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/bios-cloud" className="hover:text-blue-600 transition-colors text-left block">
                     BIOS-Cloud Login
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('dmo-analytics', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/dmo-analytics" className="hover:text-blue-600 transition-colors text-left block">
                     DMO Analytics
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('rf-gateway', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/rf-gateway" className="hover:text-blue-600 transition-colors text-left block">
                     Bedside RF Gateway
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -131,24 +132,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPage }) => {
               </h4>
               <ul className="space-y-2.5 text-slate-600 font-medium text-xs sm:text-sm">
                 <li>
-                  <button onClick={(e) => handleOpenPage('orthopedic-trauma', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/orthopedic-trauma" className="hover:text-blue-600 transition-colors text-left block">
                     Orthopedic Trauma
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('geriatric-care', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/geriatric-care" className="hover:text-blue-600 transition-colors text-left block">
                     Geriatric Care
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('mortality-protocol', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/why-choose" className="hover:text-blue-600 transition-colors text-left block">
                     22% Mortality Protocol
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('hospital-wards', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/hospital-wards" className="hover:text-blue-600 transition-colors text-left block">
                     Hospital Wards
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -160,24 +161,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPage }) => {
               </h4>
               <ul className="space-y-2.5 text-slate-600 font-medium text-xs sm:text-sm">
                 <li>
-                  <button onClick={(e) => handleOpenPage('ao-studies', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/ao-studies" className="hover:text-blue-600 transition-colors text-left block">
                     AO Research Studies
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('mobilise-d', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/mobilise-d" className="hover:text-blue-600 transition-colors text-left block">
                     Mobilise-D Registry
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('publications', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/evidence" className="hover:text-blue-600 transition-colors text-left block">
                     Clinical Publications
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('ce-mark', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/ce-mark" className="hover:text-blue-600 transition-colors text-left block">
                     CE-Mark Roadmap
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -189,24 +190,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPage }) => {
               </h4>
               <ul className="space-y-2.5 text-slate-600 font-medium text-xs sm:text-sm">
                 <li>
-                  <button onClick={(e) => handleOpenPage('about-bios', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/about" className="hover:text-blue-600 transition-colors text-left block">
                     About BIOS
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('leadership', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/about" className="hover:text-blue-600 transition-colors text-left block">
                     Leadership & Team
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('advisory-board', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/about" className="hover:text-blue-600 transition-colors text-left block">
                     Advisory Board
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={(e) => handleOpenPage('privacy', e)} className="hover:text-blue-600 transition-colors text-left cursor-pointer">
+                  <Link to="/page/privacy" className="hover:text-blue-600 transition-colors text-left block">
                     Privacy Policy
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -219,39 +220,38 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPage }) => {
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-slate-500 gap-3">
           <div>
             © {new Date().getFullYear()} BIOS Medical AG. All rights reserved. Registered in Switzerland (
-            <button 
-              onClick={() => handleOpenPage('impressum')}
-              className="text-blue-600 hover:underline cursor-pointer"
+            <Link 
+              to="/page/impressum"
+              className="text-blue-600 hover:underline"
             >
               CHE-371.993.848
-            </button>
+            </Link>
             ).
           </div>
           <div className="flex items-center gap-5 text-slate-500">
-            <button onClick={() => handleOpenPage('privacy')} className="hover:text-blue-600 transition-colors cursor-pointer">
+            <Link to="/page/privacy" className="hover:text-blue-600 transition-colors">
               Privacy Policy
-            </button>
+            </Link>
             <span>·</span>
-            <button onClick={() => handleOpenPage('terms')} className="hover:text-blue-600 transition-colors cursor-pointer">
+            <Link to="/page/terms" className="hover:text-blue-600 transition-colors">
               Terms of Service
-            </button>
+            </Link>
             <span>·</span>
-            <button onClick={() => handleOpenPage('bios-cloud')} className="hover:text-blue-600 transition-colors cursor-pointer">
+            <a href="https://bios.mdeg.cloud/login" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
               BIOS-Cloud Portal
-            </button>
+            </a>
           </div>
         </div>
 
       </div>
 
-      {/* Dedicated Clinical Page Modal */}
+      {/* Dedicated Clinical Page Modal fallback if opened programmatically */}
       <PageModal
         pageId={activeModalId}
         onClose={() => setActiveModalId(null)}
         onRequestConsultation={() => {
           setActiveModalId(null);
-          const el = document.getElementById('consultation');
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
+          window.location.href = '/contact';
         }}
       />
 
