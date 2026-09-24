@@ -16,6 +16,24 @@ export const HeroSection: React.FC = () => {
   };
 
   useEffect(() => {
+    // Explicitly enforce muted DOM property for reliable mobile/live autoplay
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {
+        // Fallback play on initial scroll or interaction
+        const startPlay = () => {
+          if (videoRef.current) {
+            videoRef.current.muted = true;
+            videoRef.current.play().catch(() => {});
+          }
+        };
+        window.addEventListener('touchstart', startPlay, { once: true });
+        window.addEventListener('click', startPlay, { once: true });
+        window.addEventListener('scroll', startPlay, { once: true });
+      });
+    }
+
     // Ticking counter from 50% to 81% (matching exact video frame 02s)
     const timer = setInterval(() => {
       setAdherenceCounter(prev => {
@@ -44,14 +62,14 @@ export const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="w-full relative overflow-hidden">
+    <section id="home" className="w-full relative overflow-hidden bg-slate-950">
       
       {/* 
         Full-Bleed Full-Width Viewport Container (Edge-to-Edge with Zero Left/Right Gaps)
       */}
       <div className="relative w-full overflow-hidden min-h-[600px] sm:min-h-[680px] flex items-center shadow-2xl border-b border-blue-900/40">
         
-        {/* Full-Bleed 7-Second Muted Video with Scale-Crop to remove bottom-right Gemini watermark */}
+        {/* Full-Bleed 7-Second Muted Video with Scale-Crop to remove bottom-right watermark */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
           <video
             ref={videoRef}
@@ -60,13 +78,40 @@ export const HeroSection: React.FC = () => {
             muted
             loop
             playsInline
+            preload="auto"
             onTimeUpdate={handleVideoTimeUpdate}
+            onEnded={() => {
+              if (videoRef.current) {
+                videoRef.current.currentTime = 0;
+                videoRef.current.play().catch(() => {});
+              }
+            }}
             className="w-[115%] h-[115%] max-w-none object-cover -translate-x-[6%] -translate-y-[6%]"
           />
         </div>
 
-        {/* Light, Crystal-Clear Overlay: Darker only behind left text, vibrant and clear on the animation */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/35 to-transparent pointer-events-none" />
+        {/* Ambient Animated Biomechanical Pulse Wave (Guarantees visible dynamic motion) */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.25, 1],
+              opacity: [0.2, 0.45, 0.2]
+            }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-blue-500/20 blur-3xl pointer-events-none"
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1.2, 1, 1.2],
+              opacity: [0.15, 0.4, 0.15]
+            }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/3 -right-32 w-[550px] h-[550px] rounded-full bg-sky-400/20 blur-3xl pointer-events-none"
+          />
+        </div>
+
+        {/* Crisp, Crystal-Clear Overlay: Allows animation to show vibrantly */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/30 to-transparent pointer-events-none" />
         
         {/* Dedicated Bottom-Right Watermark Concealment Mask */}
         <div className="absolute -bottom-1 -right-1 w-56 h-36 bg-gradient-to-tl from-slate-950 via-slate-950/60 to-transparent pointer-events-none z-[2]" />
