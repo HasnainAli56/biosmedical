@@ -199,81 +199,65 @@ export const HeroSection: React.FC = () => {
 
           </div>
 
-          {/* Right Column: Prominent Real Pictures & Senior Telemetry Card */}
-          <div className="lg:col-span-5 relative flex flex-col items-center gap-4">
+          {/* Right Column: Single Unified Sensor & Telemetry Card */}
+          <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             
-            {/* 1. Large, Clear Floating Titanium Sensor Showcase */}
+            {/* Unified Floating Card with ONLY the HIPbeacon Sensor Image */}
             <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="w-full max-w-md rounded-3xl bg-white/95 backdrop-blur-xl p-4 sm:p-5 shadow-2xl border border-white text-slate-900"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-full max-w-md rounded-[32px] bg-white/95 backdrop-blur-xl p-6 sm:p-7 shadow-2xl border border-white text-slate-900"
             >
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              {/* Card Header */}
+              <div className="flex items-center justify-between pb-3.5 border-b border-slate-100">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
                   <span className="text-xs font-black uppercase tracking-wider text-blue-700">Official Swiss Implant</span>
                 </div>
-                <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
                   HIPbeacon™ Sensor
                 </span>
               </div>
 
-              {/* Large, Clear Image of HIPbeacon Hardware */}
-              <div className="py-3 flex items-center justify-center bg-gradient-to-b from-slate-50 to-blue-50/50 rounded-2xl border border-slate-100 my-2">
+              {/* The Single Hero Image: Real HIPbeacon Titanium Implant */}
+              <div className="py-4 my-3 flex items-center justify-center bg-gradient-to-b from-slate-50 via-blue-50/30 to-slate-50 rounded-2xl border border-slate-100/90 group">
                 <img
                   src="/bios_live/hipbeacon_hardware.png"
                   alt="HIPbeacon Titanium Sensor"
-                  className="h-28 sm:h-36 w-auto object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500"
+                  className="h-44 sm:h-52 w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
-              <div className="text-xs text-slate-600 font-medium text-center">
+              <div className="text-xs text-slate-600 font-medium text-center pb-3">
                 Sub-minute surgical insertion inside standard hip nail. Zero wires, zero maintenance.
               </div>
-            </motion.div>
 
-            {/* 2. Prominent Senior Patient Walking Recovery Card */}
-            <motion.div 
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="w-full max-w-md rounded-3xl bg-white/95 backdrop-blur-xl p-4 sm:p-5 shadow-2xl border border-white text-slate-900"
-            >
-              {/* Header Badge */}
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
-                  <span className="text-xs font-black uppercase tracking-wider text-blue-700">Patient Recovery Feed</span>
+              {/* Patient Recovery Feed (Clean Metrics Only - No Second Pic) */}
+              <div className="pt-3.5 border-t border-slate-100 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-xs uppercase font-bold text-slate-500 block">Patient Recovery Feed</span>
+                    <span className="text-base sm:text-lg font-black text-slate-900">Day 14: Walking Safely</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl sm:text-3xl font-black font-heading text-blue-600">{adherenceCounter}%</span>
+                    <span className="text-[11px] font-bold text-slate-500 block uppercase">Target Met</span>
+                  </div>
                 </div>
-                <span className="text-xs font-black bg-blue-600 text-white px-2.5 py-0.5 rounded-full shadow-xs">
-                  {adherenceCounter}% Target
-                </span>
-              </div>
 
-              {/* Full Uncropped Senior Patient Photo */}
-              <div className="relative rounded-2xl overflow-hidden shadow-xs border border-slate-200/80 mb-3 bg-gradient-to-b from-slate-50 to-blue-50/40 flex items-center justify-center p-2 min-h-[220px] sm:min-h-[240px]">
-                <img 
-                  src="/bios_live/elderly_patient_walking.jpg" 
-                  alt="Senior patient walking safely during recovery" 
-                  className="max-h-[230px] sm:max-h-[250px] w-auto max-w-full object-contain drop-shadow-md"
-                />
-                <div className="absolute bottom-2 left-2 right-2 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md text-white flex items-center justify-between text-xs">
-                  <span className="font-bold">Day 14: Walking Safely At Home</span>
-                  <span className="text-blue-300 font-mono text-[11px]">Live Verified</span>
+                {/* Senior Safety Badges */}
+                <div className="grid grid-cols-2 gap-2 text-xs font-bold text-slate-700 pt-1">
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0" />
+                    <span>100% Secure</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-2">
+                    <HeartPulse className="w-4 h-4 text-blue-600 shrink-0" />
+                    <span>Family Peace of Mind</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Senior-friendly reassurance badges */}
-              <div className="grid grid-cols-2 gap-2 text-xs font-bold text-slate-700">
-                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>100% Secure Implant</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-2">
-                  <HeartPulse className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>Family Peace of Mind</span>
-                </div>
-              </div>
             </motion.div>
 
           </div>
