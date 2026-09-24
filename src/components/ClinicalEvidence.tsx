@@ -61,7 +61,7 @@ export const ClinicalEvidence: React.FC = () => {
                 />
               )}
               <span className="relative z-10 flex items-center gap-2">
-                <HeartCrack className="w-4 h-4 text-amber-400" />
+                <HeartCrack className="w-4 h-4 text-blue-500" />
                 <span>Global Fracture Mortality (1.7M)</span>
               </span>
             </button>
@@ -103,22 +103,22 @@ export const ClinicalEvidence: React.FC = () => {
                 initial={{ opacity: 0, x: -60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-7 border border-slate-200/80 shadow-inner relative group"
+                className="lg:col-span-7 bg-[#f4f8fa] rounded-3xl p-7 border border-slate-200/80 shadow-inner relative group"
               >
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/60 text-sm font-bold text-slate-600">
                   <span className="flex items-center gap-2 text-blue-700 font-extrabold">
                     <TurbineLogo size={16} animate={true} />
                     Official BIOS Clinical Epidemiology
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-black">
+                  <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-900 text-xs font-black">
                     High Risk Cohort
                   </span>
                 </div>
 
                 <div className="relative rounded-2xl overflow-hidden bg-white p-4 shadow-sm border border-slate-100 flex items-center justify-center">
                   <img
-                    src="/real_bios/hip_fracture_stats.png"
-                    alt="Hip Fracture Global Statistics from biosmedical.care"
+                    src="/bios_live/life_threat_chart.png"
+                    alt="Life-threatening complications of hip fractures from biosmedical.care"
                     className="w-full max-h-[380px] object-contain"
                   />
                 </div>
@@ -137,7 +137,7 @@ export const ClinicalEvidence: React.FC = () => {
                 className="lg:col-span-5 space-y-6"
               >
                 <div>
-                  <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-600 mb-1">
+                  <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-700 mb-1">
                     The Silent Epidemic
                   </div>
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
@@ -150,8 +150,8 @@ export const ClinicalEvidence: React.FC = () => {
 
                 {/* 4 Stat Cards Grid (Standardized to solid blue & yellow) */}
                 <div className="grid grid-cols-2 gap-3.5">
-                  <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200">
-                    <div className="text-3xl font-black text-amber-700">1.7M</div>
+                  <div className="p-4 rounded-2xl bg-blue-50/80 border border-blue-200">
+                    <div className="text-3xl font-black text-blue-700">1.7M</div>
                     <div className="text-xs font-bold text-slate-800 mt-1">Fractures Annually</div>
                     <div className="text-xs text-slate-500">Growing worldwide</div>
                   </div>
@@ -162,8 +162,8 @@ export const ClinicalEvidence: React.FC = () => {
                     <div className="text-xs text-slate-500">Post-fracture rate</div>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200">
-                    <div className="text-3xl font-black text-amber-700">3-4x</div>
+                  <div className="p-4 rounded-2xl bg-blue-50/80 border border-blue-200">
+                    <div className="text-3xl font-black text-blue-700">3-4x</div>
                     <div className="text-xs font-bold text-slate-800 mt-1">Mortality Surge</div>
                     <div className="text-xs text-slate-500">Compared to peers</div>
                   </div>
@@ -204,7 +204,7 @@ export const ClinicalEvidence: React.FC = () => {
                 initial={{ opacity: 0, x: -60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:col-span-7 bg-[#f8fafc] rounded-3xl p-7 border border-slate-200/80 shadow-inner relative group"
+                className="lg:col-span-7 bg-[#f4f8fa] rounded-3xl p-7 border border-slate-200/80 shadow-inner relative group"
               >
                 <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200/60 text-sm font-bold text-slate-600">
                   <span className="flex items-center gap-2 text-blue-700 font-extrabold">
@@ -218,8 +218,8 @@ export const ClinicalEvidence: React.FC = () => {
 
                 <div className="relative rounded-2xl overflow-hidden bg-white p-4 shadow-sm border border-slate-100 flex items-center justify-center">
                   <img
-                    src="/real_bios/economic_cost_chart.png"
-                    alt="Economic Cost of Hip Fractures from biosmedical.care"
+                    src="/bios_live/mobilization_chart.png"
+                    alt="Mobilization and Recovery Timeline from biosmedical.care"
                     className="w-full max-h-[380px] object-contain"
                   />
                 </div>
@@ -266,7 +266,7 @@ export const ClinicalEvidence: React.FC = () => {
                       <div className="text-sm font-bold text-slate-900">Reduced Readmission Rate</div>
                       <div className="text-xs text-slate-500">Micro-instability detected before collapse</div>
                     </div>
-                    <span className="text-sm font-black text-amber-700 bg-amber-50 px-3 py-1.5 rounded-full border border-amber-200">
+                    <span className="text-sm font-black text-blue-700 bg-blue-50 px-3 py-1.5 rounded-full border border-blue-200">
                       -38%
                     </span>
                   </div>
@@ -288,7 +288,7 @@ export const ClinicalEvidence: React.FC = () => {
                     href="#contact"
                     className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-slate-900 hover:bg-blue-600 text-white font-bold text-sm tracking-wide shadow-md transition-all group cursor-pointer"
                   >
-                    <FileText className="w-4 h-4 text-amber-400" />
+                    <FileText className="w-4 h-4 text-blue-500" />
                     <span>Download Health Economics Dossier</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
                   </a>

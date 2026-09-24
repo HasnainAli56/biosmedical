@@ -42,8 +42,8 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-600 mb-1">
-              <Award className="w-4 h-4 text-amber-500" />
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-700 mb-1">
+              <Award className="w-4 h-4 text-blue-600" />
               <span>Recognition</span>
             </div>
             <div className="text-2xl font-black text-slate-900">Top 2%</div>

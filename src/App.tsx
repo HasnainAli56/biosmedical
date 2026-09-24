@@ -43,7 +43,7 @@ const AnimatedRoutes: React.FC = () => {
 export const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#f8fafc] text-slate-900 overflow-x-hidden selection:bg-blue-600 selection:text-white flex flex-col justify-between">
+      <div className="min-h-screen bg-[#ffffff] text-[#114761] overflow-x-hidden selection:bg-[#114761] selection:text-white flex flex-col justify-between">
         <ScrollToTop />
         
         {/* Persistent Global Header with Adaptive State */}

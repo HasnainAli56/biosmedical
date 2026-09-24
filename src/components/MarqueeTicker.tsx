@@ -25,8 +25,8 @@ export const MarqueeTicker: React.FC = () => {
       className="py-8 border-y border-slate-200/80 bg-white/60 backdrop-blur-md overflow-hidden relative"
     >
       {/* Edge gradient masks */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f8fafc] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f4f8fa] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f4f8fa] to-transparent z-10 pointer-events-none" />
 
       {/* Looping Track with 25s continuous infinite marquee */}
       <div 
@@ -38,7 +38,7 @@ export const MarqueeTicker: React.FC = () => {
             <span className="text-sm sm:text-base font-black font-heading tracking-widest text-slate-600 uppercase hover:text-blue-600 transition-colors cursor-default">
               {text}
             </span>
-            <div className={idx % 2 === 0 ? "text-blue-600" : "text-amber-500"}>
+            <div className="text-blue-600">
               <TurbineLogo size={16} animate={false} />
             </div>
           </div>

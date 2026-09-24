@@ -91,7 +91,7 @@ export const AboutLeadership: React.FC = () => {
                   <div className={`absolute top-0 right-0 px-3 py-1 rounded-full text-xs font-bold shadow-2xs border ${
                     idx % 2 === 0
                       ? 'bg-blue-50 border-blue-200 text-blue-700'
-                      : 'bg-amber-50 border-amber-200 text-amber-700'
+                      : 'bg-blue-50 border-blue-200 text-blue-700'
                   }`}>
                     {member.highlight}
                   </div>
@@ -100,7 +100,7 @@ export const AboutLeadership: React.FC = () => {
                 <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{member.name}</h3>
                 <div className="text-sm font-bold text-blue-600 mb-1.5">{member.role}</div>
                 <div className="text-xs text-slate-500 mb-4 flex items-center gap-1.5 font-medium">
-                  <GraduationCap className={`w-4 h-4 ${idx % 2 === 0 ? 'text-blue-600' : 'text-amber-500'}`} />
+                  <GraduationCap className={`w-4 h-4 ${idx % 2 === 0 ? 'text-blue-600' : 'text-blue-600'}`} />
                   <span>{member.credentials}</span>
                 </div>
 

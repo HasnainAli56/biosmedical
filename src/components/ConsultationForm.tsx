@@ -95,7 +95,7 @@ export const ConsultationForm: React.FC = () => {
                   </div>
 
                   <div>
-                    <span className="inline-block px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold uppercase tracking-wider mb-2">
+                    <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
                       Inquiry Dispatched · {referenceId}
                     </span>
                     <h3 className="text-2xl sm:text-3xl font-black font-heading text-slate-900">
@@ -121,7 +121,7 @@ export const ConsultationForm: React.FC = () => {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-500">Expected Response:</span>
-                      <span className="font-semibold text-amber-600">Within 24 Business Hours</span>
+                      <span className="font-semibold text-blue-700">Within 24 Business Hours</span>
                     </div>
                   </div>
 
@@ -378,7 +378,7 @@ export const ConsultationForm: React.FC = () => {
                 <div className="p-2.5 rounded-xl bg-blue-50/70 border border-blue-100 font-bold text-blue-800">
                   ISO 13485:2016
                 </div>
-                <div className="p-2.5 rounded-xl bg-amber-50/70 border border-amber-100 font-bold text-amber-800">
+                <div className="p-2.5 rounded-xl bg-blue-50/70 border border-blue-100 font-bold text-blue-800">
                   Swiss Medtech AG
                 </div>
               </div>
@@ -386,8 +386,8 @@ export const ConsultationForm: React.FC = () => {
 
             {/* Fast Turnaround Card - Light Medical Theme */}
             <div className="p-6 rounded-3xl bg-gradient-to-br from-blue-50/90 via-white to-sky-50/60 border border-blue-200/90 shadow-lg space-y-4">
-              <div className="flex items-center gap-2 text-amber-700 text-xs font-black uppercase tracking-wider bg-amber-50 px-3 py-1 rounded-full border border-amber-200/80 w-fit">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+              <div className="flex items-center gap-2 text-blue-700 text-xs font-black uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-blue-200/80 w-fit">
+                <Sparkles className="w-3.5 h-3.5 text-blue-600" />
                 <span>Rapid Clinical Response</span>
               </div>
               <h4 className="text-lg font-bold font-heading text-slate-900 leading-snug">

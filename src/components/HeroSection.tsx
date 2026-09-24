@@ -77,11 +77,11 @@ export const HeroSection: React.FC = () => {
         {/* Top subtle shade for navbar clarity */}
         <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-slate-950/70 to-transparent pointer-events-none" />
 
-        {/* Inner Foreground Layout */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-28 pb-14 sm:pt-32 sm:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        {/* Inner Foreground Layout - Text positioned higher up */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-20 pb-10 sm:pt-24 sm:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
           
           {/* Left Hero Content Column with fadeInUp 0.8s staggered entrance */}
-          <div className="lg:col-span-7 flex flex-col items-start space-y-5">
+          <div className="lg:col-span-7 flex flex-col items-start space-y-4 pt-1 sm:pt-3">
             
             {/* Top Frosted Pill Badge */}
             <motion.div 
@@ -90,7 +90,7 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-sm font-bold shadow-sm"
             >
-              <span className="flex h-2.5 w-2.5 rounded-full bg-amber-400 animate-ping" />
+              <span className="flex h-2.5 w-2.5 rounded-full bg-white animate-ping" />
               <TurbineLogo size={16} animate={true} variant="white" />
               <span>World's First Implanted Hip Mobility Sensor</span>
             </motion.div>
@@ -100,25 +100,25 @@ export const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl xl:text-6xl font-black font-heading tracking-tight text-white leading-[1.12] drop-shadow-lg"
+              className="text-4xl sm:text-5xl xl:text-6xl font-black font-heading tracking-tight text-white leading-[1.15] drop-shadow-lg"
             >
-              Your Implant-Powered <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-indigo-200 drop-shadow-sm">
-                Recovery Companion
+              Restoring Independent Living <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-blue-200 to-white drop-shadow-sm">
+                After Hip Surgery
               </span>
             </motion.h1>
 
-            {/* Subtitle with Fade-in */}
+            {/* Subtitle with Fade-in - Clear, large, humane for 70+ patients */}
             <motion.p 
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
-              className="text-base sm:text-lg md:text-xl text-slate-100/95 font-normal leading-relaxed max-w-2xl drop-shadow-md"
+              className="text-lg sm:text-xl text-slate-100/95 font-medium leading-relaxed max-w-2xl drop-shadow-md"
             >
-              BIOS Medical ensures older adults recover from hip fractures with precision, giving surgeons and geriatricians continuous implanted telemetry to prevent fatal secondary complications.
+              Immediate and safe daily walking is the key to full recovery. <strong>HIPbeacon</strong> is a tiny Swiss-engineered sensor placed inside your hip implant during standard surgery, gently keeping your doctors and family updated on your recovery progress every single day.
             </motion.p>
 
-            {/* White Capsule CTA Button with Fade-in */}
+            {/* Clear Capsule CTA Buttons with Fade-in */}
             <motion.div 
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -126,18 +126,17 @@ export const HeroSection: React.FC = () => {
               className="pt-2 flex flex-wrap items-center gap-4"
             >
               <div className="relative group">
-                {/* Subtle slow glowing ring */}
                 <div className="absolute -inset-1 rounded-full bg-blue-400/30 blur-sm group-hover:bg-blue-400/50 transition-all duration-700 pointer-events-none" />
                 <motion.a
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   transition={{ duration: 0.2 }}
-                  href="#why-choose"
-                  className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-sm tracking-wider uppercase shadow-2xl hover:bg-blue-50 transition-all group cursor-pointer"
+                  href="#how-it-works"
+                  className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-base shadow-2xl hover:bg-blue-50 transition-all group cursor-pointer"
                 >
-                  <span>Get Started for Free</span>
-                  <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
-                    <ArrowRight className="w-3.5 h-3.5" />
+                  <span>See How It Helps You</span>
+                  <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
+                    <ArrowRight className="w-4 h-4" />
                   </div>
                 </motion.a>
               </div>
@@ -146,99 +145,90 @@ export const HeroSection: React.FC = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.2 }}
-                href="https://bios.mdeg.cloud/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/25 backdrop-blur-md transition-all duration-300 cursor-pointer"
+                href="#evidence"
+                className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full bg-white/15 hover:bg-white/25 text-white font-bold text-base border border-white/30 backdrop-blur-md transition-all duration-300 cursor-pointer"
               >
-                <span>Launch BIOS-Cloud</span>
+                <span>Read Clinical Results</span>
               </motion.a>
             </motion.div>
 
           </div>
 
-          {/* Right Floating Dashboard / UI Telemetry Card (Continuous 4s float animation) */}
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
+          {/* Right Column: Prominent Real Pictures & Senior Telemetry Card */}
+          <div className="lg:col-span-5 relative flex flex-col items-center gap-4">
             
-            {/* 3D Floating HIPbeacon Sensor Graphic */}
+            {/* 1. Large, Clear Floating Titanium Sensor Showcase */}
             <motion.div
-              animate={{ y: [0, -16, 0], rotate: [-3, 3, -3] }}
+              animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-12 right-0 lg:-right-4 w-28 sm:w-36 z-20 pointer-events-none drop-shadow-2xl"
+              className="w-full max-w-md rounded-3xl bg-white/95 backdrop-blur-xl p-4 sm:p-5 shadow-2xl border border-white text-slate-900"
             >
-              <img
-                src="/real_bios/hipbeacon_implant_sensor.png"
-                alt="HIPbeacon titanium implant sensor"
-                className="w-full h-auto drop-shadow-2xl"
-              />
-            </motion.div>
-
-            {/* 
-              Floating Dashboard Card:
-              Continuous 4s ease-in-out infinite floating animation
-            */}
-            <motion.div 
-              initial={{ y: 24, opacity: 0 }}
-              animate={{ 
-                y: [0, -14, 0], 
-                opacity: 1 
-              }}
-              transition={{ 
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                opacity: { duration: 0.8, ease: "easeOut", delay: 0.2 }
-              }}
-              className="relative w-full max-w-md rounded-[28px] bg-white/95 backdrop-blur-2xl p-5 sm:p-6 shadow-2xl border border-white/95 text-slate-900 z-10"
-            >
-              {/* Top Row: Founders Stack & Adherence Headline */}
-              <div className="flex items-center justify-between pb-3.5 border-b border-slate-200/60">
-                <div className="flex -space-x-2 overflow-hidden">
-                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="/real_bios/markus_windolf_ceo.jpg" alt="Dr. Markus Windolf" title="Dr. Markus Windolf (CEO)" />
-                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="/real_bios/patrick_stepanek_coo.jpg" alt="Dr. Patrick Stepanek" title="Dr. Patrick Stepanek (COO)" />
-                  <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="/real_bios/viktor_varjas_dev.jpg" alt="Viktor Varjas" title="Viktor Varjas (Lead Software Dev)" />
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
+                  <span className="text-xs font-black uppercase tracking-wider text-blue-700">Official Swiss Implant</span>
                 </div>
-                <span className="text-xs font-black uppercase tracking-wider text-slate-600">
-                  {adherenceCounter}% Adherence Rate
+                <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+                  HIPbeacon™ Sensor
                 </span>
               </div>
 
-              {/* Big Stat Row */}
-              <div className="py-3.5">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl sm:text-5xl font-black font-heading text-slate-900 tracking-tight">
-                    {adherenceCounter}%
-                  </span>
-                  <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-blue-700">
-                    OF PATIENTS IMPROVED MOBILITY
-                  </span>
+              {/* Large, Clear Image of HIPbeacon Hardware */}
+              <div className="py-3 flex items-center justify-center bg-gradient-to-b from-slate-50 to-blue-50/50 rounded-2xl border border-slate-100 my-2">
+                <img
+                  src="/bios_live/hipbeacon_hardware.png"
+                  alt="HIPbeacon Titanium Sensor"
+                  className="h-28 sm:h-36 w-auto object-contain drop-shadow-xl hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              <div className="text-xs text-slate-600 font-medium text-center">
+                Sub-minute surgical insertion inside standard hip nail. Zero wires, zero maintenance.
+              </div>
+            </motion.div>
+
+            {/* 2. Prominent Senior Patient Walking Recovery Card */}
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-full max-w-md rounded-3xl bg-white/95 backdrop-blur-xl p-4 sm:p-5 shadow-2xl border border-white text-slate-900"
+            >
+              {/* Header Badge */}
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
+                  <span className="text-xs font-black uppercase tracking-wider text-blue-700">Patient Recovery Feed</span>
                 </div>
-                <div className="mt-1 text-xs text-slate-500 font-semibold">
-                  OGCM Clinical Cohort · {mortalityCounter}% Mortality Reduction
+                <span className="text-xs font-black bg-blue-600 text-white px-2.5 py-0.5 rounded-full shadow-xs">
+                  {adherenceCounter}% Target
+                </span>
+              </div>
+
+              {/* Full Uncropped Senior Patient Photo */}
+              <div className="relative rounded-2xl overflow-hidden shadow-xs border border-slate-200/80 mb-3 bg-gradient-to-b from-slate-50 to-blue-50/40 flex items-center justify-center p-2 min-h-[220px] sm:min-h-[240px]">
+                <img 
+                  src="/bios_live/elderly_patient_walking.jpg" 
+                  alt="Senior patient walking safely during recovery" 
+                  className="max-h-[230px] sm:max-h-[250px] w-auto max-w-full object-contain drop-shadow-md"
+                />
+                <div className="absolute bottom-2 left-2 right-2 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md text-white flex items-center justify-between text-xs">
+                  <span className="font-bold">Day 14: Walking Safely At Home</span>
+                  <span className="text-blue-300 font-mono text-[11px]">Live Verified</span>
                 </div>
               </div>
 
-              {/* 6 Interactive Feature Pills (Standardized to solid blue & solid yellow icons) */}
-              <div className="grid grid-cols-2 gap-2.5 pt-1 text-xs font-bold text-slate-700">
-                {[
-                  { label: "TELEHEALTH", icon: <Activity className="w-4 h-4 text-blue-600" /> },
-                  { label: "SMART SCHEDULING", icon: <Calendar className="w-4 h-4 text-amber-500" /> },
-                  { label: "ADAPTIVE ALERTS", icon: <ShieldCheck className="w-4 h-4 text-blue-600" /> },
-                  { label: "24/7 SUPPORT", icon: <Clock className="w-4 h-4 text-amber-500" /> },
-                  { label: "AI-ASSISTED NOTES", icon: <Sparkles className="w-4 h-4 text-blue-600" /> },
-                  { label: "DMO ANALYTICS", icon: <Zap className="w-4 h-4 text-amber-500" /> },
-                ].map((item, idx) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + idx * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="p-2.5 rounded-xl bg-slate-50/95 border border-slate-200/80 flex items-center justify-between shadow-2xs hover:bg-white hover:border-blue-300 transition-all cursor-default"
-                  >
-                    <span>{item.label}</span>
-                    {item.icon}
-                  </motion.div>
-                ))}
+              {/* Senior-friendly reassurance badges */}
+              <div className="grid grid-cols-2 gap-2 text-xs font-bold text-slate-700">
+                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>100% Secure Implant</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-2">
+                  <HeartPulse className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>Family Peace of Mind</span>
+                </div>
               </div>
-
             </motion.div>
 
           </div>

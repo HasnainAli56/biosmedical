@@ -43,7 +43,7 @@ export const WhyChoosePage: React.FC = () => {
           </div>
 
           <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-3">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-3">
               <TrendingDown className="w-5 h-5" />
             </div>
             <h4 className="font-bold text-slate-900 text-base">-22% Mortality</h4>

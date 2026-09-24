@@ -31,27 +31,27 @@ export const TurbineLogo: React.FC<TurbineLogoProps> = ({
         className={`relative z-10 transition-transform ${animate ? 'animate-spin-slow' : ''}`}
       >
         <defs>
-          {/* Default Gradient */}
+          {/* BIOS Medical Official Gradient */}
           <linearGradient id="turbine-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3b82f6" />
-            <stop offset="50%" stopColor="#6366f1" />
-            <stop offset="100%" stopColor="#8b5cf6" />
+            <stop offset="0%" stopColor="#114761" />
+            <stop offset="50%" stopColor="#4d7589" />
+            <stop offset="100%" stopColor="#6b9abe" />
           </linearGradient>
           <linearGradient id="turbine-grad-soft" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#60a5fa" />
-            <stop offset="100%" stopColor="#a855f7" />
+            <stop offset="0%" stopColor="#6b9abe" />
+            <stop offset="100%" stopColor="#114761" />
           </linearGradient>
 
           {/* High-Contrast White Blades Gradient for Dark Orbs */}
           <linearGradient id="turbine-white-1" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="60%" stopColor="#f0f9ff" />
-            <stop offset="100%" stopColor="#bae6fd" />
+            <stop offset="60%" stopColor="#f4f8fa" />
+            <stop offset="100%" stopColor="#c4d1d8" />
           </linearGradient>
           <linearGradient id="turbine-white-2" x1="100%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="50%" stopColor="#e0f2fe" />
-            <stop offset="100%" stopColor="#7dd3fc" />
+            <stop offset="50%" stopColor="#ebf1f5" />
+            <stop offset="100%" stopColor="#a1b5c5" />
           </linearGradient>
         </defs>
 
@@ -89,7 +89,7 @@ export const TurbineLogo: React.FC<TurbineLogoProps> = ({
 
         {/* Center core ring */}
         <circle cx="50" cy="50" r="11" fill="#ffffff" />
-        <circle cx="50" cy="50" r="6" fill={isWhite ? "#1d4ed8" : "#3b82f6"} />
+        <circle cx="50" cy="50" r="6" fill={isWhite ? "#6b9abe" : "#114761"} />
       </svg>
     </div>
   );

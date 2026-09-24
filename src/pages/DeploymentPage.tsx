@@ -41,7 +41,7 @@ export const DeploymentPage: React.FC = () => {
           </div>
 
           <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
-            <span className="text-xs font-black text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Phase 02</span>
+            <span className="text-xs font-black text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md">Phase 02</span>
             <h4 className="font-bold text-slate-900 text-base mt-2">Ward Telemetry Setup</h4>
             <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
               Zero-pairing plug-and-play bedside RF gateways installed with zero IT overhead.

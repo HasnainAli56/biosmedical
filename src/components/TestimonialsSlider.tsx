@@ -172,9 +172,9 @@ export const TestimonialsSlider: React.FC = () => {
           <div className="rounded-3xl bg-white border border-slate-200/90 p-7 sm:p-10 shadow-xl shadow-blue-900/5 relative overflow-hidden">
             
             {/* Top 5 Star Rating (Solid Yellow) */}
-            <div className="flex items-center gap-1.5 text-amber-400 mb-6">
+            <div className="flex items-center gap-1.5 text-blue-500 mb-6">
               {[...Array(current.rating)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-amber-400 stroke-amber-400" />
+                <Star key={i} className="w-5 h-5 fill-blue-500 stroke-blue-500" />
               ))}
             </div>
 

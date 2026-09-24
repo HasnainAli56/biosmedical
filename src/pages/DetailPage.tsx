@@ -40,7 +40,7 @@ export const DetailPage: React.FC = () => {
             <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/20 text-white border border-white/30">
               {content.category}
             </span>
-            <span className="px-3.5 py-1 rounded-full text-xs font-black tracking-wide bg-amber-400 text-slate-900 shadow-xs">
+            <span className="px-3.5 py-1 rounded-full text-xs font-black tracking-wide bg-blue-600 text-white border border-blue-400/60 shadow-xs">
               {content.badge}
             </span>
           </div>
@@ -107,8 +107,8 @@ export const DetailPage: React.FC = () => {
 
         {/* Regulatory Note */}
         {content.regulatoryNote && (
-          <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm leading-relaxed flex items-start gap-3">
-            <Shield className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <div className="p-5 rounded-2xl bg-blue-50 border border-blue-200 text-blue-900 text-xs sm:text-sm leading-relaxed flex items-start gap-3">
+            <Shield className="w-5 h-5 text-blue-700 shrink-0 mt-0.5" />
             <span>{content.regulatoryNote}</span>
           </div>
         )}

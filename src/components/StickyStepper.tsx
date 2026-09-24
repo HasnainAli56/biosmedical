@@ -9,47 +9,47 @@ export const StickyStepper: React.FC = () => {
   const steps = [
     {
       id: 1,
-      badge: "STEP 01: MOBILIZATION",
-      title: "Early & Tailored Mobilization",
-      description: "Physical activity is key for healthy aging. HIPbeacon directly measures genuine weight-bearing and gait velocity at the hip implant to ensure patients start walking safely at the earliest possible stage.",
+      badge: "STEP 01: GENTLE IMPLANTATION",
+      title: "Seamlessly Placed During Standard Surgery",
+      description: "No extra surgeries or incisions are required. The tiny Swiss HIPbeacon sensor is inserted directly inside your standard orthopedic hip nail during routine treatment, immediately ready to protect your recovery.",
       points: [
-        "Continuous Gait Analysis & Step Cadence",
-        "Direct Site Loading & Weight-Bearing Telemetry",
-        "Instant Identification of Immobility Regressions"
+        "Zero additional surgical incisions required",
+        "Encased safely inside your standard titanium hip implant",
+        "Automatically activates and monitors your mobility from Day 1"
       ],
-      image: "/real_bios/hipbeacon_implant_sensor.png",
+      image: "/bios_live/hipbeacon_femur.png",
       pillColor: "bg-blue-600 text-white",
-      floatingTag: "Direct Implant Telemetry",
-      floatingStat: "Day 1 Post-Op Active"
+      floatingTag: "Safe Inside Bone Implant",
+      floatingStat: "Swiss Medical Titanium"
     },
     {
       id: 2,
-      badge: "STEP 02: SAFETY & MORTALITY",
-      title: "22% Mortality Reduction (OGCM)",
-      description: "Orthogeriatric Co-Management (OGCM) achieves a proven 22% mortality reduction. Continuous cloud data equips orthopedists and geriatricians with real-time foresight to intervene before life-threatening events unfold.",
+      badge: "STEP 02: RECOVERY TELEMETRY",
+      title: "Your Doctor & Caregivers Stay Informed",
+      description: "As you begin walking, HIPbeacon gently measures your step rhythm and weight-bearing. Encrypted data reaches your medical team so they can guide your rehabilitation and prevent sudden falls.",
       points: [
-        "Predictive Fall Risk & Asymmetry Modeling",
-        "Early Detection of Harmful Loosening Events",
-        "Elimination of Costly Emergency Re-admissions"
+        "Continuous daily step count & weight-bearing measurement",
+        "Early warning alerts if bones or screws experience excess strain",
+        "Proven 22% reduction in secondary post-surgery complications"
       ],
-      image: "/real_bios/clinical_team_review.jpg",
-      pillColor: "bg-amber-500 text-white",
-      floatingTag: "22% Mortality Reduction",
-      floatingStat: "OGCM Benchmark Met"
+      image: "/bios_live/clinical_process.png",
+      pillColor: "bg-blue-600 text-white",
+      floatingTag: "Continuous Care Loop",
+      floatingStat: "22% Complication Reduction"
     },
     {
       id: 3,
-      badge: "STEP 03: HEALTH ECONOMICS",
-      title: "Rapid Return Home & Independence",
-      description: "10-15% of hip fracture patients tragically never return home. HIPbeacon empowers older adults to regain independence, shorten acute hospital stays, and avoid admission into permanent long-term nursing homes.",
+      badge: "STEP 03: INDEPENDENT LIVING",
+      title: "Regaining Mobility & Returning Safely Home",
+      description: "The primary wish of older adults is to remain independent and live at home. HIPbeacon supports safe mobilization, shortens acute hospital stays, and helps prevent unwanted nursing home admissions.",
       points: [
-        "Minimize Acute Hospital Length of Stay",
-        "Prevent Permanent Nursing Home Admissions",
-        "Next-Level Digital Mobility Outcomes (DMO)"
+        "Shortens acute hospital stays by over 4 days on average",
+        "Helps seniors regain confidence and avoid nursing home transfer",
+        "Provides daily reassurance and peace of mind for families"
       ],
-      image: "/real_bios/telemetry_pipeline.png",
+      image: "/bios_live/senior_scooter.png",
       pillColor: "bg-blue-600 text-white",
-      floatingTag: "Safe Return Home",
+      floatingTag: "Safe Living at Home",
       floatingStat: "Hospital Days Saved: -4.2"
     }
   ];
@@ -177,7 +177,7 @@ export const StickyStepper: React.FC = () => {
 
                 {/* Floating Top Pill on Image with float 4s */}
                 <div className="absolute top-4 right-4 glass-pill px-4 py-2 rounded-full flex items-center gap-2 shadow-md z-10 animate-float">
-                  <Sparkles className="w-4 h-4 text-amber-500" />
+                  <Sparkles className="w-4 h-4 text-blue-600" />
                   <span className="text-xs font-bold text-slate-800">{current.floatingTag}</span>
                 </div>
 

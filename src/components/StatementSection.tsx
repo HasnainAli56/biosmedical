@@ -106,8 +106,8 @@ export const StatementSection: React.FC = () => {
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                   className="inline-flex items-center overflow-hidden align-middle"
                 >
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 shadow-sm text-sm sm:text-base font-bold whitespace-nowrap">
-                    <Shield className="w-4 h-4 text-amber-500" />
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 shadow-sm text-sm sm:text-base font-bold whitespace-nowrap">
+                    <Shield className="w-4 h-4 text-blue-600" />
                     <span>OGCM 22%</span>
                   </span>
                 </motion.span>

@@ -35,7 +35,7 @@ export const CtaBanner: React.FC = () => {
             whileHover={{ scale: 1.04 }}
             className="bg-white border border-blue-200/90 px-5 py-2 rounded-full flex items-center gap-2.5 shadow-sm cursor-default animate-float"
           >
-            <Users className="w-4 h-4 text-amber-500 shrink-0" />
+            <Users className="w-4 h-4 text-blue-600 shrink-0" />
             <span className="text-xs sm:text-sm font-bold text-slate-800 tracking-wide">
               1.7M Hip Fractures Worldwide Annually — Transform The Outcome
             </span>

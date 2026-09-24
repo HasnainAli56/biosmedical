@@ -110,10 +110,10 @@ export const BenefitsBentoHub: React.FC = () => {
 
             {/* Glowing SVG dashed lines connecting center to all 4 cards */}
             <svg className="absolute w-72 h-72 pointer-events-none -z-10" viewBox="0 0 256 256">
-              <line x1="128" y1="128" x2="20" y2="40" stroke="#93c5fd" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
-              <line x1="128" y1="128" x2="236" y2="40" stroke="#93c5fd" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
-              <line x1="128" y1="128" x2="20" y2="216" stroke="#93c5fd" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
-              <line x1="128" y1="128" x2="236" y2="216" stroke="#93c5fd" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
+              <line x1="128" y1="128" x2="20" y2="40" stroke="#6b9abe" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
+              <line x1="128" y1="128" x2="236" y2="40" stroke="#6b9abe" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
+              <line x1="128" y1="128" x2="20" y2="216" stroke="#6b9abe" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
+              <line x1="128" y1="128" x2="236" y2="216" stroke="#6b9abe" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
             </svg>
           </div>
         </div>
@@ -126,7 +126,7 @@ export const BenefitsBentoHub: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ y: -4, borderColor: '#93c5fd' }}
+          whileHover={{ y: -4, borderColor: '#6b9abe' }}
           className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl hover:border-blue-300 transition-all relative overflow-hidden group"
         >
           <div>
@@ -199,13 +199,13 @@ export const BenefitsBentoHub: React.FC = () => {
               >
                 <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 text-sm">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
                     <div>
                       <span className="font-bold text-slate-800">Gait Velocity: {currentDayData.gait}</span>
                       <span className="text-xs text-slate-500 block">Day {selectedDay} recovery track</span>
                     </div>
                   </div>
-                  <span className="text-xs font-bold text-amber-700 bg-amber-100/70 px-2.5 py-1 rounded-md">Direct Feed</span>
+                  <span className="text-xs font-bold text-blue-700 bg-blue-100/70 px-2.5 py-1 rounded-md">Direct Feed</span>
                 </div>
 
                 <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 text-sm">
@@ -235,12 +235,12 @@ export const BenefitsBentoHub: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ y: -4, borderColor: '#93c5fd' }}
+          whileHover={{ y: -4, borderColor: '#6b9abe' }}
           className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl hover:border-blue-300 transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-3 mb-2.5">
-              <div className="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-xs">
+              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs">
                 <ShieldAlert className="w-4.5 h-4.5" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Predictive Fall & Biomarker Alerts</h3>
@@ -250,48 +250,47 @@ export const BenefitsBentoHub: React.FC = () => {
             </p>
           </div>
 
-          {/* Radar Node Layout with smooth animations */}
-          <div className="mt-6 bg-slate-50/90 rounded-2xl p-5 shadow-xs border border-slate-200/70 relative min-h-[230px] flex items-center justify-center overflow-hidden">
+          {/* Sensor Placement & Live Anomaly Monitor */}
+          <div className="mt-6 bg-slate-50/90 rounded-2xl p-5 shadow-xs border border-slate-200/70 relative min-h-[230px] flex flex-col items-center justify-center overflow-hidden gap-3">
             
-            {/* Concentric radar rings */}
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-4 rounded-full border border-blue-100/80" 
-            />
-            <div className="absolute inset-10 rounded-full border border-dashed border-blue-200" />
+            {/* Authentic HIPbeacon Positioning Graphic from biosmedical.care */}
+            <div className="w-full flex items-center justify-between px-3 py-2 bg-white rounded-xl border border-slate-200/60 shadow-2xs">
+              <div className="flex items-center gap-3">
+                <img 
+                  src="/bios_live/hipbeacon_position.png" 
+                  alt="HIPbeacon positioning inside femur nail" 
+                  className="h-12 w-auto object-contain"
+                />
+                <div>
+                  <div className="text-xs font-bold text-blue-700 uppercase tracking-wide">Implant Telemetry</div>
+                  <div className="text-sm font-black text-slate-900">Protected Inside Hip Nail</div>
+                </div>
+              </div>
+              <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 border border-blue-200">
+                100% Safe
+              </span>
+            </div>
 
-            {/* Orbiting Sensor Indicators (Standardized to solid blue & yellow) */}
-            <motion.div animate={{ y: [-3, 3, -3] }} transition={{ duration: 3, repeat: Infinity }} className="absolute top-2 left-6 px-3 py-1 rounded-md bg-blue-50 border border-blue-200 text-xs font-bold text-blue-700">
-              Gait Cadence
-            </motion.div>
-            <motion.div animate={{ y: [3, -3, 3] }} transition={{ duration: 3.5, repeat: Infinity }} className="absolute top-3 right-6 px-3 py-1 rounded-md bg-amber-50 border border-amber-200 text-xs font-bold text-amber-700">
-              Axial Strain
-            </motion.div>
-            <motion.div animate={{ y: [-2, 2, -2] }} transition={{ duration: 4, repeat: Infinity }} className="absolute bottom-3 left-8 px-3 py-1 rounded-md bg-blue-50 border border-blue-200 text-xs font-bold text-blue-700">
-              Step Symmetry
-            </motion.div>
-            <motion.div animate={{ y: [2, -2, 2] }} transition={{ duration: 3.2, repeat: Infinity }} className="absolute bottom-3 right-8 px-3 py-1 rounded-md bg-amber-50 border border-amber-200 text-xs font-bold text-amber-700">
-              Fall Hazard Flag
-            </motion.div>
-
-            {/* Central Alert Card Stack */}
-            <div className="relative z-10 w-full max-w-[280px] bg-white rounded-xl shadow-lg border border-slate-100 p-4 space-y-2.5">
-              <div className="flex items-center gap-2 text-sm text-amber-700 font-bold pb-1.5 border-b border-slate-100">
-                <AlertTriangle className="w-4 h-4 text-amber-500" />
-                <span>Biomarker Anomaly Stream</span>
+            {/* Central Alert Card Stack - Simple, clear metrics for seniors */}
+            <div className="relative z-10 w-full bg-white rounded-xl shadow-md border border-slate-100 p-4 space-y-2.5">
+              <div className="flex items-center justify-between text-sm text-blue-700 font-bold pb-2 border-b border-slate-100">
+                <span className="flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-blue-600" />
+                  <span>Real-Time Recovery Safety Check</span>
+                </span>
+                <span className="text-xs font-mono text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Live</span>
               </div>
-              <div className="flex items-center justify-between text-xs text-slate-700">
-                <span className="font-medium">Early Loosening Risk:</span>
-                <span className="font-black text-amber-600">Minimal (0.01%)</span>
+              <div className="flex items-center justify-between text-xs sm:text-sm text-slate-700">
+                <span className="font-medium">Implant Stability:</span>
+                <span className="font-black text-blue-700">100% Secure</span>
               </div>
-              <div className="flex items-center justify-between text-xs text-slate-700">
-                <span className="font-medium">Fall Probability Score:</span>
-                <span className="font-black text-blue-600">Stable (8%)</span>
+              <div className="flex items-center justify-between text-xs sm:text-sm text-slate-700">
+                <span className="font-medium">Sudden Fall Hazard:</span>
+                <span className="font-black text-blue-700">Protected (Low Risk)</span>
               </div>
-              <div className="flex items-center justify-between text-xs text-slate-700">
-                <span className="font-medium">Continuous DMO Accuracy:</span>
-                <span className="font-black text-blue-600">99.8%</span>
+              <div className="flex items-center justify-between text-xs sm:text-sm text-slate-700">
+                <span className="font-medium">Walking Rhythm Accuracy:</span>
+                <span className="font-black text-blue-700">99.8% Precision</span>
               </div>
             </div>
           </div>
@@ -305,7 +304,7 @@ export const BenefitsBentoHub: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ y: -4, borderColor: '#93c5fd' }}
+          whileHover={{ y: -4, borderColor: '#6b9abe' }}
           className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl hover:border-blue-300 transition-all relative overflow-hidden group"
         >
           <div>
@@ -351,7 +350,7 @@ export const BenefitsBentoHub: React.FC = () => {
 
               {/* Node 2: Dr. Patrick Stepanek */}
               <div className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-13 h-13 rounded-full ring-4 ring-white shadow-md overflow-hidden bg-amber-100">
+                <div className="w-13 h-13 rounded-full ring-4 ring-white shadow-md overflow-hidden bg-blue-100">
                   <img src="/real_bios/patrick_stepanek_coo.jpg" alt="Dr. Patrick Stepanek" className="w-full h-full object-cover" />
                 </div>
                 <span className="text-xs font-bold text-slate-900 mt-2">Geriatric Lead</span>
@@ -375,12 +374,12 @@ export const BenefitsBentoHub: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          whileHover={{ y: -4, borderColor: '#93c5fd' }}
+          whileHover={{ y: -4, borderColor: '#6b9abe' }}
           className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:shadow-xl hover:border-blue-300 transition-all relative overflow-hidden group"
         >
           <div>
             <div className="flex items-center gap-3 mb-2.5">
-              <div className="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-xs">
+              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs">
                 <BellRing className="w-4.5 h-4.5" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">Personalized Clinical Reminders</h3>
@@ -390,13 +389,13 @@ export const BenefitsBentoHub: React.FC = () => {
             </p>
           </div>
 
-          {/* Floating Message Stack with Staggered Motion */}
+          {/* Floating Message Stack with Staggered Motion - Matching other cards */}
           <div className="mt-6 bg-slate-50/90 rounded-2xl p-4 sm:p-5 shadow-xs border border-slate-200/70 space-y-3">
             <motion.div 
               whileHover={{ scale: 1.02, y: -1 }}
-              className="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3 shadow-xs hover:border-amber-300 transition-all cursor-default"
+              className="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3 shadow-xs hover:border-blue-300 transition-all cursor-default"
             >
-              <div className="w-7 h-7 rounded-full bg-amber-500 text-white flex items-center justify-center shrink-0 text-sm font-bold shadow-xs">
+              <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-sm font-bold shadow-xs">
                 ✓
               </div>
               <div>
@@ -413,7 +412,7 @@ export const BenefitsBentoHub: React.FC = () => {
                 ⚡
               </div>
               <div>
-                <div className="text-sm font-bold text-slate-900">Telehealth Sync Scheduled</div>
+                <div className="text-sm font-bold text-slate-900">Doctor Report Sent Automatically</div>
                 <div className="text-xs text-slate-600 font-medium mt-0.5">Weekly progress evaluation with Dr. Windolf at 10:30 AM.</div>
               </div>
             </motion.div>
@@ -427,9 +426,14 @@ export const BenefitsBentoHub: React.FC = () => {
               </div>
               <div>
                 <div className="text-sm font-bold text-slate-900">Peace of Mind for Families</div>
-                <div className="text-xs text-slate-600 font-medium mt-0.5">Immediate remote notifications sent to family caregivers.</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5">Immediate remote notifications sent directly to family caregivers.</div>
               </div>
             </motion.div>
+          </div>
+
+          <div className="mt-4 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm text-slate-600">
+            <span className="font-medium">Direct Family Reassurance</span>
+            <span className="font-bold text-blue-600">24/7 Monitored</span>
           </div>
         </motion.div>
 

@@ -106,9 +106,9 @@ export const Navbar: React.FC = () => {
                     <Link 
                       to="/page/bios-cloud" 
                       onClick={() => setSolutionsOpen(false)}
-                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-amber-50/80 transition-colors group"
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-blue-50/80 transition-colors group"
                     >
-                      <div className="p-2 rounded-lg bg-amber-100 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                      <div className="p-2 rounded-lg bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                         <Database className="w-4.5 h-4.5" />
                       </div>
                       <div>
@@ -215,7 +215,7 @@ export const Navbar: React.FC = () => {
               }`}
             >
               <span>BIOS-Cloud</span>
-              <ExternalLink className="w-3 h-3 text-amber-400" />
+              <ExternalLink className="w-3 h-3 text-blue-500" />
             </a>
 
             <Link

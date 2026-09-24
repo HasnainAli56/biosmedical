@@ -42,7 +42,7 @@ export const PartnersPage: React.FC = () => {
       {/* 3. Partner Inquiry Callout */}
       <section className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
         <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200/90 shadow-sm max-w-3xl mx-auto">
-          <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-4">
+          <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center mx-auto mb-4">
             <HeartHandshake className="w-6 h-6" />
           </div>
           <h3 className="text-2xl font-bold text-slate-900">Join Our Clinical Multi-Center Studies</h3>

@@ -119,7 +119,7 @@ export const PricingTiers: React.FC = () => {
               {/* Top Ribbon */}
               {plan.featured && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-black tracking-wider uppercase shadow-md flex items-center gap-2 whitespace-nowrap">
-                  <Crown className="w-4 h-4 text-amber-400 fill-amber-400" />
+                  <Crown className="w-4 h-4 text-blue-500 fill-blue-500" />
                   <span>Most Recommended Clinical Tier</span>
                 </div>
               )}

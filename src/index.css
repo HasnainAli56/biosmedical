@@ -1,5 +1,152 @@
 @import "tailwindcss";
 
+@theme {
+  /* Exact BIOS Medical (biosmedical.care) Color System */
+  --color-bios-navy: #114761;
+  --color-bios-dark: #0b3447;
+  --color-bios-deep: #1e435f;
+  --color-bios-slate: #4d7589;
+  --color-bios-muted: #88a3b0;
+  --color-bios-border: #c4d1d8;
+  --color-bios-ice: #ebf1f5;
+  --color-bios-light: #f4f8fa;
+  --color-bios-amber: #114761;
+  --color-bios-accent: #6b9abe;
+  --color-bios-cyan: #35afc9;
+  --color-bios-blue: #6b9abe;
+  --color-bios-softblue: #a1b5c5;
+
+  /* Restrict all standard Tailwind palette scales exclusively to biosmedical.care colors */
+  --color-blue-50: #f4f8fa;
+  --color-blue-100: #ebf1f5;
+  --color-blue-200: #c4d1d8;
+  --color-blue-300: #a1b5c5;
+  --color-blue-400: #6b9abe;
+  --color-blue-500: #35afc9;
+  --color-blue-600: #114761;
+  --color-blue-700: #114761;
+  --color-blue-800: #1e435f;
+  --color-blue-900: #0b3447;
+  --color-blue-950: #072330;
+
+  --color-sky-50: #f4f8fa;
+  --color-sky-100: #ebf1f5;
+  --color-sky-200: #c4d1d8;
+  --color-sky-300: #a1b5c5;
+  --color-sky-400: #6b9abe;
+  --color-sky-500: #35afc9;
+  --color-sky-600: #114761;
+  --color-sky-700: #114761;
+  --color-sky-800: #1e435f;
+  --color-sky-900: #0b3447;
+
+  --color-cyan-50: #f4f8fa;
+  --color-cyan-100: #ebf1f5;
+  --color-cyan-200: #c4d1d8;
+  --color-cyan-300: #a1b5c5;
+  --color-cyan-400: #6b9abe;
+  --color-cyan-500: #35afc9;
+  --color-cyan-600: #114761;
+
+  --color-indigo-50: #f4f8fa;
+  --color-indigo-100: #ebf1f5;
+  --color-indigo-200: #c4d1d8;
+  --color-indigo-300: #a1b5c5;
+  --color-indigo-400: #6b9abe;
+  --color-indigo-500: #35afc9;
+  --color-indigo-600: #114761;
+  --color-indigo-700: #114761;
+  --color-indigo-800: #1e435f;
+  --color-indigo-900: #0b3447;
+
+  --color-purple-50: #f4f8fa;
+  --color-purple-100: #ebf1f5;
+  --color-purple-200: #c4d1d8;
+  --color-purple-300: #a1b5c5;
+  --color-purple-400: #6b9abe;
+  --color-purple-500: #114761;
+  --color-purple-600: #114761;
+  --color-purple-700: #1e435f;
+  --color-purple-900: #0b3447;
+
+  --color-violet-50: #f4f8fa;
+  --color-violet-100: #ebf1f5;
+  --color-violet-400: #6b9abe;
+  --color-violet-500: #114761;
+  --color-violet-600: #114761;
+
+  --color-emerald-50: #f4f8fa;
+  --color-emerald-100: #ebf1f5;
+  --color-emerald-400: #35afc9;
+  --color-emerald-500: #35afc9;
+  --color-emerald-600: #114761;
+
+  --color-green-50: #f4f8fa;
+  --color-green-100: #ebf1f5;
+  --color-green-400: #35afc9;
+  --color-green-500: #35afc9;
+  --color-green-600: #114761;
+
+  --color-teal-400: #35afc9;
+  --color-teal-500: #35afc9;
+  --color-teal-600: #114761;
+
+  --color-amber-50: #f4f8fa;
+  --color-amber-100: #ebf1f5;
+  --color-amber-200: #c4d1d8;
+  --color-amber-300: #a1b5c5;
+  --color-amber-400: #6b9abe;
+  --color-amber-500: #114761;
+  --color-amber-600: #114761;
+  --color-amber-700: #114761;
+  --color-amber-800: #0b3447;
+  --color-amber-900: #0b3447;
+
+  --color-yellow-50: #f4f8fa;
+  --color-yellow-100: #ebf1f5;
+  --color-yellow-200: #c4d1d8;
+  --color-yellow-300: #a1b5c5;
+  --color-yellow-400: #6b9abe;
+  --color-yellow-500: #114761;
+  --color-yellow-600: #114761;
+
+  --color-orange-50: #f4f8fa;
+  --color-orange-100: #ebf1f5;
+  --color-orange-200: #c4d1d8;
+  --color-orange-400: #6b9abe;
+  --color-orange-500: #114761;
+
+  --color-rose-500: #114761;
+  --color-red-500: #114761;
+
+  --color-slate-50: #f4f8fa;
+  --color-slate-100: #ebf1f5;
+  --color-slate-200: #c4d1d8;
+  --color-slate-300: #a1b5c5;
+  --color-slate-400: #88a3b0;
+  --color-slate-500: #4d7589;
+  --color-slate-600: #4d7589;
+  --color-slate-700: #2c4d5e;
+  --color-slate-800: #1e435f;
+  --color-slate-900: #114761;
+  --color-slate-950: #0b3447;
+
+  --color-gray-50: #f4f8fa;
+  --color-gray-100: #ebf1f5;
+  --color-gray-200: #c4d1d8;
+  --color-gray-300: #a1b5c5;
+  --color-gray-400: #88a3b0;
+  --color-gray-500: #4d7589;
+  --color-gray-600: #4d7589;
+  --color-gray-700: #2c4d5e;
+  --color-gray-800: #1e435f;
+  --color-gray-900: #114761;
+  --color-gray-950: #0b3447;
+
+  --color-zinc-900: #114761;
+  --color-zinc-950: #0b3447;
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -9,7 +156,8 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #f8fafc;
+    background-color: #f4f8fa;
+    color: #114761;
     overflow-x: hidden;
     letter-spacing: -0.011em;
     font-size: 1rem;
@@ -27,6 +175,7 @@
   h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif !important;
     letter-spacing: -0.025em;
+    color: #114761;
   }
 }
 
@@ -119,11 +268,11 @@
 /* 5. Icon & Central Hub Pulsing Animation */
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4), 0 0 35px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 15px rgba(17, 71, 97, 0.4), 0 0 35px rgba(107, 154, 190, 0.2);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 32px rgba(37, 99, 235, 0.85), 0 0 65px rgba(59, 130, 246, 0.55);
+    box-shadow: 0 0 32px rgba(17, 71, 97, 0.85), 0 0 65px rgba(252, 190, 51, 0.55);
     transform: scale(1.06);
   }
 }
@@ -161,28 +310,28 @@
 
 /* Glassmorphic utilities */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07);
+  border: 1px solid rgba(196, 209, 216, 0.6);
+  box-shadow: 0 20px 40px -15px rgba(17, 71, 97, 0.08);
 }
 
 .glass-pill {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.85);
+  border: 1px solid rgba(196, 209, 216, 0.8);
 }
 
 /* Glow gradient borders */
 .glow-card {
-  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.12), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(17, 71, 97, 0.12), 0 0 0 1px rgba(196, 209, 216, 0.8);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glow-card:hover {
-  box-shadow: 0 20px 40px -12px rgba(37, 99, 235, 0.22), 0 0 0 1px rgba(96, 165, 250, 0.6);
+  box-shadow: 0 20px 40px -12px rgba(17, 71, 97, 0.22), 0 0 0 1px rgba(107, 154, 190, 0.8);
   transform: translateY(-3px);
 }
 

@@ -6,10 +6,10 @@ export const PartnersGrid: React.FC = () => {
   const partnerCards = [
     {
       type: 'image',
-      image: '/real_bios/clinical_team_review.jpg',
-      alt: 'Clinical Investigation Rounds',
-      tag: 'Multi-Disciplinary',
-      title: 'Trauma & Geriatric Co-Management',
+      image: '/bios_live/elderly_recovery_doctor.jpg',
+      alt: 'Doctor & Patient Hip Recovery Review',
+      tag: 'Geriatric Orthopedics',
+      title: 'Safe Mobility & Rapid Independence',
     },
     {
       type: 'logo',
@@ -26,8 +26,8 @@ export const PartnersGrid: React.FC = () => {
       sub: 'Bern · Switzerland',
       badge: 'NATIONAL ASSOCIATION',
       short: '+CH',
-      iconColor: 'bg-amber-500 text-white',
-      badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
+      iconColor: 'bg-blue-600 text-white',
+      badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
     },
     {
       type: 'dark',
@@ -50,8 +50,8 @@ export const PartnersGrid: React.FC = () => {
       sub: 'Reconstructive Surgery',
       badge: 'LEVEL 1 TRAUMA',
       short: 'BG',
-      iconColor: 'bg-amber-500 text-white',
-      badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
+      iconColor: 'bg-blue-600 text-white',
+      badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
     },
     {
       type: 'logo',
@@ -75,8 +75,8 @@ export const PartnersGrid: React.FC = () => {
       sub: 'Alpine High-Altitude Tech Hub',
       badge: 'INCUBATION',
       short: 'ICD',
-      iconColor: 'bg-amber-500 text-white',
-      badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
+      iconColor: 'bg-blue-600 text-white',
+      badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
     }
   ];
 
@@ -117,8 +117,8 @@ export const PartnersGrid: React.FC = () => {
       >
         
         {/* Left & Right gradient masks for smooth edge fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-[#f8fafc] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-r from-[#f4f8fa] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#f4f8fa] to-transparent z-10 pointer-events-none" />
 
         <div 
           className="flex animate-marquee-25s items-center gap-5 sm:gap-6 pl-4"
@@ -145,8 +145,8 @@ export const PartnersGrid: React.FC = () => {
                   </div>
 
                   <div className="relative z-10">
-                    <span className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                    <span className="text-xs font-bold text-blue-500 uppercase tracking-wider flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-blue-500" />
                       {card.tag}
                     </span>
                     <h4 className="text-base sm:text-lg font-black text-white tracking-wide mt-1">

@@ -19,37 +19,37 @@ export const RadialIntegrationHub: React.FC = () => {
   const leftItems: IntegrationItem[] = [
     // Top row
     { id: 'epic', name: 'Epic Systems', category: 'EHR Ingest', icon: <Database className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'left' },
-    { id: 'cerner', name: 'Oracle Cerner', category: 'Hospital Record', icon: <Server className="w-4.5 h-4.5 text-amber-500" />, row: 'top', side: 'left' },
+    { id: 'cerner', name: 'Oracle Cerner', category: 'Hospital Record', icon: <Server className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'left' },
     { id: 'fhir', name: 'HL7 FHIR v4', category: 'Interoperability', icon: <Radio className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'left' },
-    { id: 'baxter', name: 'Baxter Platform', category: 'Device Stream', icon: <Cpu className="w-4.5 h-4.5 text-amber-500" />, row: 'top', side: 'left' },
+    { id: 'baxter', name: 'Baxter Platform', category: 'Device Stream', icon: <Cpu className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'left' },
 
     // Mid row
     { id: 'mdeg', name: 'mdeg Swiss Cloud', category: 'GDPR / HIPAA', icon: <Cloud className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'left' },
-    { id: 'ble', name: 'Bedside RF Ingest', category: 'Wireless Telemetry', icon: <Radio className="w-4.5 h-4.5 text-amber-500" />, row: 'mid', side: 'left' },
+    { id: 'ble', name: 'Bedside RF Ingest', category: 'Wireless Telemetry', icon: <Radio className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'left' },
     { id: 'pacs', name: 'DICOM / PACS', category: 'Radiology Archive', icon: <FileSpreadsheet className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'left' },
 
     // Bot row
-    { id: 'apple', name: 'Apple Health', category: 'Patient Portal', icon: <Activity className="w-4.5 h-4.5 text-amber-500" />, row: 'bot', side: 'left' },
+    { id: 'apple', name: 'Apple Health', category: 'Patient Portal', icon: <Activity className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'left' },
     { id: 'aes', name: 'AES-256 Vault', category: 'Encrypted Stream', icon: <Lock className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'left' },
-    { id: 'cal', name: 'Cal Clinical Sync', category: 'Visit Scheduler', icon: <Stethoscope className="w-4.5 h-4.5 text-amber-500" />, row: 'bot', side: 'left' },
+    { id: 'cal', name: 'Cal Clinical Sync', category: 'Visit Scheduler', icon: <Stethoscope className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'left' },
   ];
 
   // Right Wing Items (Registries & AI Analytics) - Standardized to Solid Blue & Solid Yellow
   const rightItems: IntegrationItem[] = [
     // Top row
-    { id: 'ai-engine', name: 'BIOS AI Risk Engine', category: 'Predictive ML', icon: <Cpu className="w-4.5 h-4.5 text-amber-500" />, row: 'top', side: 'right' },
+    { id: 'ai-engine', name: 'BIOS AI Risk Engine', category: 'Predictive ML', icon: <Cpu className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'right' },
     { id: 'mobilise', name: 'Mobilise-D Registry', category: 'EU DMO Benchmark', icon: <LineChart className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'right' },
-    { id: 'ao-data', name: 'AO Foundation DB', category: 'Fracture Trials', icon: <Database className="w-4.5 h-4.5 text-amber-500" />, row: 'top', side: 'right' },
+    { id: 'ao-data', name: 'AO Foundation DB', category: 'Fracture Trials', icon: <Database className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'right' },
     { id: 'avegen', name: 'Avegen Health', category: 'Remote Monitoring', icon: <Activity className="w-4.5 h-4.5 text-blue-600" />, row: 'top', side: 'right' },
 
     // Mid row
-    { id: 'ward', name: 'OGCM Ward Tablet', category: 'Geriatric Rounding', icon: <Stethoscope className="w-4.5 h-4.5 text-amber-500" />, row: 'mid', side: 'right' },
+    { id: 'ward', name: 'OGCM Ward Tablet', category: 'Geriatric Rounding', icon: <Stethoscope className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'right' },
     { id: 'telehealth', name: 'Telehealth Portal', category: 'Physician Review', icon: <Radio className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'right' },
-    { id: 'fall-model', name: 'Fall Hazard Engine', category: 'Asymmetry ML', icon: <Shield className="w-4.5 h-4.5 text-amber-500" />, row: 'mid', side: 'right' },
+    { id: 'fall-model', name: 'Fall Hazard Engine', category: 'Asymmetry ML', icon: <Shield className="w-4.5 h-4.5 text-blue-600" />, row: 'mid', side: 'right' },
 
     // Bot row
     { id: 'api-gateway', name: 'REST Clinical API', category: 'Fast Ingest', icon: <Server className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'right' },
-    { id: 'audit', name: 'Audit Compliance', category: 'MDR / FDA Logs', icon: <Lock className="w-4.5 h-4.5 text-amber-500" />, row: 'bot', side: 'right' },
+    { id: 'audit', name: 'Audit Compliance', category: 'MDR / FDA Logs', icon: <Lock className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'right' },
     { id: 'export', name: 'CSV / Parquet Export', category: 'Research Cohorts', icon: <FileSpreadsheet className="w-4.5 h-4.5 text-blue-600" />, row: 'bot', side: 'right' },
   ];
 

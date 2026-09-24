@@ -38,7 +38,7 @@ export const TechnologyPage: React.FC = () => {
             <span>Biocompatible Ti-6Al-4V Titanium</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/90 shadow-2xs">
-            <CheckCircle2 className="w-4 h-4 text-amber-500" />
+            <CheckCircle2 className="w-4 h-4 text-blue-600" />
             <span>Sub-Minute Surgical Insertion</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/90 shadow-2xs">

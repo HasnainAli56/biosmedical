@@ -71,7 +71,7 @@ export const FOOTER_PAGES: Record<string, PageContent> = {
     subtitle: 'Scientifically Validated Algorithms Harmonized with EU Mobilise-D Standards',
     badge: 'Evidence-Based Algorithms',
     badgeColor: 'amber',
-    icon: <Activity className="w-6 h-6 text-amber-500" />,
+    icon: <Activity className="w-6 h-6 text-blue-600" />,
     summary: 'Digital Mobility Outcomes represent the new clinical gold standard for functional recovery. The BIOS DMO Engine computes validated metrics that objectively correlate with patient functional independence, discharge readiness, and 1-year mortality risk.',
     keyPoints: [
       { title: 'Gait Velocity & Cadence', description: 'Accurate continuous estimation of walking velocity (m/s) without requiring timed 10-meter walk tests or camera setups.' },
@@ -136,7 +136,7 @@ export const FOOTER_PAGES: Record<string, PageContent> = {
     subtitle: 'Preventing Delirium, Sarcopenia & Secondary Fractures in Vulnerable Seniors',
     badge: 'Geriatric Pathway',
     badgeColor: 'amber',
-    icon: <HeartCrack className="w-6 h-6 text-amber-500" />,
+    icon: <HeartCrack className="w-6 h-6 text-blue-600" />,
     summary: 'Hip fractures in geriatric patients (>75 years) are catastrophic medical events. Bed rest induces rapid muscle atrophy (up to 1.5% per day) and precipitates acute delirium. BIOS real-time alerts ensure prompt mobilization within 24 hours of surgery.',
     keyPoints: [
       { title: 'Acute Delirium Mitigation', description: 'Patients mobilized within 24 hours of osteosynthesis show a 42% reduction in hospital-acquired post-operative delirium.' },
@@ -178,7 +178,7 @@ export const FOOTER_PAGES: Record<string, PageContent> = {
     subtitle: 'Shortening Length of Stay (LOS) by 1.8 Days and Optimizing Bed Turnover',
     badge: 'Health Economics',
     badgeColor: 'amber',
-    icon: <Award className="w-6 h-6 text-amber-500" />,
+    icon: <Award className="w-6 h-6 text-blue-600" />,
     summary: 'For healthcare executives and hospital administrators, hip fracture treatment represents high DRG cost and frequent bed blockages. BIOS provides the objective evidence required to safely discharge patients an average of 1.8 days earlier.',
     keyPoints: [
       { title: 'Average 1.8-Day LOS Reduction', description: 'Surgeons gain empirical confidence to discharge patients as soon as continuous DMO milestones confirm safe independent gait.' },
@@ -222,7 +222,7 @@ export const FOOTER_PAGES: Record<string, PageContent> = {
     subtitle: 'Aligning with the European Landmark Framework for Digital Mobility Outcomes',
     badge: 'EU IMI Framework',
     badgeColor: 'amber',
-    icon: <Activity className="w-6 h-6 text-amber-500" />,
+    icon: <Activity className="w-6 h-6 text-blue-600" />,
     summary: 'BIOS Medical aligns its analytics pipeline with the European Innovative Medicines Initiative (IMI) Mobilise-D framework, ensuring that all computed Digital Mobility Outcomes adhere to global regulatory and academic standardization.',
     keyPoints: [
       { title: 'Harmonized Metric Definitions', description: 'Direct compliance with Mobilise-D definitions for real-world walking speed, cadence, stride length, and walking bout duration.' },
@@ -264,7 +264,7 @@ export const FOOTER_PAGES: Record<string, PageContent> = {
     subtitle: 'European Medical Device Regulation (EU MDR 2017/745) Class IIb Pathway',
     badge: 'MDR Class IIb Submission',
     badgeColor: 'amber',
-    icon: <Award className="w-6 h-6 text-amber-500" />,
+    icon: <Award className="w-6 h-6 text-blue-600" />,
     summary: 'BIOS Medical AG is systematically executing its regulatory timeline under EU MDR 2017/745 Class IIb for active implantable medical devices, alongside ISO 13485:2016 quality management system certification.',
     keyPoints: [
       { title: 'ISO 13485:2016 Certification', description: 'Full Quality Management System certified by European Notified Body for design, manufacturing, and distribution of active medical devices.' },
@@ -324,7 +324,7 @@ export const FOOTER_PAGES: Record<string, PageContent> = {
     subtitle: 'World Key Opinion Leaders in Orthopedic Trauma and Geriatric Medicine',
     badge: 'Scientific Advisory Board',
     badgeColor: 'amber',
-    icon: <Award className="w-6 h-6 text-amber-500" />,
+    icon: <Award className="w-6 h-6 text-blue-600" />,
     summary: 'Our Scientific Advisory Board comprises internationally renowned professors of orthopedic surgery, geriatric medicine, and health economics from leading global university hospitals.',
     keyPoints: [
       { title: 'Prof. Dr. med. Christian Krettek (Hannover/Davos)', description: 'Pioneer of minimally invasive fracture fixation techniques and past Chairman of AO Trauma International.' },
@@ -447,7 +447,7 @@ export const PageModal: React.FC<PageModalProps> = ({ pageId, onClose, onRequest
               <span className="px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/20 text-white border border-white/30">
                 {content.category}
               </span>
-              <span className="px-3.5 py-1 rounded-full text-xs font-black tracking-wide bg-amber-400 text-slate-900 shadow-xs">
+              <span className="px-3.5 py-1 rounded-full text-xs font-black tracking-wide bg-blue-600 text-white border border-blue-400/60 shadow-xs">
                 {content.badge}
               </span>
             </div>
@@ -509,8 +509,8 @@ export const PageModal: React.FC<PageModalProps> = ({ pageId, onClose, onRequest
 
             {/* Regulatory or Compliance Note */}
             {content.regulatoryNote && (
-              <div className="p-3.5 rounded-xl bg-amber-50/80 border border-amber-200 text-amber-900 text-xs sm:text-sm leading-relaxed flex items-start gap-2.5">
-                <Shield className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+              <div className="p-3.5 rounded-xl bg-blue-50/80 border border-blue-200 text-blue-900 text-xs sm:text-sm leading-relaxed flex items-start gap-2.5">
+                <Shield className="w-4 h-4 text-blue-700 shrink-0 mt-0.5" />
                 <span>{content.regulatoryNote}</span>
               </div>
             )}
