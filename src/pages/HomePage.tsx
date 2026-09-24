@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HeroSection } from '../components/HeroSection';
+import { StatementSection } from '../components/StatementSection';
 import { SeniorVisualGallery } from '../components/SeniorVisualGallery';
 import { StickyStepper } from '../components/StickyStepper';
 import { BenefitsBentoHub } from '../components/BenefitsBentoHub';
@@ -22,7 +23,10 @@ export const HomePage: React.FC = () => {
       {/* 1. Hero Section with Real Sensor & Real Patient Walking Photo */}
       <HeroSection />
 
-      {/* 2. Visual Technology & Patient Recovery Gallery with Authentic Photos */}
+      {/* 2. Kinetic Morphing Statement Animation */}
+      <StatementSection />
+
+      {/* 3. Visual Technology & Patient Recovery Gallery with Authentic Photos */}
       <SeniorVisualGallery />
 
       {/* 3. Three-Step Patient Recovery Guide with Real X-ray, Process & Caregiver Images */}

@@ -89,7 +89,7 @@ export const TurbineLogo: React.FC<TurbineLogoProps> = ({
 
         {/* Center core ring */}
         <circle cx="50" cy="50" r="11" fill="#ffffff" />
-        <circle cx="50" cy="50" r="6" fill={isWhite ? "#6b9abe" : "#114761"} />
+        <circle cx="50" cy="50" r="6" fill={isWhite ? "#ffffff" : "#114761"} />
       </svg>
     </div>
   );
